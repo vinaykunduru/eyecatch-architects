@@ -46,7 +46,7 @@
       body {
         padding: 0;
         margin: 0;
-        font-family: Helvetica;
+        /* font-family: Helvetica; */
         font-family: "Poppins", sans-serif;
         font-size: 14px;
       }
@@ -138,7 +138,7 @@
       .topNav span {
         align-items: center;
         text-transform: uppercase;
-        font-family: "Helvetica";
+        /* font-family: "Helvetica"; */
         color: #444;
         letter-spacing: 1px;
       }
@@ -341,7 +341,7 @@
           <!-- Logo -->
           <div class="topNav">
             <span><a href="#">Architecture</a></span>
-            <span><a href="#">Landscape</a></span>
+            <span><a href="#">Interior</a></span>
             <span><a href="#">Products</a></span>
             <!-- <span>Nav1</span>
             <span>Nav1</span> -->
@@ -713,6 +713,35 @@
                             alt=""
                           />
                         </li>
+
+                        <li class="ss-carousel__item videoBlock">
+                          <video muted="" autoplay="" loop="">
+                            <source
+                              src="/projects/amyra/Amrya Video.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+
+                        <li class="ss-carousel__item textBlock">
+                          <!-- <h3>Site</h3> -->
+                          <p>
+                            Layered semicircular forms create depth, movement,
+                            and a dynamic appearance. Subtle shadows and
+                            dimensionality give the structure a sense of motion,
+                            softening its modern aesthetic with gentle,
+                            repetitive curves.
+                          </p>
+                          <p>
+                            Step into a world of fluid elegance, where every
+                            thoughtfully crafted curve creates harmony, inviting
+                            exploration in a space that’s both sophisticated and
+                            inspiring.
+                          </p>
+                        </li>
                         <li class="ss-carousel__item imgBlock">
                           <img
                             class="ss-carousel__item__image"
@@ -722,13 +751,15 @@
                         </li>
                         <li class="ss-carousel__item textBlock">
                           <div class="ss-carousel__description">
-                            <!-- <h3>Originality</h3> -->
+                            <h3>Concept</h3>
                             <p>
-                              Warm curves, textured surfaces, and soft lighting
-                              invite exploration in a comforting, immersive
-                              space. Greenery and subtle wood scents further
-                              enhance the serene, thoughtfully designed
-                              atmosphere.
+                              Introducing a new era of fluidic interiors at
+                              @amyrasilver. Nestled in a serene, modern space,
+                              the store exudes fluid elegance and refined
+                              sophistication. Soft, flowing curves, neutral
+                              tones, and smooth textures enhance fine jewellery
+                              displays, offering a serene, gallery-like
+                              experience.
                             </p>
                           </div>
                         </li>
@@ -736,7 +767,7 @@
                         <li class="ss-carousel__item videoBlock">
                           <video muted="" autoplay="" loop="">
                             <source
-                              src="/projects/amyra/amrya 1.mp4"
+                              src="/projects/amyra/sections.mp4"
                               type="video/mp4"
                               poster="/images/blank.png"
                             />
@@ -780,6 +811,13 @@
                               jewellery-inspired elements and elliptical racks
                               evoke fluidity and reflect the brand’s identity.
                             </p>
+                            <p>
+                              The design balances aesthetics with functionality,
+                              keeping customer flow around a circular display
+                              and strategically placing key areas around it.
+                              Hidden storage and green corner oases maximize
+                              space while enhancing comfort and elegance.
+                            </p>
                           </div>
                         </li>
 
@@ -805,6 +843,13 @@
                               serpentine path. Soft purples, beiges, and gentle
                               curves create a calm, sophisticated, and immersive
                               brand experience.
+                            </p>
+                            <p>
+                              Elliptical shelves rise seamlessly from curved
+                              walls, blending furniture with architecture and
+                              echoing the form of jewellery. Sculptural
+                              countertops and intentional details create a
+                              cohesive narrative of elegance and function.
                             </p>
                           </div>
                         </li>
@@ -859,26 +904,6 @@
 
                             Your browser does not support the video tag.
                           </video>
-                        </li>
-
-                        <li class="ss-carousel__item textBlock">
-                          <div class="ss-carousel__description">
-                            <!-- <h3>Originality</h3> -->
-                            <p>
-                              The design balances aesthetics with functionality,
-                              keeping customer flow around a circular display
-                              and strategically placing key areas around it.
-                              Hidden storage and green corner oases maximize
-                              space while enhancing comfort and elegance.
-                            </p>
-                            <p>
-                              Elliptical shelves rise seamlessly from curved
-                              walls, blending furniture with architecture and
-                              echoing the form of jewellery. Sculptural
-                              countertops and intentional details create a
-                              cohesive narrative of elegance and function.
-                            </p>
-                          </div>
                         </li>
 
                         <li class="ss-carousel__item imgBlock">
@@ -986,9 +1011,8 @@
                               <p>Medha Pulipati</p>
                               <h5 class="subHead2">Project Manager</h5>
                               <p>Rakesh CH</p>
-                            </div>
-                            <div>
-                              <h5>Project Team</h5>
+
+                              <h5 class="subHead2">Project Team</h5>
                               <p>Ravi Kumar K</p>
                               <p>Abdul</p>
                               <p>Pavan P NSK</p>
@@ -1012,6 +1036,9 @@
                               <h5 class="subHead2">Content</h5>
                               <p>Ananth</p>
                             </div>
+                            <!-- <div>
+                              
+                            </div> -->
                           </div>
                         </li>
                       </ul>
@@ -2555,7 +2582,14 @@
         width: 100%;
       }
       .ss-carousel .ss-carousel__item.imgBlock {
-        min-width: 75vw;
+        min-width: 70vw;
+      }
+      .ss-carousel .ss-carousel__item {
+        /* border: 8px solid #fff;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+         border: 1px solid #ccc; 
+        box-sizing: border-box;
+        padding: 10px; */
       }
 
       .ss-carousel .ss-carousel__item.imgBlock.vertical {
@@ -2651,7 +2685,9 @@
       }
 
       .ss-carousel__description > p,
-      .textBlock > p {
+      .ss-carousel__description > h3,
+      .textBlock > p,
+      .textBlock > h3 {
         margin-top: 0;
         padding-top: 0;
       }
@@ -2680,7 +2716,7 @@
       }
       .ss-carousel .ss-carousel__item.mapBlock iframe {
         width: 100%;
-        height: 90%;
+        height: 100%;
       }
 
       .ss-carousel .ss-carousel__item.mapBlock #map {
@@ -3034,7 +3070,7 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
           // Add active class and resize clicked item
           this.classList.add("active");
           this.style.width = `${window.innerWidth - 30}px`;
-          this.style.height = `${window.innerHeight - 140}px`;
+          this.style.height = `${window.innerHeight - 130}px`;
 
           document
             .querySelectorAll(".ss-carousel .ss-carousel__item")
