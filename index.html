@@ -1224,7 +1224,7 @@
                           </div>
                         </li> -->
 
-                        <li class="ss-carousel__item videoBlock">
+                        <li class="ss-carousel__item videoBlock overlyText">
                           <video muted autoplay loop>
                             <source
                               src="/projects/ladia/Ladia - Capsule.mp4"
@@ -1234,21 +1234,22 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <p>
+                            The wall-mounted jewellery-stand, designed as an
+                            elegant capsule sculpted from a cylindrical form,
+                            stands out with its distinctive charm.
+                          </p>
                         </li>
 
-                        <li class="ss-carousel__item textBlock">
+                        <!-- <li class="ss-carousel__item textBlock">
                           <div class="ss-carousel__description">
-                            <p>
-                              The wall-mounted jewellery-stand, designed as an
-                              elegant capsule sculpted from a cylindrical form,
-                              stands out with its distinctive charm.
-                            </p>
+                            
                           </div>
-                        </li>
+                        </li> -->
                         <li class="ss-carousel__item videoBlock">
                           <video muted autoplay loop>
                             <source
-                              src="/projects/ladia/Ladia Reel 2 Music Change.mp4"
+                              src="/projects/ladia/Ladia Website Full Video.mp4"
                               type="video/mp4"
                               poster="/images/blank.png"
                             />
@@ -2354,71 +2355,77 @@
                 </div>
               </div>
               <!-- Project Item-->
+
+              <footer class="footer">
+                <div class="footer-section">
+                  <div class="footer-link" data-target="emailSection">
+                    Email <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="emailSection">
+                    <p>New Projects: xyz.email.com</p>
+                    <p>Press: xyz.email.com</p>
+                    <p>Complaints: xyz.email.com</p>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="officeSection">
+                    Offices <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="officeSection">
+                    <div>
+                      <p class="sub-toggle" onclick="toggleAddressHyd()">
+                        Hyderabad
+                      </p>
+                      <div id="hyderabadAddress" style="display: block">
+                        <p>XYZ Address</p>
+                      </div>
+                      <p class="sub-toggle" onclick="toggleAddressVijayawada()">
+                        Vijayawada
+                      </p>
+                      <div id="vijayawadaAddress" style="display: none">
+                        <p>XYZ Address</p>
+                      </div>
+                      <p class="sub-toggle" onclick="toggleAddressTamil()">
+                        Tamilnadu
+                      </p>
+                      <div id="tamilnaduAddress" style="display: none">
+                        <p>XYZ Address</p>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="socialSection">
+                    Social <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="socialSection">
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                    <p>LinkedIn</p>
+                    <p>Instagram</p>
+                    <p>Youtube</p>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="copyrightSection">
+                    Copyright <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="copyrightSection">
+                    <p>Privacy Policy</p>
+                    <p>Terms of Use</p>
+                    <p>Legal Disclaimer</p>
+                    <p>Cookie Policy</p>
+                  </div>
+                </div>
+              </footer>
             </div>
             <!-- Projects Grid-->
           </div>
           <!-- Grid Container-->
-
-          <footer class="footer">
-            <div class="footer-section">
-              <div class="footer-link" data-target="emailSection">
-                Email <span class="toggle">+</span>
-              </div>
-              <div class="sub-content" id="emailSection">
-                <p>New Projects: xyz.email.com</p>
-                <p>Press: xyz.email.com</p>
-                <p>Complaints: xyz.email.com</p>
-              </div>
-            </div>
-
-            <div class="footer-section">
-              <div class="footer-link" data-target="officeSection">
-                Offices <span class="toggle">+</span>
-              </div>
-              <div class="sub-content" id="officeSection">
-                <div id="hyderabadAddress">
-                  <p>Hyderabad: XYZ Address</p>
-                  <p class="sub-toggle" onclick="toggleAddress()">
-                    Vijayawada +
-                  </p>
-                  <p class="sub-toggle" onclick="toggleAddressTamil()">
-                    Tamilnadu +
-                  </p>
-                </div>
-                <div id="vijayawadaAddress" style="display: none">
-                  <p>Vijayawada: XYZ Address</p>
-                </div>
-                <div id="tamilnaduAddress" style="display: none">
-                  <p>Tamilnadu: XYZ Address</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="footer-section">
-              <div class="footer-link" data-target="socialSection">
-                Social <span class="toggle">+</span>
-              </div>
-              <div class="sub-content" id="socialSection">
-                <p>Facebook</p>
-                <p>Twitter</p>
-                <p>LinkedIn</p>
-                <p>Instagram</p>
-                <p>Youtube</p>
-              </div>
-            </div>
-
-            <div class="footer-section">
-              <div class="footer-link" data-target="copyrightSection">
-                Copyright <span class="toggle">+</span>
-              </div>
-              <div class="sub-content" id="copyrightSection">
-                <p>Privacy Policy</p>
-                <p>Terms of Use</p>
-                <p>Legal Disclaimer</p>
-                <p>Cookie Policy</p>
-              </div>
-            </div>
-          </footer>
         </div>
         <!-- Container-->
       </div>
@@ -2427,17 +2434,23 @@
     <!-- Main Wrapper-->
     <style>
       .footer {
-        padding: 30px;
-        text-align: center;
+        padding: 130px 0 30px 0;
+
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
       }
 
       .footer-section {
         margin: 10px 0;
+        position: relative;
+        min-width: 150px;
       }
 
       .footer-link {
         cursor: pointer;
-        font-size: 20px;
+        font-size: 14px;
         margin: 10px 0;
         display: inline-block;
         position: relative;
@@ -2451,13 +2464,25 @@
       .sub-content {
         display: none;
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 14px;
+        position: absolute;
+        left: 0;
+        top: 30px;
+      }
+
+      .sub-content p {
+        margin: 0;
+        padding: 0;
       }
 
       .sub-toggle {
         color: #00bcd4;
         cursor: pointer;
         margin-top: 10px;
+      }
+
+      #officeSection {
+        display: flex;
       }
       .ss-carousel {
         padding: 24px 0px;
@@ -3185,9 +3210,9 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
       });
 
       // Toggle Vijayawada Address
-      function toggleAddress() {
-        document.getElementById("hyderabadAddress").style.display = "none";
-        document.getElementById("vijayawadaAddress").style.display = "block";
+      function toggleAddressHyd() {
+        document.getElementById("hyderabadAddress").style.display = "block";
+        document.getElementById("vijayawadaAddress").style.display = "none";
         document.getElementById("tamilnaduAddress").style.display = "none";
       }
 
@@ -3196,6 +3221,12 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
         document.getElementById("hyderabadAddress").style.display = "none";
         document.getElementById("vijayawadaAddress").style.display = "none";
         document.getElementById("tamilnaduAddress").style.display = "block";
+      }
+
+      function toggleAddressVijayawada() {
+        document.getElementById("hyderabadAddress").style.display = "none";
+        document.getElementById("vijayawadaAddress").style.display = "block";
+        document.getElementById("tamilnaduAddress").style.display = "none";
       }
     </script>
 
