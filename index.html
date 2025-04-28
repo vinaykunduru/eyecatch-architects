@@ -142,6 +142,9 @@
         color: #444;
         text-decoration: none;
       }
+      .topNav span a.activeNav {
+        border-bottom: 1px solid #444;
+      }
       .projecDetails {
         display: flex;
         gap: 30px;
@@ -344,8 +347,8 @@
           <!-- Logo -->
           <div class="topNav">
             <span><a href="#">Architecture</a></span>
-            <span><a href="#">Interior</a></span>
-            <span><a href="#">Products</a></span>
+            <span><a href="#" class="activeNav">Interior</a></span>
+            <span><a href="/products.html">Products</a></span>
             <!-- <span>Nav1</span>
             <span>Nav1</span> -->
           </div>
@@ -364,9 +367,12 @@
           <span></span>
           <ul id="menu">
             <li><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="#">Projects</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="#">Careers</a></li>
+
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
@@ -476,25 +482,17 @@
                             alt=""
                           />
                         </li>
-                        <!-- <li class="ss-carousel__item textBlock">
-                          <div class="ss-carousel__description">
-                            <p>
-                              Step into a world of fluid elegance, where every
-                              thoughtfully crafted curve creates harmony,
-                              inviting exploration in a space that’s both
-                              sophisticated and inspiring.
-                            </p>
-                            <p>
-                              Introducing a new era of fluidic interiors at
-                              amyra silver jewellery. Nestled in a serene,
-                              modern space, the store exudes fluid elegance and
-                              refined sophistication. Soft, flowing curves,
-                              neutral tones, and smooth textures enhance fine
-                              jewellery displays, offering a serene,
-                              gallery-like experience.
-                            </p>
-                          </div>
-                        </li> -->
+                        <li class="ss-carousel__item textBlock">
+                          <!-- <h3></h3> -->
+                          <p>
+                            Introducing a new era of fluidic interiors at amyra
+                            silver jewellery. Nestled in a serene, modern space,
+                            the store exudes fluid elegance and refined
+                            sophistication. Soft, flowing curves, neutral tones,
+                            and smooth textures enhance fine jewellery displays,
+                            offering a serene, gallery-like experience.
+                          </p>
+                        </li>
                         <li class="ss-carousel__item videoBlock">
                           <video muted="" autoplay="" loop="">
                             <source
@@ -509,14 +507,6 @@
 
                         <li class="ss-carousel__item textBlock">
                           <!-- <h3></h3> -->
-                          <p>
-                            Introducing a new era of fluidic interiors at amyra
-                            silver jewellery. Nestled in a serene, modern space,
-                            the store exudes fluid elegance and refined
-                            sophistication. Soft, flowing curves, neutral tones,
-                            and smooth textures enhance fine jewellery displays,
-                            offering a serene, gallery-like experience.
-                          </p>
 
                           <p>
                             The Facade layered semicircular forms create depth,
@@ -760,15 +750,17 @@
                               <p>Id. Medha Pulipati</p>
                               <h5 class="subHead2">Project Manager</h5>
                               <p>Rakesh CH</p>
+                              <h5 class="subHead2">Procurment Manager</h5>
+                              <p>Abhilash.V</p>
 
                               <h5 class="subHead2">Project Team</h5>
-                              <p>Ravi Kumar K</p>
-                              <p>Abdul</p>
+                              <p>Ravi Kumar.K</p>
+
                               <p>Pavan P NSK</p>
                               <p>Ar. Vaishnavi Basireddy</p>
                               <p>Krishna Kanth P</p>
                               <p>Rajib roy</p>
-                              <p>Keshav G</p>
+
                               <p>Shamsheer p</p>
                               <p>Chandan Halder</p>
                               <p>Somisetty Baby Sushma</p>
@@ -776,14 +768,16 @@
                             <div>
                               <h5>Project Incharge</h5>
                               <p>Sai</p>
+                              <p>Ameer khan</p>
                               <h5 class="subHead2">Operational manager</h5>
                               <p>Fathima</p>
-                              <h5 class="subHead2">Site supervisor</h5>
-                              <p>Ameer khan</p>
+
                               <h5 class="subHead2">Photograghy</h5>
                               <p>Victor</p>
                               <h5 class="subHead2">Content</h5>
-                              <p>Ananth</p>
+                              <p>Ananth.C</p>
+                              <h5 class="subHead2">Relationship Manager</h5>
+                              <p>Tharani M</p>
                             </div>
                             <!-- <div>
                               
@@ -1977,7 +1971,11 @@
                         id="hyderabadAddress"
                         style="display: block"
                       >
-                        <p>XYZ Address</p>
+                        <p class="detailedAddress">
+                          Plot No. 710, Road No. 36, Aditya Enclave,
+                          Venkatagiri, Jubilee Hills, Hyderabad, Telangana
+                          500033
+                        </p>
                       </div>
                       <p class="sub-toggle" onclick="toggleAddressVijayawada()">
                         Vijayawada
@@ -1987,7 +1985,7 @@
                         id="vijayawadaAddress"
                         style="display: none"
                       >
-                        <p>XYZ Address</p>
+                        <p class="detailedAddress">XYZ Address</p>
                       </div>
                       <p class="sub-toggle" onclick="toggleAddressTamil()">
                         Tamilnadu
@@ -1997,7 +1995,7 @@
                         id="tamilnaduAddress"
                         style="display: none"
                       >
-                        <p>XYZ Address</p>
+                        <p class="detailedAddress">XYZ Address</p>
                       </div>
                     </div>
                     <div></div>
@@ -2095,6 +2093,9 @@
         cursor: pointer;
         margin-top: 10px;
         font-weight: bold;
+      }
+      .detailedAddress {
+        max-width: 150px;
       }
       .ss-carousel {
         padding: 24px 0px;
