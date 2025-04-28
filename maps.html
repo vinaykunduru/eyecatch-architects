@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>4 Leaflet Grayscale Maps with Popups</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .map-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .map {
+        width: 100%;
+        height: 400px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="map-container">
+      <div id="map1" class="map"></div>
+      <div id="map2" class="map"></div>
+      <div id="map3" class="map"></div>
+      <div id="map4" class="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      const locations = [
+        { coords: [17.4281, 78.4484974], address: "Amyra Silver" },
+        {
+          coords: [17.42848, 78.413184],
+          address: "Ladia Lab Grown Diamond Jewellery",
+        },
+        { coords: [17.43, 78.42], address: "Location 3 (Update Later)" },
+        { coords: [17.431, 78.425], address: "Location 4 (Update Later)" },
+      ];
+
+      function createMap(id, location) {
+        const map = L.map(id).setView(location.coords, 17);
+
+        L.tileLayer(
+          "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+          {
+            attribution: "&copy; OpenStreetMap &copy; CARTO",
+            subdomains: "abcd",
+            maxZoom: 20,
+          }
+        ).addTo(map);
+
+        L.marker(location.coords).addTo(map).bindPopup(location.address);
+      }
+
+      createMap("map1", locations[0]);
+      createMap("map2", locations[1]);
+      createMap("map3", locations[2]);
+      createMap("map4", locations[3]);
+    </script>
+  </body>
+</html>

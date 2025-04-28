@@ -25,11 +25,7 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+
     <style>
       @font-face {
         font-family: Helvetica;
@@ -314,6 +310,13 @@
         transform: none;
       }
 
+      .map {
+        width: 100%;
+        height: 400px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
       @media all and (max-width: 576px) {
         #menu {
           width: 100vw;
@@ -372,254 +375,6 @@
         <div class="container">
           <div class="gridContainer scroll-container">
             <div class="projectsGrid">
-              <div class="projectItem">
-                <div class="firstSection">
-                  <div class="basicInfo">
-                    <div class="icon">
-                      <img
-                        class="mobileSVG"
-                        src="/images/ic1.svg"
-                        type="image/svg+xml"
-                      />
-                    </div>
-                    <div class="projectTitleInfo">
-                      <h3 class="projectTitle">Project Title</h3>
-                      <p class="location">Project location</p>
-                    </div>
-                  </div>
-                  <div class="heroSection">
-                    <img src="/images/d1.jpg" alt="" />
-                  </div>
-                </div>
-                <div class="detailContainer">
-                  <div class="ss-carousel">
-                    <div class="ss-carousel__wrapper">
-                      <div class="ss-carousel__header">
-                        <div class="ss-carousel__controls">
-                          <button
-                            class="ss-carousel__arrow disabled arrow-prev"
-                          ></button>
-                          <button
-                            class="ss-carousel__arrow arrow-next"
-                          ></button>
-                        </div>
-                      </div>
-                      <ul class="ss-carousel__content">
-                        <li class="ss-carousel__item firstInfo">
-                          <div class="basicInfo">
-                            <div>
-                              <div class="icon">
-                                <img
-                                  class="mobileSVG"
-                                  src="/images/ic1.svg"
-                                  type="image/svg+xml"
-                                />
-                              </div>
-                              <div class="projectTitleInfo">
-                                <h3 class="projectTitle">
-                                  What is Lorem Ipsum?
-                                </h3>
-                                <p class="location">Why do we use it?</p>
-                              </div>
-                            </div>
-                            <div class="moreInfo">
-                              <div>
-                                <h4>Client</h4>
-                                <p>Lorem Ipsum</p>
-                              </div>
-                              <div>
-                                <h4>Size</h4>
-                                <p>6000 S.ft</p>
-                              </div>
-                              <div>
-                                <h4>Status</h4>
-                                <p>Completed</p>
-                              </div>
-                            </div>
-                            <div class="socialSection">
-                              <div>
-                                <a href="#" target="_blank"
-                                  ><i class="bi bi-facebook"></i
-                                ></a>
-                              </div>
-                              <div>
-                                <a href="#" target="_blank"
-                                  ><i class="bi bi-instagram"></i
-                                ></a>
-                              </div>
-                              <div>
-                                <a href="#" target="_blank"
-                                  ><i class="bi bi-twitter"></i
-                                ></a>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="ss-carousel__item imgBlock">
-                          <img
-                            class="ss-carousel__item__image"
-                            src="/images/d4.jpg"
-                            alt=""
-                          />
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <div class="ss-carousel__description">
-                            <p>
-                              Lorem Ipsum is simply dummy text of the printing
-                              and typesetting industry. Lorem Ipsum has been the
-                              industry's standard dummy text ever since the
-                              1500s, when an unknown printer took a galley of
-                              type and scrambled it to make a type specimen
-                              book. It has survived not only five centuries, but
-                              also the leap into electronic typesetting,
-                              remaining essentially unchanged. It was
-                              popularised in the 1960s with the release of
-                              Letraset sheets containing Lorem Ipsum passages,
-                              and more recently with desktop publishing software
-                              like Aldus PageMaker including versions of Lorem
-                              Ipsum.
-                            </p>
-                          </div>
-                        </li>
-
-                        <li class="ss-carousel__item slideBlock">
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d2.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d3.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d4.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d1.jpg"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Originality</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Display counter.mp4"
-                              type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Cash Counter.mp4"
-                              type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Innovation</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Wall Racks.mp4"
-                              type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Sensorial & Spatial Experience</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <!-- Project Item-->
               <div class="projectItem">
                 <div class="firstSection">
@@ -714,28 +469,6 @@
                           />
                         </li>
 
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted="" autoplay="" loop="">
-                            <source
-                              src="/projects/amyra/Amrya Video 1.mp4"
-                              type="video/mp4"
-                              poster="/images/blank.png"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-
-                        <li class="ss-carousel__item textBlock">
-                          <!-- <h3></h3> -->
-                          <p>
-                            The Facade layered semicircular forms create depth,
-                            movement, and a dynamic appearance. Subtle shadows
-                            and dimensionality give the structure a sense of
-                            motion, softening its modern aesthetic with gentle,
-                            repetitive curves.
-                          </p>
-                        </li>
                         <li class="ss-carousel__item imgBlock">
                           <img
                             class="ss-carousel__item__image"
@@ -743,7 +476,7 @@
                             alt=""
                           />
                         </li>
-                        <li class="ss-carousel__item textBlock">
+                        <!-- <li class="ss-carousel__item textBlock">
                           <div class="ss-carousel__description">
                             <p>
                               Step into a world of fluid elegance, where every
@@ -761,6 +494,37 @@
                               gallery-like experience.
                             </p>
                           </div>
+                        </li> -->
+                        <li class="ss-carousel__item videoBlock">
+                          <video muted="" autoplay="" loop="">
+                            <source
+                              src="/projects/amyra/Amrya Video 1.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+
+                        <li class="ss-carousel__item textBlock">
+                          <!-- <h3></h3> -->
+                          <p>
+                            Introducing a new era of fluidic interiors at amyra
+                            silver jewellery. Nestled in a serene, modern space,
+                            the store exudes fluid elegance and refined
+                            sophistication. Soft, flowing curves, neutral tones,
+                            and smooth textures enhance fine jewellery displays,
+                            offering a serene, gallery-like experience.
+                          </p>
+
+                          <p>
+                            The Facade layered semicircular forms create depth,
+                            movement, and a dynamic appearance. Subtle shadows
+                            and dimensionality give the structure a sense of
+                            motion, softening its modern aesthetic with gentle,
+                            repetitive curves.
+                          </p>
                         </li>
 
                         <li class="ss-carousel__item videoBlock">
@@ -784,6 +548,12 @@
                             circular display and strategically placing key areas
                             around it. Hidden storage and green corner oases
                             maximize space while enhancing comfort and elegance.
+                          </p>
+                          <p>
+                            Step into a world of fluid elegance, where every
+                            thoughtfully crafted curve creates harmony, inviting
+                            exploration in a space that’s both sophisticated and
+                            inspiring.
                           </p>
                         </li>
 
@@ -966,7 +736,7 @@
                         </li> -->
 
                         <li class="ss-carousel__item mapBlock">
-                          <div id="map" class="map-container"></div>
+                          <div id="map1" class="map"></div>
                           <!-- <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3825.417072362901!2d80.65936527491395!3d16.50502878423935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35fb2cb9168e3d%3A0x15335ac5718bc32d!2sAmyra%20Silver!5e0!3m2!1sen!2sin!4v1745307043961!5m2!1sen!2sin&gestureHandling=none"
                             width="600"
@@ -1115,6 +885,14 @@
                             alt=""
                           />
                         </li>
+
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/projects/ladia/5-1.JPG"
+                            alt=""
+                          />
+                        </li>
                         <li class="ss-carousel__item textBlock">
                           <div class="ss-carousel__description">
                             <p>
@@ -1126,18 +904,6 @@
                               optimized circulation elevate the brand experience
                               beautifully.
                             </p>
-                          </div>
-                        </li>
-
-                        <li class="ss-carousel__item imgBlock">
-                          <img
-                            class="ss-carousel__item__image"
-                            src="/projects/ladia/5.JPG"
-                            alt=""
-                          />
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <div class="ss-carousel__description">
                             <p>
                               Curved racks guide customers smoothly through the
                               space, enhancing the seamless experience. Backlit
@@ -1358,25 +1124,25 @@
                 </div>
               </div>
               <!-- Project Item-->
+
               <div class="projectItem">
                 <div class="firstSection">
                   <div class="basicInfo">
                     <div class="icon">
                       <img
-                        class="mobileSVG"
-                        src="/images/ic1.svg"
-                        type="image/svg+xml"
+                        src="/projects/smart-furniture/Smart furniture _logo.jpg"
                       />
                     </div>
                     <div class="projectTitleInfo">
-                      <h3 class="projectTitle">Project Title</h3>
-                      <p class="location">Project location</p>
+                      <h3 class="projectTitle">Smart Furniture</h3>
+                      <p class="location">Vijayawada</p>
                     </div>
                   </div>
                   <div class="heroSection">
-                    <img src="/images/d2.jpg" alt="" />
+                    <img src="/projects/smart-furniture/1.jpg" alt="" />
                   </div>
                 </div>
+
                 <div class="detailContainer">
                   <div class="ss-carousel">
                     <div class="ss-carousel__wrapper">
@@ -1396,26 +1162,27 @@
                             <div>
                               <div class="icon">
                                 <img
-                                  class="mobileSVG"
-                                  src="/images/ic1.svg"
-                                  type="image/svg+xml"
+                                  src="/projects/smart-furniture/Smart furniture _logo.jpg"
                                 />
                               </div>
                               <div class="projectTitleInfo">
-                                <h3 class="projectTitle">
-                                  What is Lorem Ipsum?
-                                </h3>
-                                <p class="location">Why do we use it?</p>
+                                <h3 class="projectTitle">Smart Furniture</h3>
+                                <p class="location">Vijayawada</p>
+                                <p class="location">2025</p>
                               </div>
                             </div>
                             <div class="moreInfo">
                               <div>
                                 <h4>Client</h4>
-                                <p>Lorem Ipsum</p>
+                                <p>Santhosh G</p>
+                              </div>
+                              <div>
+                                <h4>Typology</h4>
+                                <p>Commercial</p>
                               </div>
                               <div>
                                 <h4>Size</h4>
-                                <p>6000 S.ft</p>
+                                <p>5100 S.ft</p>
                               </div>
                               <div>
                                 <h4>Status</h4>
@@ -1444,411 +1211,236 @@
                         <li class="ss-carousel__item imgBlock">
                           <img
                             class="ss-carousel__item__image"
-                            src="/images/d4.jpg"
+                            src="/projects/smart-furniture/1.jpg"
                             alt=""
                           />
                         </li>
-                        <li class="ss-carousel__item textBlock">
-                          <div class="ss-carousel__description">
-                            <p>
-                              Lorem Ipsum is simply dummy text of the printing
-                              and typesetting industry. Lorem Ipsum has been the
-                              industry's standard dummy text ever since the
-                              1500s, when an unknown printer took a galley of
-                              type and scrambled it to make a type specimen
-                              book. It has survived not only five centuries, but
-                              also the leap into electronic typesetting,
-                              remaining essentially unchanged. It was
-                              popularised in the 1960s with the release of
-                              Letraset sheets containing Lorem Ipsum passages,
-                              and more recently with desktop publishing software
-                              like Aldus PageMaker including versions of Lorem
-                              Ipsum.
-                            </p>
-                          </div>
-                        </li>
 
-                        <li class="ss-carousel__item slideBlock">
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d2.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d3.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d4.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d1.jpg"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Originality</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Display counter.mp4"
-                              type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Cash counter.mp4"
-                              type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Innovation</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Wall racks.mp4"
-                              type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Sensorial & Spatial Experience</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Project Item-->
-              <div class="projectItem">
-                <div class="firstSection">
-                  <div class="basicInfo">
-                    <div class="icon">
-                      <img
-                        class="mobileSVG"
-                        src="/images/ic1.svg"
-                        type="image/svg+xml"
-                      />
-                    </div>
-                    <div class="projectTitleInfo">
-                      <h3 class="projectTitle">Project Title</h3>
-                      <p class="location">Project location</p>
-                    </div>
-                  </div>
-                  <div class="heroSection">
-                    <img src="/images/d1.jpg" alt="" />
-                  </div>
-                </div>
-                <div class="detailContainer">
-                  <div class="ss-carousel">
-                    <div class="ss-carousel__wrapper">
-                      <div class="ss-carousel__header">
-                        <div class="ss-carousel__controls">
-                          <button
-                            class="ss-carousel__arrow disabled arrow-prev"
-                          ></button>
-                          <button
-                            class="ss-carousel__arrow arrow-next"
-                          ></button>
-                        </div>
-                      </div>
-                      <ul class="ss-carousel__content">
-                        <li class="ss-carousel__item firstInfo">
-                          <div class="basicInfo">
-                            <div>
-                              <div class="icon">
-                                <img
-                                  class="mobileSVG"
-                                  src="/images/ic1.svg"
-                                  type="image/svg+xml"
-                                />
-                              </div>
-                              <div class="projectTitleInfo">
-                                <h3 class="projectTitle">
-                                  What is Lorem Ipsum?
-                                </h3>
-                                <p class="location">Why do we use it?</p>
-                              </div>
-                            </div>
-                            <div class="moreInfo">
-                              <div>
-                                <h4>Client</h4>
-                                <p>Lorem Ipsum</p>
-                              </div>
-                              <div>
-                                <h4>Size</h4>
-                                <p>6000 S.ft</p>
-                              </div>
-                              <div>
-                                <h4>Status</h4>
-                                <p>Completed</p>
-                              </div>
-                            </div>
-                            <div class="socialSection">
-                              <div>
-                                <a href="#" target="_blank"
-                                  ><i class="bi bi-facebook"></i
-                                ></a>
-                              </div>
-                              <div>
-                                <a href="#" target="_blank"
-                                  ><i class="bi bi-instagram"></i
-                                ></a>
-                              </div>
-                              <div>
-                                <a href="#" target="_blank"
-                                  ><i class="bi bi-twitter"></i
-                                ></a>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
                         <li class="ss-carousel__item imgBlock">
                           <img
                             class="ss-carousel__item__image"
-                            src="/images/d4.jpg"
+                            src="/projects/smart-furniture/2.jpg"
                             alt=""
                           />
                         </li>
                         <li class="ss-carousel__item textBlock">
                           <div class="ss-carousel__description">
                             <p>
-                              Lorem Ipsum is simply dummy text of the printing
-                              and typesetting industry. Lorem Ipsum has been the
-                              industry's standard dummy text ever since the
-                              1500s, when an unknown printer took a galley of
-                              type and scrambled it to make a type specimen
-                              book. It has survived not only five centuries, but
-                              also the leap into electronic typesetting,
-                              remaining essentially unchanged. It was
-                              popularised in the 1960s with the release of
-                              Letraset sheets containing Lorem Ipsum passages,
-                              and more recently with desktop publishing software
-                              like Aldus PageMaker including versions of Lorem
-                              Ipsum.
+                              The store transforms a long, narrow space into an
+                              organic shopping environment with paper
+                              cut-out-inspired curved dividers. These elements
+                              create distinct zones for furniture display and
+                              enhance perception. A muted brown palette lets the
+                              furniture’s color and texture stand out, enriching
+                              the immersive experience.
+                            </p>
+                            <p>
+                              Inspired by paper cuttings, curved partitions with
+                              frayed edges add a sculptural touch. These flowing
+                              divisions create intimate, functional spaces that
+                              foster emotional connection.
+                            </p>
+                          </div>
+                        </li>
+                        <li class="ss-carousel__item videoBlock">
+                          <video muted autoplay loop>
+                            <source
+                              src="/projects/smart-furniture/Smart Furniture Video.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The small shop space led to an innovative solution
+                              to the design to prevent monotony and provide a
+                              rich and visually stimulating interior. The design
+                              provides maximum main road visibility despite a
+                              secondary road entrance
+                            </p>
+                          </div>
+                        </li>
+                        <li class="ss-carousel__item imgBlock horizantal">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/projects/smart-furniture/5.jpg"
+                            alt=""
+                          />
+                        </li>
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The winding path and curving dividers create
+                              intimate areas, enhanced by a warm brown color
+                              scheme. The design balances comfort and
+                              readability, encouraging exploration and a
+                              captivating experience.
                             </p>
                           </div>
                         </li>
 
-                        <li class="ss-carousel__item slideBlock">
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d2.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d3.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d4.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  class="ss-carousel__item__image"
-                                  src="/images/d1.jpg"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
+                        <li class="ss-carousel__item videoBlock overlyText">
+                          <video muted autoplay loop>
+                            <source
+                              src="/projects/smart-furniture/Smart furniture - Set 1.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                          <p></p>
+                        </li>
+                        <!-- <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+
+                          </div>
+                        </li> -->
+
+                        <li class="ss-carousel__item videoBlock overlyText">
+                          <video muted autoplay loop>
+                            <source
+                              src="/projects/smart-furniture/Smart furniture - Set 2.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                          <p></p>
+                        </li>
+                        <!-- <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                           
+                          </div>
+                        </li> -->
+
+                        <li class="ss-carousel__item videoBlock overlyText">
+                          <video muted autoplay loop>
+                            <source
+                              src="/projects/smart-furniture/Smart furniture - Set 3.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                          <p></p>
+                        </li>
+
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The layout accommodates 15 furniture pieces, two
+                              of which are in window displays, and has basic
+                              facilities. Parabolic curves provide clear
+                              wayfinding, linked spaces, and efficient space
+                              use.
+                            </p>
                           </div>
                         </li>
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Originality</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
                         <li class="ss-carousel__item videoBlock">
                           <video muted autoplay loop>
                             <source
-                              src="/projects/amyra/Amyra - Display counter.mp4"
+                              src="/projects/smart-furniture/Full Length Video.mp4"
                               type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Cash counter.mp4"
-                              type="video/mp4"
-                            />
-
-                            Your browser does not support the video tag.
-                          </video>
-                        </li>
-                        <li class="ss-carousel__item textBlock">
-                          <h3>Innovation</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
-                        </li>
-                        <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
-                            <source
-                              src="/projects/amyra/Amyra - Wall racks.mp4"
-                              type="video/mp4"
+                              poster="/images/blank.png"
                             />
 
                             Your browser does not support the video tag.
                           </video>
                         </li>
 
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/projects/smart-furniture/3.jpg"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item imgBlock horizantal">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/projects/smart-furniture/4.jpg"
+                            alt=""
+                          />
+                        </li>
+
                         <li class="ss-carousel__item textBlock">
-                          <h3>Sensorial & Spatial Experience</h3>
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                          </p>
+                          <div class="ss-carousel__description">
+                            <p>
+                              Parabolic divisions break linear monotony,
+                              creating well-defined, dual-sided display zones.
+                              Curved modules maximize display, ensure smooth
+                              flow, and add rhythmic movement to the space.
+                            </p>
+                            <p>
+                              Swooping partitions serve as visual dividers and
+                              display supports, blending beauty and
+                              functionality. This two-in-one design adds depth
+                              and continuous storytelling to the space.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li class="ss-carousel__item mapBlock">
+                          <!-- <div id="map"></div> -->
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6520199870743!2d78.41060947493568!3d17.42847958346571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb915d5c699807%3A0xe06d0d7506cde173!2sLadia%20Lab%20Grown%20Diamond%20Jewellery%20Jubilee%20Hills!5e0!3m2!1sen!2sin!4v1745475220740!5m2!1sen!2sin"
+                            width="600"
+                            height="450"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                          ></iframe>
+                        </li>
+
+                        <li class="ss-carousel__item teamBlock threeGrid">
+                          <div class="teamlist">
+                            <div>
+                              <h5>Project Leader</h5>
+                              <p>Madhu sudhan rao Pulipati</p>
+                              <h5 class="subHead2">
+                                Project Architect, Concept
+                              </h5>
+                              <p>Ar. Pranay Mithilesh Pulipati</p>
+                              <p>Id. Medha Pulipati</p>
+                              <h5 class="subHead2">Project Manager</h5>
+                              <p>Rakesh CH</p>
+
+                              <h5 class="subHead2">Project Team</h5>
+                              <p>Ravi Kumar K</p>
+                              <p>Abdul</p>
+                              <p>Pavan P NSK</p>
+                              <p>Ar. Chennakeshava.R</p>
+                              <p>Ar. Vaishnavi Basireddy</p>
+                              <p>Krishna Kanth P</p>
+                              <p>Rajib roy</p>
+                              <p>Keshav G</p>
+                              <p>Shamsheer p</p>
+                              <p>Chandan Halder</p>
+                              <p>Somisetty Baby Sushma</p>
+                            </div>
+
+                            <div>
+                              <h5>Project Incharge</h5>
+                              <p>Sai</p>
+                              <h5 class="subHead2">Operational manager</h5>
+                              <p>Fathima</p>
+                              <h5 class="subHead2">Site supervisor</h5>
+                              <p>Ameer khan</p>
+                              <h5 class="subHead2">Photograghy</h5>
+                              <p>Victor</p>
+                              <h5 class="subHead2">Content</h5>
+                              <p>Ananth</p>
+                            </div>
+                          </div>
                         </li>
                       </ul>
                     </div>
@@ -1856,6 +1448,9 @@
                 </div>
               </div>
               <!-- Project Item-->
+
+              <!-- Project Item-->
+
               <div class="projectItem">
                 <div class="firstSection">
                   <div class="basicInfo">
@@ -2377,19 +1972,31 @@
                       <p class="sub-toggle" onclick="toggleAddressHyd()">
                         Hyderabad
                       </p>
-                      <div id="hyderabadAddress" style="display: block">
+                      <div
+                        class="address"
+                        id="hyderabadAddress"
+                        style="display: block"
+                      >
                         <p>XYZ Address</p>
                       </div>
                       <p class="sub-toggle" onclick="toggleAddressVijayawada()">
                         Vijayawada
                       </p>
-                      <div id="vijayawadaAddress" style="display: none">
+                      <div
+                        class="address"
+                        id="vijayawadaAddress"
+                        style="display: none"
+                      >
                         <p>XYZ Address</p>
                       </div>
                       <p class="sub-toggle" onclick="toggleAddressTamil()">
                         Tamilnadu
                       </p>
-                      <div id="tamilnaduAddress" style="display: none">
+                      <div
+                        class="address"
+                        id="tamilnaduAddress"
+                        style="display: none"
+                      >
                         <p>XYZ Address</p>
                       </div>
                     </div>
@@ -2459,30 +2066,35 @@
       .footer-link .toggle {
         margin-left: 10px;
         transition: transform 0.3s ease;
+        display: inline-block;
       }
 
       .sub-content {
-        display: none;
-        margin-top: 10px;
-        font-size: 14px;
-        position: absolute;
-        left: 0;
-        top: 30px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        opacity: 0;
       }
-
+      .address {
+        transition: all 0.5s ease;
+        /* opacity: 0; */
+      }
       .sub-content p {
         margin: 0;
         padding: 0;
       }
 
-      .sub-toggle {
-        color: #00bcd4;
-        cursor: pointer;
-        margin-top: 10px;
+      .sub-content.show {
+        max-height: 500px; /* Large enough to hold content */
+        opacity: 1;
+        /* padding-top: 10px; */
       }
 
-      #officeSection {
-        display: flex;
+      .sub-toggle {
+        /* color: #00bcd4; */
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: bold;
       }
       .ss-carousel {
         padding: 24px 0px;
@@ -2572,6 +2184,18 @@
         height: 100% !important;
         width: auto !important;
       }
+
+      .ss-carousel .ss-carousel__item.imgBlock.horizantal {
+        min-width: 90vw;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+      }
+      .ss-carousel .ss-carousel__item.imgBlock.horizantal img {
+        height: auto !important;
+        width: 100% !important;
+      }
+
       .ss-carousel .ss-carousel__item.vCenter {
         align-self: center;
         align-items: center;
@@ -2672,6 +2296,7 @@
       .ss-carousel .ss-carousel__item.textBlock p {
         font-size: 14px;
         line-height: 22px;
+        text-align: justify;
       }
 
       .ss-carousel__description > p,
@@ -2728,7 +2353,7 @@
         margin-top: 20px !important;
       }
       .ss-carousel .ss-carousel__item a {
-        display: flex;
+        /* display: flex;
         justify-content: center;
         justify-content: flex-start;
         align-items: center;
@@ -2737,7 +2362,7 @@
         user-select: none;
         width: 350px;
 
-        cursor: pointer;
+        cursor: pointer; */
       }
       .ss-carousel .ss-carousel__controls {
         display: grid;
@@ -3190,21 +2815,28 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
           const subContent = document.getElementById(targetId);
           const toggleSymbol = this.querySelector(".toggle");
 
-          // Close all open sections first
+          // Close all open sections
           document.querySelectorAll(".sub-content").forEach((content) => {
-            if (content.id !== targetId) content.style.display = "none";
+            if (content.id !== targetId) {
+              content.classList.remove("show");
+            }
           });
           document.querySelectorAll(".toggle").forEach((toggle) => {
-            if (toggle !== toggleSymbol) toggle.textContent = "+";
+            if (toggle !== toggleSymbol) {
+              toggle.textContent = "+";
+              toggle.style.transform = "rotate(0deg)";
+            }
           });
 
           // Toggle current section
-          if (subContent.style.display === "block") {
-            subContent.style.display = "none";
+          if (subContent.classList.contains("show")) {
+            subContent.classList.remove("show");
             toggleSymbol.textContent = "+";
+            toggleSymbol.style.transform = "rotate(0deg)";
           } else {
-            subContent.style.display = "block";
+            subContent.classList.add("show");
             toggleSymbol.textContent = "-";
+            toggleSymbol.style.transform = "rotate(180deg)";
           }
         });
       });
@@ -3230,27 +2862,37 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
       }
     </script>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-      const map = L.map("map", {
-        gestureHandling: false, // disables gestures similar to your iframe's `gestureHandling=none`
-      }).setView([16.5050288, 80.6593653], 17);
-
-      // Greyscale tile layer (CartoDB Positron)
-      L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+      const locations = [
+        { coords: [17.4281, 78.4484974], address: "Amyra Silver" },
         {
-          attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
-          subdomains: "abcd",
-          maxZoom: 20,
-        }
-      ).addTo(map);
+          coords: [17.42848, 78.413184],
+          address: "Ladia Lab Grown Diamond Jewellery",
+        },
+        { coords: [17.43, 78.42], address: "Location 3 (Update Later)" },
+        { coords: [17.431, 78.425], address: "Location 4 (Update Later)" },
+      ];
 
-      // Marker
-      L.marker([16.5050288, 80.6593653])
-        .addTo(map)
-        .bindPopup("Amyra Silver")
-        .openPopup();
+      function createMap(id, location) {
+        const map = L.map(id).setView(location.coords, 17);
+
+        L.tileLayer(
+          "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+          {
+            attribution: "&copy; OpenStreetMap &copy; CARTO",
+            subdomains: "abcd",
+            maxZoom: 20,
+          }
+        ).addTo(map);
+
+        L.marker(location.coords).addTo(map).bindPopup(location.address);
+      }
+
+      createMap("map1", locations[0]);
+      createMap("map2", locations[1]);
+      createMap("map3", locations[2]);
+      createMap("map4", locations[3]);
     </script>
   </body>
 </html>
