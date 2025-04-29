@@ -392,16 +392,17 @@
 
         const tl = gsap.timeline();
 
-        // Move logo to top-left
+        // 1. Move logo to top-left and fade out while moving
         tl.to(logo, {
           x: -window.innerWidth / 2 + 60,
           y: -window.innerHeight / 2 + 40,
           scale: 0.5,
-          duration: 1,
+          opacity: 0, // Fade out during move
+          duration: 1.2,
           ease: "power2.inOut",
         })
 
-          // At same time: Increase gap between letters and move + fade letters
+          // 2. Increase letter gap
           .to(
             preloaderText,
             {
@@ -409,21 +410,22 @@
               duration: 1.2,
               ease: "power2.inOut",
             },
-            "-=0.8"
-          )
+            "-=1.2"
+          ) // start at same time as logo move
 
+          // 3. Move letters upward and fade out during move
           .to(
             letters,
             {
-              y: "-=400", // move up
-              opacity: 0, // fade out at the same time
-              duration: 1.2, // same duration as gap increase
+              y: "-=400",
+              opacity: 0,
+              duration: 1.2,
               ease: "power2.inOut",
             },
             "-=1.2"
-          ) // start together with gap increasing
+          ) // also start together
 
-          // Finally hide preloader
+          // 4. Hide preloader
           .to("#preloader", {
             opacity: 0,
             duration: 0.5,
@@ -1559,8 +1561,8 @@
 
                               <h5 class="subHead2">Project Team</h5>
                               <p>Ravi Kumar K</p>
-                              <p>Abdul</p>
-                              <p>Pavan P NSK</p>
+                              <!-- <p>Abdul</p> -->
+
                               <p>Ar. Chennakeshava.R</p>
                               <p>Ar. Vaishnavi Basireddy</p>
                               <p>Krishna Kanth P</p>
