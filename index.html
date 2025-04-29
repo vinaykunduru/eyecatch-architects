@@ -338,6 +338,103 @@
     </style>
   </head>
   <body>
+    <div id="preloader">
+      <div class="preloader-content">
+        <img src="/images/logo.png" alt="Logo" class="preloader-logo" />
+        <div class="preloader-text">
+          <span>A</span><span>r</span><span>c</span><span>h</span><span>i</span
+          ><span>t</span><span>e</span><span>c</span><span>t</span
+          ><span>s</span>
+        </div>
+      </div>
+    </div>
+    <style>
+      #preloader {
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .preloader-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .preloader-logo {
+        width: 80px;
+        margin-bottom: 20px;
+      }
+
+      .preloader-text {
+        display: flex;
+        gap: 0px; /* initially no gap */
+        font-family: "Poppins", sans-serif;
+        font-weight: bold;
+      }
+
+      .preloader-text span {
+        font-size: 32px;
+        opacity: 1;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", () => {
+        const logo = document.querySelector(".preloader-logo");
+        const preloaderText = document.querySelector(".preloader-text");
+        const letters = document.querySelectorAll(".preloader-text span");
+
+        const tl = gsap.timeline();
+
+        // Move logo to top-left
+        tl.to(logo, {
+          x: -window.innerWidth / 2 + 60,
+          y: -window.innerHeight / 2 + 40,
+          scale: 0.5,
+          duration: 1,
+          ease: "power2.inOut",
+        })
+
+          // At same time: Increase gap between letters and move + fade letters
+          .to(
+            preloaderText,
+            {
+              gap: "40px",
+              duration: 1.2,
+              ease: "power2.inOut",
+            },
+            "-=0.8"
+          )
+
+          .to(
+            letters,
+            {
+              y: "-=400", // move up
+              opacity: 0, // fade out at the same time
+              duration: 1.2, // same duration as gap increase
+              ease: "power2.inOut",
+            },
+            "-=1.2"
+          ) // start together with gap increasing
+
+          // Finally hide preloader
+          .to("#preloader", {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power1.inOut",
+            onComplete: () => {
+              document.getElementById("preloader").style.display = "none";
+            },
+          });
+      });
+    </script>
+
     <div class="mainWrapper" style="position: relative">
       <div class="header">
         <div class="headerContainer">
@@ -879,14 +976,64 @@
                             alt=""
                           />
                         </li>
-
                         <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/projects/ladia/n3.jpg"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item slideBlock">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="/projects/ladia/n4.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="/projects/ladia/n5.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="/projects/ladia/n6.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="/projects/ladia/5-1.JPG"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="/projects/ladia/n7.jpg"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        </li>
+
+                        <!-- <li class="ss-carousel__item imgBlock">
                           <img
                             class="ss-carousel__item__image"
                             src="/projects/ladia/5-1.JPG"
                             alt=""
                           />
-                        </li>
+                        </li> -->
                         <li class="ss-carousel__item textBlock">
                           <div class="ss-carousel__description">
                             <p>
@@ -1407,6 +1554,8 @@
                               <p>Id. Medha Pulipati</p>
                               <h5 class="subHead2">Project Manager</h5>
                               <p>Rakesh CH</p>
+                              <h5 class="subHead2">Procurment Manager</h5>
+                              <p>Abhilash.V</p>
 
                               <h5 class="subHead2">Project Team</h5>
                               <p>Ravi Kumar K</p>
@@ -1416,7 +1565,7 @@
                               <p>Ar. Vaishnavi Basireddy</p>
                               <p>Krishna Kanth P</p>
                               <p>Rajib roy</p>
-                              <p>Keshav G</p>
+
                               <p>Shamsheer p</p>
                               <p>Chandan Halder</p>
                               <p>Somisetty Baby Sushma</p>
@@ -1425,14 +1574,16 @@
                             <div>
                               <h5>Project Incharge</h5>
                               <p>Sai</p>
+                              <p>Ameer khan</p>
                               <h5 class="subHead2">Operational manager</h5>
                               <p>Fathima</p>
-                              <h5 class="subHead2">Site supervisor</h5>
-                              <p>Ameer khan</p>
+
                               <h5 class="subHead2">Photograghy</h5>
                               <p>Victor</p>
                               <h5 class="subHead2">Content</h5>
                               <p>Ananth</p>
+                              <h5 class="subHead2">Relationship Manager</h5>
+                              <p>Tharani M</p>
                             </div>
                           </div>
                         </li>
