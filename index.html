@@ -254,7 +254,7 @@
         opacity: 0;
         z-index: 2;
       }
-      .css-mobile-menu #menuToggle span {
+      .css-mobile-menu #menuToggle span.span {
         display: flex;
         width: 29px;
         height: 2px;
@@ -267,21 +267,21 @@
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
           background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
       }
-      .css-mobile-menu #menuToggle span:first-child {
+      .css-mobile-menu #menuToggle span.span:first-child {
         transform-origin: 0% 0%;
       }
-      .css-mobile-menu #menuToggle span:nth-last-child(2) {
+      .css-mobile-menu #menuToggle span.span:nth-last-child(2) {
         transform-origin: 0% 100%;
       }
-      .css-mobile-menu #menuToggle input:checked ~ span {
+      .css-mobile-menu #menuToggle input:checked ~ span.span {
         opacity: 1;
         transform: rotate(45deg) translate(-3px, -1px);
       }
-      .css-mobile-menu #menuToggle input:checked ~ span:nth-last-child(3) {
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
       }
-      .css-mobile-menu #menuToggle input:checked ~ span:nth-last-child(2) {
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px);
       }
       #menu {
@@ -494,9 +494,9 @@
       <nav class="css-mobile-menu" role="navigation">
         <div id="menuToggle">
           <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="span"></span>
+          <span class="span"></span>
+          <span class="span"></span>
           <ul id="menu">
             <li class="has-submenu">
               <a
