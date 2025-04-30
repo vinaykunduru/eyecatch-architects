@@ -161,6 +161,33 @@
       .css-mobile-menu #menuToggle input:checked ~ ul {
         transform: none;
       }
+      /* Hide submenu initially */
+      #menu .has-submenu .submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 15px;
+        list-style: none;
+      }
+
+      /* When open, show submenu */
+      #menu .has-submenu.open .submenu {
+        max-height: 300px;
+      }
+
+      /* Style the icon specifically in the menu */
+      #menu .submenu-toggle {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      #menu .submenu-icon {
+        /* font-weight: bold; */
+        font-size: 14px;
+        margin-right: 5px;
+        line-height: 1;
+      }
 
       .social {
         display: flex;
@@ -240,8 +267,8 @@
           </div>
           <!-- Logo -->
           <div class="topNav" style="display: none">
-            <span><a href="#">Architecture</a></span>
-            <span><a href="#">Landscape</a></span>
+            <span><a href="/architecture.html">Architecture</a></span>
+            <span><a href="/index.html">Interior</a></span>
             <span><a href="/products.html">Products</a></span>
             <!-- <span>Nav1</span>
             <span>Nav1</span> -->
@@ -273,7 +300,20 @@
           <span></span>
           <span></span>
           <ul id="menu">
-            <li><a href="/index.html">Projects</a></li>
+            <li class="has-submenu">
+              <a
+                href="javascript:void(0);"
+                class="submenu-toggle"
+                onclick="toggleSubmenu(this)"
+              >
+                <span class="submenu-icon">+</span>Projects
+              </a>
+              <ul class="submenu">
+                <li><a href="/architecture.html">Architecture</a></li>
+                <li><a href="/index.html">Interior</a></li>
+                <li><a href="/products.html">Products</a></li>
+              </ul>
+            </li>
             <li><a href="/news.html">News</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#">People</a></li>
@@ -459,6 +499,19 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
           ? "transform"
           : "fixed",
       });
+    </script>
+    <script>
+      function toggleSubmenu(el) {
+        const parentLi = el.closest("li.has-submenu");
+        const icon = el.querySelector(".submenu-icon");
+
+        parentLi.classList.toggle("open");
+        if (parentLi.classList.contains("open")) {
+          icon.textContent = "−";
+        } else {
+          icon.textContent = "+";
+        }
+      }
     </script>
   </body>
 </html>

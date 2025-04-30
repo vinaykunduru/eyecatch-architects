@@ -251,7 +251,7 @@
         opacity: 0;
         z-index: 2;
       }
-      .css-mobile-menu #menuToggle span {
+      .css-mobile-menu #menuToggle span.span {
         display: flex;
         width: 29px;
         height: 2px;
@@ -264,21 +264,21 @@
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
           background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
       }
-      .css-mobile-menu #menuToggle span:first-child {
+      .css-mobile-menu #menuToggle span.span:first-child {
         transform-origin: 0% 0%;
       }
-      .css-mobile-menu #menuToggle span:nth-last-child(2) {
+      .css-mobile-menu #menuToggle span.span:nth-last-child(2) {
         transform-origin: 0% 100%;
       }
-      .css-mobile-menu #menuToggle input:checked ~ span {
+      .css-mobile-menu #menuToggle input:checked ~ span.span {
         opacity: 1;
         transform: rotate(45deg) translate(-3px, -1px);
       }
-      .css-mobile-menu #menuToggle input:checked ~ span:nth-last-child(3) {
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
       }
-      .css-mobile-menu #menuToggle input:checked ~ span:nth-last-child(2) {
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px);
       }
       #menu {
@@ -313,12 +313,39 @@
       .css-mobile-menu #menuToggle input:checked ~ ul {
         transform: none;
       }
+      /* Hide submenu initially */
+      #menu .has-submenu .submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 15px;
+        list-style: none;
+      }
+
+      /* When open, show submenu */
+      #menu .has-submenu.open .submenu {
+        max-height: 300px;
+      }
+
+      /* Style the icon specifically in the menu */
+      #menu .submenu-toggle {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      #menu .submenu-icon {
+        /* font-weight: bold; */
+        font-size: 14px;
+        margin-right: 5px;
+        line-height: 1;
+      }
 
       .map {
         width: 100%;
-        height: 400px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
+        height: 100vh;
+        /* border: 1px solid #ccc;
+        border-radius: 8px; */
       }
 
       @media all and (max-width: 576px) {
@@ -363,11 +390,24 @@
       <nav class="css-mobile-menu" role="navigation">
         <div id="menuToggle">
           <input type="checkbox" />
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="span"></span>
+          <span class="span"></span>
+          <span class="span"></span>
           <ul id="menu">
-            <li><a href="/index.html">Projects</a></li>
+            <li class="has-submenu">
+              <a
+                href="javascript:void(0);"
+                class="submenu-toggle"
+                onclick="toggleSubmenu(this)"
+              >
+                <span class="submenu-icon">+</span>Projects
+              </a>
+              <ul class="submenu">
+                <li><a href="/architecture.html">Architecture</a></li>
+                <li><a href="/index.html">Interior</a></li>
+                <li><a href="/products.html">Products</a></li>
+              </ul>
+            </li>
             <li><a href="/news.html">News</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#">People</a></li>
@@ -592,8 +632,8 @@
                         </li>
 
                         <li class="ss-carousel__item mapBlock">
-                          <!-- <div id="map"></div> -->
-                          <iframe
+                          <div id="map1" class="map"></div>
+                          <!-- <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6520199870743!2d78.41060947493568!3d17.42847958346571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb915d5c699807%3A0xe06d0d7506cde173!2sLadia%20Lab%20Grown%20Diamond%20Jewellery%20Jubilee%20Hills!5e0!3m2!1sen!2sin!4v1745475220740!5m2!1sen!2sin"
                             width="600"
                             height="450"
@@ -601,7 +641,563 @@
                             allowfullscreen=""
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
-                          ></iframe>
+                          ></iframe> -->
+                        </li>
+
+                        <li class="ss-carousel__item teamBlock threeGrid">
+                          <div class="teamlist">
+                            <div>
+                              <h5>Project Leader</h5>
+                              <p>Madhu sudhan rao Pulipati</p>
+                              <h5 class="subHead2">
+                                Project Architect, Concept
+                              </h5>
+                              <p>Ar. Pranay Mithilesh Pulipati</p>
+                              <p>Id. Medha Pulipati</p>
+                              <h5 class="subHead2">Project Manager</h5>
+                              <p>Rakesh CH</p>
+                              <h5 class="subHead2">Procurment Manager</h5>
+                              <p>Abhilash.V</p>
+
+                              <h5 class="subHead2">Project Team</h5>
+                              <p>Ravi Kumar K</p>
+
+                              <p>Ar. Chennakeshava.R</p>
+                              <p>Ar. Vaishnavi Basireddy</p>
+                              <p>Krishna Kanth P</p>
+                              <p>Rajib roy</p>
+
+                              <p>Shamsheer p</p>
+                              <p>Chandan Halder</p>
+                              <p>Somisetty Baby Sushma</p>
+                            </div>
+
+                            <div>
+                              <h5>Project Incharge</h5>
+                              <p>Ameer khan</p>
+                              <h5 class="subHead2">Operational manager</h5>
+                              <p>Fathima</p>
+
+                              <h5 class="subHead2">Photograghy</h5>
+                              <p>Victor</p>
+                              <h5 class="subHead2">Content</h5>
+                              <p>Ananth</p>
+                              <h5 class="subHead2">Relationship Manager</h5>
+                              <p>Tharani M</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Item-->
+
+              <div class="projectItem">
+                <div class="firstSection">
+                  <div class="basicInfo">
+                    <div class="icon">
+                      <img src="/projects/ladia/Ladia_Logo_01.jpg" />
+                    </div>
+                    <div class="projectTitleInfo">
+                      <h3 class="projectTitle">Ladia - Capsule</h3>
+                      <p class="location">JUBILEE HILLS, PUNJAGUTTA</p>
+                    </div>
+                  </div>
+                  <div class="heroSection">
+                    <img src="/products/ladia-capsule/1.JPG" alt="" />
+                  </div>
+                </div>
+
+                <div class="detailContainer">
+                  <div class="ss-carousel">
+                    <div class="ss-carousel__wrapper">
+                      <div class="ss-carousel__header">
+                        <div class="ss-carousel__controls">
+                          <button
+                            class="ss-carousel__arrow disabled arrow-prev"
+                          ></button>
+                          <button
+                            class="ss-carousel__arrow arrow-next"
+                          ></button>
+                        </div>
+                      </div>
+                      <ul class="ss-carousel__content">
+                        <li class="ss-carousel__item firstInfo">
+                          <div class="basicInfo">
+                            <div>
+                              <div class="icon">
+                                <img src="/projects/ladia/Ladia_Logo_01.jpg" />
+                              </div>
+                              <div class="projectTitleInfo">
+                                <h3 class="projectTitle">Ladia - Capsule</h3>
+                                <p class="location">
+                                  JUBILEE HILLS, PUNJAGUTTA
+                                </p>
+                                <p class="location">2023</p>
+                              </div>
+                            </div>
+                            <div class="moreInfo">
+                              <div>
+                                <h4>Client</h4>
+                                <p>Akhil</p>
+                              </div>
+                              <div>
+                                <h4>Typology</h4>
+                                <p>Commercial</p>
+                              </div>
+                              <div>
+                                <h4>Size</h4>
+                                <p>32 S.ft</p>
+                              </div>
+                              <div>
+                                <h4>Status</h4>
+                                <p>Completed</p>
+                              </div>
+                            </div>
+                            <div class="socialSection">
+                              <div>
+                                <a href="#" target="_blank"
+                                  ><i class="bi bi-facebook"></i
+                                ></a>
+                              </div>
+                              <div>
+                                <a href="#" target="_blank"
+                                  ><i class="bi bi-instagram"></i
+                                ></a>
+                              </div>
+                              <div>
+                                <a href="#" target="_blank"
+                                  ><i class="bi bi-twitter"></i
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-capsule/1.JPG"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-capsule/2.JPG"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The wall-mounted brass jewellery stands are a true
+                              testament to refined design and craftsmanship.
+                              Inspired by the sleek, modern silhouette of a
+                              capsule and meticulously shaped from cylindrical
+                              brass forms, these stands exude a sophisticated
+                              and contemporary charm. Their elegant construction
+                              and warm metallic finish not only draw the eye but
+                              also elevate the overall ambience of the display
+                              environment.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li class="ss-carousel__item videoBlock">
+                          <video muted autoplay loop>
+                            <source
+                              src="/products/ladia-capsule/LadiaCapsule.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+
+                        <li class="ss-carousel__item videoBlock">
+                          <video muted autoplay loop>
+                            <source
+                              src="/products/ladia-capsule/LadiaCapsule1.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              Purposefully designed to address and overcome
+                              spatial limitations, these wall-mounted fixtures
+                              serve as both functional solutions and artistic
+                              statements. By lifting the presentation of
+                              jewellery away from conventional countertop
+                              displays, they maximize available space while
+                              introducing a fresh, vertical dimension to the
+                              showcase.
+                            </p>
+                          </div>
+                        </li>
+
+                        <!-- <li class="ss-carousel__item videoBlock">
+                          <video muted autoplay loop>
+                            <source
+                              src="/products/ladia/Ladia- Chandlier.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The design draws from the serene experience of the
+                              ocean’s edge, creating an immersive environment
+                              that mirrors the purity and fluidity of lab-grown
+                              diamonds. A calming blue palette slows the heart
+                              rate and enhances the diamonds' brilliance,
+                              resulting in a luxurious yet tranquil space that
+                              embodies peaceful refinement.
+                            </p>
+                          </div>
+                        </li> -->
+
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-capsule/3.JPG"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-capsule/4.JPG"
+                            alt=""
+                          />
+                        </li>
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              These stands play a pivotal role in enhancing the
+                              allure of cultured diamonds. Their minimalist yet
+                              luxurious form acts as a perfect backdrop,
+                              allowing the inherent brilliance and craftsmanship
+                              of the jewellery to take center stage. The
+                              seamless integration of form, function, and
+                              material creates a striking visual harmony that
+                              enriches the customer experience, fostering a
+                              sense of exclusivity and emotional engagement.
+                            </p>
+                            <p>
+                              More than just display tools, these jewellery
+                              stands contribute to a curated retail
+                              narrative—one where design sophistication meets
+                              thoughtful practicality. They infuse the space
+                              with character, transforming it into an immersive
+                              environment that not only showcases products but
+                              also tells a compelling story of innovation,
+                              elegance, and intentionality.
+                            </p>
+                          </div>
+                        </li>
+
+                        <li class="ss-carousel__item mapBlock">
+                          <div id="map1l" class="map"></div>
+                          <!-- <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6520199870743!2d78.41060947493568!3d17.42847958346571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb915d5c699807%3A0xe06d0d7506cde173!2sLadia%20Lab%20Grown%20Diamond%20Jewellery%20Jubilee%20Hills!5e0!3m2!1sen!2sin!4v1745475220740!5m2!1sen!2sin"
+                            width="600"
+                            height="450"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                          ></iframe> -->
+                        </li>
+
+                        <li class="ss-carousel__item teamBlock threeGrid">
+                          <div class="teamlist">
+                            <div>
+                              <h5>Project Leader</h5>
+                              <p>Madhu sudhan rao Pulipati</p>
+                              <h5 class="subHead2">
+                                Project Architect, Concept
+                              </h5>
+                              <p>Ar. Pranay Mithilesh Pulipati</p>
+                              <p>Id. Medha Pulipati</p>
+                              <h5 class="subHead2">Project Manager</h5>
+                              <p>Rakesh CH</p>
+                              <h5 class="subHead2">Procurment Manager</h5>
+                              <p>Abhilash.V</p>
+
+                              <h5 class="subHead2">Project Team</h5>
+                              <p>Ravi Kumar K</p>
+
+                              <p>Ar. Chennakeshava.R</p>
+                              <p>Ar. Vaishnavi Basireddy</p>
+                              <p>Krishna Kanth P</p>
+                              <p>Rajib roy</p>
+
+                              <p>Shamsheer p</p>
+                              <p>Chandan Halder</p>
+                              <p>Somisetty Baby Sushma</p>
+                            </div>
+
+                            <div>
+                              <h5>Project Incharge</h5>
+                              <p>Ameer khan</p>
+                              <h5 class="subHead2">Operational manager</h5>
+                              <p>Fathima</p>
+
+                              <h5 class="subHead2">Photograghy</h5>
+                              <p>Victor</p>
+                              <h5 class="subHead2">Content</h5>
+                              <p>Ananth</p>
+                              <h5 class="subHead2">Relationship Manager</h5>
+                              <p>Tharani M</p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Item-->
+
+              <div class="projectItem">
+                <div class="firstSection">
+                  <div class="basicInfo">
+                    <div class="icon">
+                      <img src="/projects/ladia/Ladia_Logo_01.jpg" />
+                    </div>
+                    <div class="projectTitleInfo">
+                      <h3 class="projectTitle">Ladia - Display Counter</h3>
+                      <p class="location">JUBILEE HILLS, PUNJAGUTTA</p>
+                    </div>
+                  </div>
+                  <div class="heroSection">
+                    <img src="/products/ladia-display-counter/1.JPG" alt="" />
+                  </div>
+                </div>
+
+                <div class="detailContainer">
+                  <div class="ss-carousel">
+                    <div class="ss-carousel__wrapper">
+                      <div class="ss-carousel__header">
+                        <div class="ss-carousel__controls">
+                          <button
+                            class="ss-carousel__arrow disabled arrow-prev"
+                          ></button>
+                          <button
+                            class="ss-carousel__arrow arrow-next"
+                          ></button>
+                        </div>
+                      </div>
+                      <ul class="ss-carousel__content">
+                        <li class="ss-carousel__item firstInfo">
+                          <div class="basicInfo">
+                            <div>
+                              <div class="icon">
+                                <img src="/projects/ladia/Ladia_Logo_01.jpg" />
+                              </div>
+                              <div class="projectTitleInfo">
+                                <h3 class="projectTitle">
+                                  Ladia - Display Counter
+                                </h3>
+                                <p class="location">
+                                  JUBILEE HILLS, PUNJAGUTTA
+                                </p>
+                                <p class="location">2023</p>
+                              </div>
+                            </div>
+                            <div class="moreInfo">
+                              <div>
+                                <h4>Client</h4>
+                                <p>Akhil</p>
+                              </div>
+                              <div>
+                                <h4>Typology</h4>
+                                <p>Commercial</p>
+                              </div>
+                              <div>
+                                <h4>Size</h4>
+                                <p>32 S.ft</p>
+                              </div>
+                              <div>
+                                <h4>Status</h4>
+                                <p>Completed</p>
+                              </div>
+                            </div>
+                            <div class="socialSection">
+                              <div>
+                                <a href="#" target="_blank"
+                                  ><i class="bi bi-facebook"></i
+                                ></a>
+                              </div>
+                              <div>
+                                <a href="#" target="_blank"
+                                  ><i class="bi bi-instagram"></i
+                                ></a>
+                              </div>
+                              <div>
+                                <a href="#" target="_blank"
+                                  ><i class="bi bi-twitter"></i
+                                ></a>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-display-counter/1.JPG"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-display-counter/2.JPG"
+                            alt=""
+                          />
+                        </li>
+
+                        <!-- <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              Situated in a luxury diamond boutique, the
+                              chandelier evokes purity and sophistication,
+                              creating an immediate sense of opulence. It makes
+                              a striking first impression, setting the tone for
+                              an engaging retail experience.
+                            </p>
+                            <p>
+                              The centerpiece of the boutique is a bespoke
+                              chandelier inspired by ocean waves and pearl-like
+                              purity, echoing the brilliance of cultured
+                              diamonds. Designed to resemble cascading droplets,
+                              it creates a dynamic, sculptural wave that
+                              reflects light and narrative. More than lighting,
+                              it embodies the brand’s essence—where
+                              craftsmanship meets poetic design.
+                            </p>
+                          </div>
+                        </li> -->
+
+                        <li class="ss-carousel__item videoBlock">
+                          <video muted autoplay loop>
+                            <source
+                              src="/products/ladia-display-counter/Ladia Display Counter 2.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+
+                        <!-- <li class="ss-carousel__item videoBlock">
+                          <video muted autoplay loop>
+                            <source
+                              src="/products/ladia-capsule/LadiaCapsule1.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li> -->
+
+                        <!-- <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The installation captures the serene rhythm of
+                              waves frozen mid-motion, with suspended droplets
+                              and curved brass wings guiding the eye in a fluid
+                              choreography. As a moving art form, the chandelier
+                              invites guests to pause and immerse themselves in
+                              an atmosphere where opulence meets tranquility. It
+                              beautifully echoes the brand’s essence of elegance
+                              and calm.
+                            </p>
+                            <p>
+                              Hand-blown from delicate Borosil Italian glass,
+                              each droplet captures the purity of diamonds and
+                              the fluidity of ocean waves, suspended in a
+                              graceful wave design. Framed by curved, subtly lit
+                              brass wings, the chandelier blends craftsmanship,
+                              material innovation, and storytelling in a refined
+                              centerpiece.
+                            </p>
+                          </div>
+                        </li> -->
+
+                        <!-- <li class="ss-carousel__item videoBlock">
+                          <video muted autoplay loop>
+                            <source
+                              src="/products/ladia/Ladia- Chandlier.mp4"
+                              type="video/mp4"
+                              poster="/images/blank.png"
+                            />
+
+                            Your browser does not support the video tag.
+                          </video>
+                        </li>
+                        <li class="ss-carousel__item textBlock">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The design draws from the serene experience of the
+                              ocean’s edge, creating an immersive environment
+                              that mirrors the purity and fluidity of lab-grown
+                              diamonds. A calming blue palette slows the heart
+                              rate and enhances the diamonds' brilliance,
+                              resulting in a luxurious yet tranquil space that
+                              embodies peaceful refinement.
+                            </p>
+                          </div>
+                        </li> -->
+
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-display-counter/3.JPG"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item imgBlock">
+                          <img
+                            class="ss-carousel__item__image"
+                            src="/products/ladia-display-counter/4.JPG"
+                            alt=""
+                          />
+                        </li>
+
+                        <li class="ss-carousel__item mapBlock">
+                          <div id="map1l2" class="map"></div>
+                          <!-- <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6520199870743!2d78.41060947493568!3d17.42847958346571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb915d5c699807%3A0xe06d0d7506cde173!2sLadia%20Lab%20Grown%20Diamond%20Jewellery%20Jubilee%20Hills!5e0!3m2!1sen!2sin!4v1745475220740!5m2!1sen!2sin"
+                            width="600"
+                            height="450"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                          ></iframe> -->
                         </li>
 
                         <li class="ss-carousel__item teamBlock threeGrid">
@@ -1568,38 +2164,129 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
         document.getElementById("tamilnaduAddress").style.display = "none";
       }
     </script>
+    <script>
+      function toggleSubmenu(el) {
+        const parentLi = el.closest("li.has-submenu");
+        const icon = el.querySelector(".submenu-icon");
+
+        parentLi.classList.toggle("open");
+        if (parentLi.classList.contains("open")) {
+          icon.textContent = "−";
+        } else {
+          icon.textContent = "+";
+        }
+      }
+    </script>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-      const locations = [
-        { coords: [17.4281, 78.4484974], address: "Amyra Silver" },
+      const mapConfigs = [
         {
-          coords: [17.42848, 78.413184],
-          address: "Ladia Lab Grown Diamond Jewellery",
+          id: "map1",
+          coords: [17.432709, 78.4281349],
+          title: "Ladia - Lab Grown Diamond Jewellery",
+          address:
+            "Road No. 36, Jubilee Hills, beside US Polo Assn, Hyderabad, Telangana 500033",
         },
-        { coords: [17.43, 78.42], address: "Location 3 (Update Later)" },
-        { coords: [17.431, 78.425], address: "Location 4 (Update Later)" },
+        {
+          id: "map1l",
+          coords: [17.432709, 78.4281349],
+          title: "Ladia - Lab Grown Diamond Jewellery",
+          address:
+            "Road No. 36, Jubilee Hills, beside US Polo Assn, Hyderabad, Telangana 500033",
+        },
+        {
+          id: "map1l2",
+          coords: [17.432709, 78.4281349],
+          title: "Ladia - Lab Grown Diamond Jewellery",
+          address:
+            "Road No. 36, Jubilee Hills, beside US Polo Assn, Hyderabad, Telangana 500033",
+        },
+        {
+          id: "map2",
+          coords: [16.5050288, 80.6619402],
+          title: "Amyra Silver - Jewellery Store",
+          address:
+            "D. No: 40-2-3/3C, Gouse Street, Mogalrajpuram, Vijayawada, Andhra Pradesh 520010",
+        },
+
+        {
+          id: "map3",
+          coords: [17.43, 78.42],
+          title: "Smart Furniture",
+          address: "MG Road, Vijayawada, Andhra Pradesh 520010",
+        },
+        {
+          id: "map4",
+          coords: [17.4344965, 78.3691441],
+          title: "Aakruti - Clothing Store",
+          address:
+            "1-74/DH 186 & 201, Gachibowli - Miyapur Rd, Hyderabad, Telangana 500032",
+        },
       ];
 
-      function createMap(id, location) {
-        const map = L.map(id).setView(location.coords, 17);
+      const customIcon = L.icon({
+        iconUrl: "/images/pointer.png",
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+      });
 
-        L.tileLayer(
-          "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-          {
-            attribution: "&copy; OpenStreetMap &copy; CARTO",
-            subdomains: "abcd",
-            maxZoom: 20,
+      const mapInstances = {};
+
+      function waitForElementVisible(el, callback, maxTries = 20) {
+        let count = 0;
+        const interval = setInterval(() => {
+          const style = getComputedStyle(el);
+          if (
+            style.display !== "none" &&
+            el.offsetHeight > 0 &&
+            el.offsetWidth > 0
+          ) {
+            clearInterval(interval);
+            callback();
           }
-        ).addTo(map);
-
-        L.marker(location.coords).addTo(map).bindPopup(location.address);
+          if (++count > maxTries) clearInterval(interval);
+        }, 200);
       }
 
-      createMap("map1", locations[0]);
-      createMap("map2", locations[1]);
-      createMap("map3", locations[2]);
-      createMap("map4", locations[3]);
+      function initMap({ id, coords, title, address }) {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        waitForElementVisible(el, () => {
+          const map = L.map(id, { attributionControl: false }).setView(
+            coords,
+            17
+          );
+
+          L.tileLayer(
+            "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+            {
+              attribution: "&copy; OpenStreetMap &copy; Carto",
+              subdomains: "abcd",
+              maxZoom: 20,
+            }
+          ).addTo(map);
+
+          L.marker(coords, { icon: customIcon })
+            .addTo(map)
+            .bindPopup(`<strong>${title}</strong><br>${address}`)
+            .openPopup();
+
+          mapInstances[id] = map;
+
+          setTimeout(() => map.invalidateSize(), 300);
+        });
+      }
+
+      window.addEventListener("load", () => {
+        mapConfigs.forEach((config) => initMap(config));
+      });
+
+      window.addEventListener("resize", () => {
+        Object.values(mapInstances).forEach((map) => map.invalidateSize());
+      });
     </script>
   </body>
 </html>
