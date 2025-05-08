@@ -190,13 +190,6 @@
         line-height: 1;
       }
 
-      .map {
-        width: 100%;
-        height: 100vh;
-        /* border: 1px solid #ccc;
-        border-radius: 8px; */
-      }
-
       .social {
         display: flex;
         gap: 20px;
@@ -206,47 +199,59 @@
         font-size: 18px;
         color: #4a4a4a;
       }
+      .contentWrapper {
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+      }
 
       .content {
         /* padding-top: 100px; */
-        max-width: 80%;
-        margin: 120px auto;
-        padding-bottom: 250px;
+        /* max-width: 80%; */
+        margin: 20px auto;
+        /* padding-bottom: 250px; */
       }
-      .content h1 {
+      .pageTitle {
+        /* max-width: 80%; */
+        margin: 0px auto;
+      }
+      .pageTitle h1 {
         text-transform: uppercase;
-        font-size: 2.6rem;
+        font-size: 4.6rem;
+        font-weight: 300;
+        margin-bottom: 0;
       }
 
-      .newsContainer {
-        width: 80%;
-        margin: 0 auto;
-      }
-      .newsItem {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 20px;
-      }
-      .newsItem .date {
-        text-align: right;
-      }
-      .newsItem .newsImage {
-        width: 60%;
-      }
-      .newsDetails {
-        width: 35%;
-      }
-      .newsItem .newsImage img {
-        width: 100%;
-        height: auto;
-      }
-      .newsItem .description {
-      }
-      .newsDetails h2 {
-        font-weight: normal;
+      .container h2 {
         text-transform: uppercase;
+        font-size: 2rem;
+      }
+      .container p {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+      }
+      .philosophy {
         margin: 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: "Griffiths";
+        font-size: 25px;
+      }
+      .grid2 {
+        display: flex;
+        gap: 50px;
+      }
+      .grid2 section {
+        width: 50%;
+      }
+      video {
+        width: 50%;
+        height: auto;
       }
 
       @media all and (max-width: 576px) {
@@ -275,8 +280,8 @@
           </div>
           <!-- Logo -->
           <div class="topNav" style="display: none">
-            <span><a href="/architecture.html">Architecture</a></span>
-            <span><a href="/index.html">Interior</a></span>
+            <span><a href="#">Architecture</a></span>
+            <span><a href="#">Landscape</a></span>
             <span><a href="/products.html">Products</a></span>
             <!-- <span>Nav1</span>
             <span>Nav1</span> -->
@@ -331,116 +336,180 @@
           </ul>
         </div>
       </nav>
-      <div class="contentWrapper">
-        <div class="container scroll-container">
-          <div class="content">
-            <h1>News</h1>
 
-            <div class="newsContainer">
-              <div class="newsItem">
-                <div class="date"><span>10.04.2025</span></div>
-                <div class="newsImage">
-                  <img src="/projects/smart-furniture/1.jpg" />
-                </div>
-                <div class="newsDetails">
-                  <h2>
-                    EyeCatch Architects Wins Second Place at FOAID 2024 – A
-                    Proud Moment for Telugu Architecture
-                  </h2>
-                  <div class="description">
-                    <p>
-                      EyeCatch Architects has secured second place in the
-                      prestigious Festival of Architecture and Interior
-                      Designing (FOAID) 2024, a nationwide event held annually
-                      in Delhi and Mumbai. Our firm was recognized in the highly
-                      competitive Conceptual Architecture category, with Chief
-                      Architect Pranay Mithilesh Pulipati receiving the award
-                      during the Delhi ceremony. This achievement marks a major
-                      milestone for EyeCatch Architects and brings pride to the
-                      Telugu architectural community. We are thrilled to share
-                      that our recognition was also featured on TV9, Telangana
-                      and Andhra Pradesh’s leading news channel. We extend our
-                      heartfelt thanks to TV9 for showcasing our success.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- News Item-->
-              <div class="newsItem">
-                <div class="date"><span>10.04.2025</span></div>
-                <div class="newsImage">
-                  <img src="/projects/smart-furniture/1.jpg" />
-                </div>
-                <div class="newsDetails">
-                  <h2>
-                    The standard Lorem Ipsum passage, used since the 1500s
-                  </h2>
-                  <div class="description">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- News Item-->
-              <div class="newsItem">
-                <div class="date"><span>10.04.2025</span></div>
-                <div class="newsImage">
-                  <img src="/projects/smart-furniture/1.jpg" />
-                </div>
-                <div class="newsDetails">
-                  <h2>
-                    The standard Lorem Ipsum passage, used since the 1500s
-                  </h2>
-                  <div class="description">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- News Item-->
-              <div class="newsItem">
-                <div class="date"><span>10.04.2025</span></div>
-                <div class="newsImage">
-                  <img src="/projects/smart-furniture/1.jpg" />
-                </div>
-                <div class="newsDetails">
-                  <h2>
-                    The standard Lorem Ipsum passage, used since the 1500s
-                  </h2>
-                  <div class="description">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit
-                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                      sint occaecat cupidatat non proident, sunt in culpa qui
-                      officia deserunt mollit anim id est laborum.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- News Item-->
-            </div>
+      <div class="contentWrapper scroll-container">
+        <div class="container">
+          <div class="pageTitle"><h1>Careers</h1></div>
+          <div class="content grid2">
+            <section>
+              <p>
+                Our architectural division specializes in designing functional
+                and visually stunning spaces. Whether for commercial buildings,
+                residential projects, or public spaces, EyeCatch Architects
+                combines architectural expertise with artistic and aesthetic
+                vision to bring each project to life. We specialize in the
+                design and execution of both interiors and exteriors of retail
+                spaces from bare cell to complete showrooms and villas. We
+                believe in the power of visual storytelling. Our goal is to
+                create experiences that captivate target audiences and leave a
+                lasting impression.
+              </p>
+            </section>
+            <section>
+              <p>
+                Our philosophy centers on innovation, creativity, and meticulous
+                attention to detail, ensuring that every project exceeds
+                expectations. From conceptualization to execution, we uphold the
+                highest standards of quality and professionalism. Our
+                collaborative approach ensures each client receives personalized
+                attention and solutions tailored to their specific needs. We are
+                an ensemble of storytellers, innovators, and creators of
+                immersive experiences. With a passion for artistry and a
+                commitment to excellence, we look forward to partnering with you
+                on your next project. Choose us for unparalleled creativity and
+                visionary design solutions.
+              </p>
+            </section>
           </div>
           <!-- Content-->
+          <h2>Job Openings</h2>
+
+          <div class="job-listing">
+            <!-- Header Row -->
+            <div class="job-header">
+              <span class="toggle-iconh"></span>
+              <span class="job-title">TITLE</span>
+              <span class="job-area">JOB AREA</span>
+              <span class="job-location">LOCATION</span>
+              <span class="job-deadline">DEADLINE</span>
+            </div>
+
+            <!-- Job Items -->
+            <div class="job-item">
+              <div class="job-summary">
+                <span class="toggle-icon">+</span>
+                <span class="job-title">Visualization Design Assistant</span>
+                <span class="job-area">Architecture</span>
+                <span class="job-location">Barcelona</span>
+                <span class="job-deadline">As soon as possible</span>
+              </div>
+              <div class="job-description">
+                <p>
+                  You will assist in creating architectural visualizations using
+                  3D tools, collaborating with design teams.
+                </p>
+              </div>
+            </div>
+
+            <div class="job-item">
+              <div class="job-summary">
+                <span class="toggle-icon">+</span>
+                <span class="job-title">People Coordinator</span>
+                <span class="job-area">People</span>
+                <span class="job-location">Barcelona</span>
+                <span class="job-deadline">As soon as possible</span>
+              </div>
+              <div class="job-description">
+                <p>
+                  Coordinate internal HR activities and support team growth and
+                  well-being.
+                </p>
+              </div>
+            </div>
+
+            <div class="job-item">
+              <div class="job-summary">
+                <span class="toggle-icon">+</span>
+                <span class="job-title">Constructing Architect</span>
+                <span class="job-area">Architecture</span>
+                <span class="job-location">Barcelona</span>
+                <span class="job-deadline">As soon as possible</span>
+              </div>
+              <div class="job-description">
+                <p>
+                  Oversee design implementation and work closely with
+                  contractors and engineers during construction.
+                </p>
+              </div>
+            </div>
+          </div>
+          <style>
+            .job-listing {
+              padding-bottom: 250px;
+            }
+            .job-header {
+              font-weight: bold;
+              font-family: "Karla", sans-serif;
+            }
+            .job-header,
+            .job-summary {
+              display: grid;
+              grid-template-columns: 30px 1.5fr 1fr 1fr 1fr;
+              gap: 10px;
+              padding: 10px;
+              /* font-weight: bold; */
+              align-items: center;
+              border-bottom: 1px solid #ccc;
+            }
+
+            .job-header {
+              background-color: #f4f4f4;
+            }
+
+            .job-summary {
+              cursor: pointer;
+              background-color: #fff;
+              transition: background 0.3s;
+            }
+
+            .job-summary:hover {
+              background-color: #f9f9f9;
+            }
+
+            .toggle-icon {
+              font-size: 20px;
+              width: 20px;
+              text-align: center;
+              transition: transform 0.3s ease;
+            }
+
+            .job-description {
+              max-height: 0;
+              overflow: hidden;
+              opacity: 0;
+              padding: 0 40px;
+              transition: max-height 0.4s ease, opacity 0.3s ease;
+              background-color: #fafafa;
+              font-weight: normal;
+            }
+
+            .job-item.open .job-description {
+              max-height: 300px;
+              opacity: 1;
+              padding: 10px 40px;
+            }
+          </style>
+
+          <script>
+            document.querySelectorAll(".job-summary").forEach((summary) => {
+              summary.addEventListener("click", () => {
+                const item = summary.closest(".job-item");
+                const isOpen = item.classList.contains("open");
+
+                // Close all
+                document.querySelectorAll(".job-item").forEach((el) => {
+                  el.classList.remove("open");
+                  el.querySelector(".toggle-icon").textContent = "+";
+                });
+
+                // Open this one if it wasn’t already
+                if (!isOpen) {
+                  item.classList.add("open");
+                  summary.querySelector(".toggle-icon").textContent = "–";
+                }
+              });
+            });
+          </script>
         </div>
         <!-- Container-->
       </div>
