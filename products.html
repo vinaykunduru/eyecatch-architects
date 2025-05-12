@@ -85,7 +85,7 @@
         transition: all 0.5;
       }
       .projectItem.active {
-        margin-bottom: 60px;
+        /* margin-bottom: 60px; */
       }
       .projectItem.active .detailContainer {
         visibility: visible;
@@ -3880,7 +3880,7 @@
         font-weight: bold;
       }
       .ss-carousel {
-        padding: 24px 0px;
+        /* padding: 24px 0px; */
         background-color: #fff;
       }
 
@@ -3922,7 +3922,7 @@
         grid-auto-flow: column;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 16px;
+        /* margin-bottom: 16px; */
         padding: 0px 15px;
       }
       .ss-carousel .ss-carousel__content {
@@ -3935,7 +3935,7 @@
         cursor: grab;
         padding: 0;
         margin: 0;
-        grid-gap: 50px;
+        grid-gap: 40px;
         grid-auto-flow: column;
         list-style: none;
         position: relative;
@@ -3948,7 +3948,7 @@
         width: 100%;
       }
       .ss-carousel .ss-carousel__item.imgBlock {
-        min-width: 70vw;
+        min-width: 60vw;
       }
       .ss-carousel .ss-carousel__item {
         /* border: 8px solid #fff;
@@ -3969,7 +3969,7 @@
       }
 
       .ss-carousel .ss-carousel__item.imgBlock.horizantal {
-        min-width: 90vw;
+        min-width: 80vw;
         text-align: center;
         align-items: center;
         align-content: center;
@@ -4455,25 +4455,25 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
           // Add active class and resize clicked item
           this.classList.add("active");
           this.style.width = `${window.innerWidth - 30}px`;
-          this.style.height = `${window.innerHeight - 130}px`;
+          this.style.height = `${window.innerHeight - 230}px`;
 
           document
             .querySelectorAll(".ss-carousel .ss-carousel__item")
             .forEach(
-              (el) => (el.style.height = window.innerHeight - 140 + "px")
+              (el) => (el.style.height = window.innerHeight - 240 + "px")
             );
 
           document
             .querySelectorAll(".map-container")
             .forEach(
-              (el) => (el.style.height = window.innerHeight - 140 + "px")
+              (el) => (el.style.height = window.innerHeight - 240 + "px")
             );
 
           // ✅ Scroll to vertically center this item with velocity-style timing
           const itemOffsetTop = this.offsetTop;
           const itemHeight = this.offsetHeight;
           const centerTarget =
-            itemOffsetTop - (window.innerHeight / 2 - itemHeight / 2);
+            itemOffsetTop - (window.innerHeight / 2 - itemHeight / 2 + 50);
 
           const currentScrollY = scroll.scroll.instance.scroll.y;
           const distance = Math.abs(currentScrollY - centerTarget);
