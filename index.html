@@ -1346,7 +1346,7 @@
                   <div class="basicInfo">
                     <div class="icon">
                       <img
-                        src="/projects/smart-furniture/Smart furniture _logo.jpg"
+                        src="/projects/smart-furniture/Smart_furniture_logo-colourinfill.png"
                       />
                     </div>
                     <div class="projectTitleInfo">
@@ -1378,7 +1378,7 @@
                             <div>
                               <div class="icon">
                                 <img
-                                  src="/projects/smart-furniture/Smart furniture _logo.jpg"
+                                  src="/projects/smart-furniture/Smart_furniture_logo-colourinfill.png"
                                 />
                               </div>
                               <div class="projectTitleInfo">
@@ -1562,7 +1562,7 @@
                         <li class="ss-carousel__item videoBlock">
                           <video muted autoplay loop>
                             <source
-                              src="/projects/smart-furniture/Full Length Video.mp4"
+                              src="/projects/smart-furniture/Website Video.mp4"
                               type="video/mp4"
                               poster="/images/blank.png"
                             />
@@ -3122,13 +3122,27 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
         });
       }
 
+      function refreshVisibleMaps() {
+        Object.entries(mapInstances).forEach(([id, map]) => {
+          const el = document.getElementById(id);
+          if (el && el.offsetParent !== null) {
+            map.invalidateSize();
+          }
+        });
+      }
+
       window.addEventListener("load", () => {
         mapConfigs.forEach((config) => initMap(config));
+
+        // Refresh maps when carousel arrows are clicked
+        document.querySelectorAll(".ss-carousel__arrow").forEach((arrow) => {
+          arrow.addEventListener("click", () => {
+            setTimeout(refreshVisibleMaps, 200); // Let slide finish changing
+          });
+        });
       });
 
-      window.addEventListener("resize", () => {
-        Object.values(mapInstances).forEach((map) => map.invalidateSize());
-      });
+      window.addEventListener("resize", refreshVisibleMaps);
     </script>
   </body>
 </html>
