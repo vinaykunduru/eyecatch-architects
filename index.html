@@ -73,6 +73,7 @@
         gap: 0; */
         margin-bottom: 0;
         margin-left: auto;
+        margin-left: calc(50% - 12%);
         margin-right: auto;
         width: 30%;
         min-height: 250px;
@@ -89,6 +90,7 @@
       }
       .projectItem.active {
         margin-bottom: 60px;
+        margin-left: auto;
       }
       .projectItem.active .detailContainer {
         visibility: visible;
@@ -346,6 +348,7 @@
 
       .map {
         width: 100%;
+        min-height: 400px;
         height: 100vh;
         /* border: 1px solid #ccc;
         border-radius: 8px; */
@@ -2748,6 +2751,7 @@
               scrollToCenter(currentIndex);
             }
           });
+          let mx = 0; // Declare mx before using it
 
           const mousemoveHandler = (e) => {
             const mx2 = e.pageX - content.offsetLeft;
@@ -3076,68 +3080,71 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
 
       const mapInstances = {};
 
-      function waitForElementVisible(el, callback, maxTries = 20) {
-        let count = 0;
-        const interval = setInterval(() => {
-          const style = getComputedStyle(el);
-          if (
-            style.display !== "none" &&
-            el.offsetHeight > 0 &&
-            el.offsetWidth > 0
-          ) {
-            clearInterval(interval);
-            callback();
-          }
-          if (++count > maxTries) clearInterval(interval);
-        }, 200);
+      function isElementVisible(el) {
+        return (
+          el &&
+          el.offsetParent !== null &&
+          el.offsetWidth > 0 &&
+          el.offsetHeight > 0
+        );
       }
 
       function initMap({ id, coords, title, address }) {
         const el = document.getElementById(id);
         if (!el) return;
 
-        waitForElementVisible(el, () => {
-          const map = L.map(id, { attributionControl: false }).setView(
-            coords,
-            17
-          );
+        const map = L.map(id, { attributionControl: false }).setView(
+          coords,
+          17
+        );
 
-          L.tileLayer(
-            "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-            {
-              attribution: "&copy; OpenStreetMap &copy; Carto",
-              subdomains: "abcd",
-              maxZoom: 20,
-            }
-          ).addTo(map);
+        L.tileLayer(
+          "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+          {
+            attribution: "&copy; OpenStreetMap &copy; Carto",
+            subdomains: "abcd",
+            maxZoom: 20,
+          }
+        ).addTo(map);
 
-          L.marker(coords, { icon: customIcon })
-            .addTo(map)
-            .bindPopup(`<strong>${title}</strong><br>${address}`)
-            .openPopup();
+        L.marker(coords, { icon: customIcon })
+          .addTo(map)
+          .bindPopup(`<strong>${title}</strong><br>${address}`)
+          .openPopup();
 
-          mapInstances[id] = map;
-
-          setTimeout(() => map.invalidateSize(), 300);
-        });
+        mapInstances[id] = map;
       }
 
       function refreshVisibleMaps() {
         Object.entries(mapInstances).forEach(([id, map]) => {
           const el = document.getElementById(id);
-          if (el && el.offsetParent !== null) {
+          if (isElementVisible(el)) {
             map.invalidateSize();
           }
         });
       }
 
+      function initializeMapsWhenVisible() {
+        mapConfigs.forEach((config) => {
+          const el = document.getElementById(config.id);
+          if (!mapInstances[config.id] && isElementVisible(el)) {
+            initMap(config);
+            setTimeout(() => refreshVisibleMaps(), 300);
+          }
+        });
+      }
+
       window.addEventListener("load", () => {
-        mapConfigs.forEach((config) => initMap(config));
+        // Try initializing only visible map(s)
+        initializeMapsWhenVisible();
 
         // Refresh maps when carousel arrows are clicked
         document.querySelectorAll(".ss-carousel__arrow").forEach((arrow) => {
           arrow.addEventListener("click", () => {
-            setTimeout(refreshVisibleMaps, 200); // Let slide finish changing
+            setTimeout(() => {
+              initializeMapsWhenVisible();
+              refreshVisibleMaps();
+            }, 400); // allow time for slide transition
           });
         });
       });
