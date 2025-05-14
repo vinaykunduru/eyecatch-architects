@@ -492,7 +492,7 @@
           <div class="topNav">
             <span><a href="/architecture.html">Architecture</a></span>
             <span><a href="#" class="activeNav">Interior</a></span>
-            <span><a href="/products.html">Products</a></span>
+            <!-- <span><a href="/products.html">Products</a></span> -->
             <!-- <span>Nav1</span>
             <span>Nav1</span> -->
           </div>
@@ -2597,7 +2597,7 @@
         }
       }
     </style>
-    <script>
+    <!-- <script>
       window.addEventListener("load", () => {
         const COMPONENT_SELECTOR = ".ss-carousel__wrapper";
         const CONTROLS_SELECTOR = ".ss-carousel__controls";
@@ -2703,6 +2703,98 @@
           content.addEventListener("mouseup", mouseupHandler);
           content.addEventListener("mouseleave", mouseupHandler);
         }
+      });
+    </script> -->
+
+    <script>
+      window.addEventListener("load", () => {
+        const COMPONENT_SELECTOR = ".ss-carousel__wrapper";
+        const CONTROLS_SELECTOR = ".ss-carousel__controls";
+        const CONTENT_SELECTOR = ".ss-carousel__content";
+
+        const components = document.querySelectorAll(COMPONENT_SELECTOR);
+
+        components.forEach((component) => {
+          const content = component.querySelector(CONTENT_SELECTOR);
+          const items = content.querySelectorAll(".ss-carousel__item");
+          const nextButton = component.querySelector(".arrow-next");
+          const prevButton = component.querySelector(".arrow-prev");
+          let currentIndex = 0;
+
+          function scrollToCenter(index) {
+            if (!items[index]) return;
+            const item = items[index];
+            const scrollLeft =
+              item.offsetLeft - content.offsetWidth / 2 + item.offsetWidth / 2;
+
+            content.scrollTo({
+              left: scrollLeft,
+              behavior: "smooth",
+            });
+          }
+
+          nextButton?.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (currentIndex < items.length - 1) {
+              currentIndex++;
+              scrollToCenter(currentIndex);
+            }
+          });
+
+          prevButton?.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (currentIndex > 0) {
+              currentIndex--;
+              scrollToCenter(currentIndex);
+            }
+          });
+
+          const mousemoveHandler = (e) => {
+            const mx2 = e.pageX - content.offsetLeft;
+            if (mx !== 0) {
+              content.scrollLeft = content.sx + mx - mx2;
+            }
+          };
+
+          const mousedownHandler = (e) => {
+            content.sx = content.scrollLeft;
+            mx = e.pageX - content.offsetLeft;
+            content.classList.add("dragging");
+          };
+
+          const mouseupHandler = () => {
+            mx = 0;
+            content.classList.remove("dragging");
+          };
+
+          const scrollHandler = () => {
+            toggleArrows();
+          };
+
+          const toggleArrows = () => {
+            const maxScroll = content.scrollWidth - content.clientWidth;
+            if (content.scrollLeft >= maxScroll - 10) {
+              nextButton.classList.add("disabled");
+            } else {
+              nextButton.classList.remove("disabled");
+            }
+            if (content.scrollLeft <= 10) {
+              prevButton.classList.add("disabled");
+            } else {
+              prevButton.classList.remove("disabled");
+            }
+          };
+
+          content.addEventListener("mousemove", mousemoveHandler);
+          content.addEventListener("mousedown", mousedownHandler);
+          content.addEventListener("mouseup", mouseupHandler);
+          content.addEventListener("mouseleave", mouseupHandler);
+          if (component.querySelector(CONTROLS_SELECTOR)) {
+            content.addEventListener("scroll", scrollHandler);
+          }
+
+          scrollToCenter(currentIndex);
+        });
       });
     </script>
     <style>
