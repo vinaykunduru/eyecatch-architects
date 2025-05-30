@@ -305,7 +305,7 @@
     </style>
   </head>
   <body>
-    <div class="mainWrapper" style="position: relative">
+    <div class="mainWrapper" style="position: relative; padding-bottom: 300px">
       <div class="header">
         <div class="headerContainer">
           <div class="logo">
@@ -370,8 +370,12 @@
           </ul>
         </div>
       </nav>
-      <div class="contentWrapper">
-        <div class="container scroll-container">
+      <div
+        class="contentWrapper scroll-container"
+        data-scroll-container
+        style="padding-bottom: 300px"
+      >
+        <div class="container">
           <div class="content">
             <style>
               .newsCategories {
@@ -494,6 +498,10 @@
                 height: auto;
                 border-radius: 10px;
               }
+              .cardBody video {
+                width: 100%;
+                height: auto;
+              }
               .cardBody p {
                 text-align: justify;
               }
@@ -567,11 +575,149 @@
                 <!-- Card Footer -->
               </div>
               <!-- News Card -->
-              <div class="newsCard"></div>
+
+              <div class="newsCard">
+                <div class="cardHeader">
+                  <div class="logoIcon">
+                    <img src="/images/logo.png" alt="eyecatch architects" />
+                  </div>
+                  <div class="newsInfo">
+                    <div class="newsTitle">
+                      <h2>VRK Silks: Where Tradition Meets Innovation</h2>
+                    </div>
+                    <div class="newsMeta">
+                      <div class="newsCategory">Gallery,</div>
+                      <div class="newsDate">Thursday February 6, 2025</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Header -->
+                <div class="cardBody">
+                  <div
+                    style="
+                      --swiper-navigation-color: #fff;
+                      --swiper-pagination-color: #fff;
+                    "
+                    class="swiper mySwiper2"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="/images/1.jfif" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="/images/2.jfif" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="/images/3.jfif" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="/images/4.jfif" />
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+                  <div thumbsSlider="" class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="/images/1.jfif" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="/images/2.jfif" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="/images/3.jfif" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="/images/4.jfif" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="cardFooter">
+                  <div class="newsActions">
+                    <span>Like</span
+                    ><span class="likeIcon"
+                      ><a href="#" target="_blank"
+                        ><i class="bi bi-hand-thumbs-up"></i></a
+                    ></span>
+                  </div>
+                  <div class="newsShare">
+                    <span>Share:</span>
+                    <div class="shareIcons">
+                      <span><img src="/images/facebook.svg" /></span>
+                      <span><img src="/images/twitter.svg" /></span>
+                      <span><img src="/images/instagram.svg" /></span>
+                      <span><img src="/images/linkedin.svg" /></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+              </div>
               <!-- News Card -->
-              <div class="newsCard"></div>
-              <!-- News Card -->
-              <div class="newsCard"></div>
+
+              <div class="newsCard">
+                <div class="cardHeader">
+                  <div class="logoIcon">
+                    <img src="/images/logo.png" alt="eyecatch architects" />
+                  </div>
+                  <div class="newsInfo">
+                    <div class="newsTitle">
+                      <h2>
+                        Step into Tradition: The 450-Foot Tanjore Marvel at
+                        Perumal Silks
+                      </h2>
+                    </div>
+                    <div class="newsMeta">
+                      <div class="newsCategory">News, Video,</div>
+                      <div class="newsDate">Thursday February 6, 2025</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Header -->
+                <div class="cardBody">
+                  <div class="newsVideo">
+                    <video controls>
+                      <source
+                        src="/images/v1.mp4"
+                        type="video/mp4"
+                        poster="/images/blank.png"
+                      />
+
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <p>
+                    Step into Perumal Silks and be captivated by India's largest
+                    in-store Tanjore masterpiece-a 450-foot mural depicting Lord
+                    Perumal's divine journey and celestial wedding. This
+                    monumental artwork not only honours our namesake but also
+                    immerses you in the rich tapestry of tradition and devotion,
+                    enhancing your shopping experience with cultural grandeur.
+                  </p>
+                </div>
+                <!-- Card Body -->
+                <div class="cardFooter">
+                  <div class="newsActions">
+                    <span>Like</span
+                    ><span class="likeIcon"
+                      ><a href="#" target="_blank"
+                        ><i class="bi bi-hand-thumbs-up"></i></a
+                    ></span>
+                  </div>
+                  <div class="newsShare">
+                    <span>Share:</span>
+                    <div class="shareIcons">
+                      <span><img src="/images/facebook.svg" /></span>
+                      <span><img src="/images/twitter.svg" /></span>
+                      <span><img src="/images/instagram.svg" /></span>
+                      <span><img src="/images/linkedin.svg" /></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+              </div>
               <!-- News Card -->
 
               <footer class="footer">
@@ -709,6 +855,7 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
         el: document.querySelector(".scroll-container"),
         smooth: true,
       });
+      window.scrollInstance = scroll; // Make it global
 
       // ✅ Sync ScrollTrigger with Locomotive Scroll
       scroll.on("scroll", ScrollTrigger.update);
@@ -798,6 +945,98 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
         document.getElementById("vijayawadaAddress").style.display = "block";
         document.getElementById("tamilnaduAddress").style.display = "none";
       }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .mySwiper2 {
+        height: 80%;
+        width: 100%;
+      }
+
+      .mySwiper {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+      }
+
+      .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+      }
+
+      .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+    <!-- Swiper JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
     </script>
   </body>
 </html>
