@@ -919,6 +919,9 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
               toggle.textContent = "+";
               toggle.style.transform = "rotate(0deg)";
             }
+            setTimeout(() => {
+              window.scrollInstance && window.scrollInstance.update();
+            }, 400); // delay to wait for animation
           });
 
           // Toggle current section
@@ -1045,6 +1048,9 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
           swiper: swiper,
         },
       });
+      setTimeout(() => {
+        if (window.scrollInstance) window.scrollInstance.update();
+      }, 500); // allow time for Swiper to render
     </script>
   </body>
 </html>
