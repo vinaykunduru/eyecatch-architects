@@ -735,7 +735,7 @@
 
                             Your browser does not support the video tag.
                           </video>
-                          <p>
+                          <p style="max-width: 100%">
                             The display zone features fluid partitions crafted
                             from flexible plywood, echoing paper cuts and folds.
                             Sculptural elements curve, forming parabolic
@@ -858,7 +858,6 @@
                               <p>Ravi Kumar K</p>
                               <!-- <p>Abdul</p> -->
 
-                              <p>Ar. Chennakeshava.R</p>
                               <p>Ar. Vaishnavi Basireddy</p>
                               <p>Krishna Kanth P</p>
                               <p>Rajib roy</p>
@@ -3582,6 +3581,10 @@
         font-size: 14px;
         line-height: 22px;
         text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        line-height: 1.6;
+        widows: 2;
       }
 
       .ss-carousel__description > p,
@@ -3674,6 +3677,7 @@
         background-color: transparent;
         box-shadow: none;
         border: 0;
+        outline: 0;
         z-index: 999;
         width: 15vw;
         cursor: move;
@@ -3682,6 +3686,13 @@
         top: 0;
         bottom: 0;
         z-index: 9999;
+      }
+      .ss-carousel .ss-carousel__arrow:focus,
+      .ss-carousel .ss-carousel__arrow:active,
+      .ss-carousel .ss-carousel__arrow:focus-within,
+      .ss-carousel .ss-carousel__arrow:focus-visible {
+        border: 0 !important;
+        outline: 0 !important;
       }
       .ss-carousel .ss-carousel__arrow.arrow-prev {
         left: 0;

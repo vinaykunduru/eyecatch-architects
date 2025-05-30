@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: Helvetica;
+        src: url(/fonts/Helvetica.ttf);
+      }
+      @font-face {
+        font-family: "Helvetica-Bold";
+        src: url(/fonts/Helvetica-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Helvetica-Light";
+        src: url(/fonts/helvetica-light.ttf);
+      }
+      @font-face {
+        font-family: "Griffiths";
+        src: url(/fonts/Griffiths.otf);
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: Helvetica;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Karla", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .logo {
+        width: 50px;
+        height: auto;
+        padding: 5px 0;
+      }
+      .logo img {
+        width: 100%;
+      }
+      .header {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        z-index: 999;
+      }
+      .headerContainer {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        justify-content: space-between;
+        vertical-align: middle;
+      }
+
+      .css-mobile-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .css-mobile-menu #menuToggle {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        padding-right: 1.5rem;
+        z-index: 9999;
+        -webkit-user-select: none;
+        user-select: none;
+        right: 0;
+        top: 35px;
+      }
+      .css-mobile-menu #menuToggle input {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+      }
+      .css-mobile-menu #menuToggle span.span {
+        display: flex;
+        width: 29px;
+        height: 2px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #4a4a4a;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 5px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+      }
+      .css-mobile-menu #menuToggle span.span:first-child {
+        transform-origin: 0% 0%;
+      }
+      .css-mobile-menu #menuToggle span.span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-3px, -1px);
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+      #menu {
+        position: absolute;
+        width: auto;
+        min-width: 50px;
+        height: 100vh;
+        margin: -50px 0 0 -50px;
+        padding: 50px 30px 0 50px;
+        padding-top: 110px;
+        background-color: #fff;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translateX(100%);
+        top: 0;
+        right: 0;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        list-style: none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      #menu li {
+        padding: 10px 0;
+        transition-delay: 2s;
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      #menu li a {
+        color: #4a4a4a;
+        text-decoration: none;
+      }
+      .css-mobile-menu #menuToggle input:checked ~ ul {
+        transform: none;
+      }
+      /* Hide submenu initially */
+      #menu .has-submenu .submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 15px;
+        list-style: none;
+      }
+
+      /* When open, show submenu */
+      #menu .has-submenu.open .submenu {
+        max-height: 300px;
+      }
+
+      /* Style the icon specifically in the menu */
+      #menu .submenu-toggle {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      #menu .submenu-icon {
+        /* font-weight: bold; */
+        font-size: 14px;
+        margin-right: 5px;
+        line-height: 1;
+      }
+
+      .map {
+        width: 100%;
+        height: 100vh;
+        /* border: 1px solid #ccc;
+        border-radius: 8px; */
+      }
+
+      .social {
+        display: flex;
+        gap: 20px;
+        margin: 34px 60px 0 0;
+      }
+      .social i {
+        font-size: 18px;
+        color: #4a4a4a;
+      }
+
+      .content {
+        /* padding-top: 100px; */
+        max-width: 80%;
+        margin: 120px auto;
+        padding-bottom: 250px;
+      }
+      .content h1 {
+        text-transform: uppercase;
+        font-size: 2.6rem;
+      }
+
+      .newsContainer {
+        width: 60%;
+        margin: 0 auto 50px auto;
+      }
+
+      .footer {
+        padding: 100px 0 230px 0;
+
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 300px;
+      }
+
+      .footer-section {
+        margin: 10px 0;
+        position: relative;
+        min-width: 150px;
+      }
+
+      .footer-link {
+        cursor: pointer;
+        font-size: 14px;
+        margin: 10px 0;
+        display: inline-block;
+        position: relative;
+      }
+
+      .footer-link .toggle {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+      }
+
+      .sub-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        opacity: 0;
+      }
+      .address {
+        transition: all 0.5s ease;
+        /* opacity: 0; */
+      }
+      .sub-content p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sub-content.show {
+        max-height: 500px; /* Large enough to hold content */
+        opacity: 1;
+        /* padding-top: 10px; */
+      }
+
+      .sub-toggle {
+        /* color: #00bcd4; */
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      .detailedAddress {
+        max-width: 200px;
+      }
+      .detailedAddress strong {
+        font-weight: 600;
+      }
+
+      @media all and (max-width: 576px) {
+        #menu {
+          width: 100vw;
+          height: 100vh;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+        #menu li {
+          padding: 1rem 2rem;
+        }
+        .css-mobile-menu #menuToggle {
+          padding-right: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainWrapper" style="position: relative">
+      <div class="header">
+        <div class="headerContainer">
+          <div class="logo">
+            <a href="/index.html"><img src="/images/logo.png" /></a>
+          </div>
+          <!-- Logo -->
+          <div class="topNav" style="display: none">
+            <span><a href="/architecture.html">Architecture</a></span>
+            <span><a href="/index.html">Interior</a></span>
+            <span><a href="/products.html">Products</a></span>
+            <!-- <span>Nav1</span>
+            <span>Nav1</span> -->
+          </div>
+          <!-- Top Nav -->
+          <div class="social">
+            <div>
+              <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+            </div>
+            <div>
+              <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+            <div>
+              <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+            </div>
+            <div>
+              <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+          <!-- Social -->
+        </div>
+        <!-- Header Container-->
+      </div>
+      <!-- Main Nav-->
+      <nav class="css-mobile-menu" role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span class="span"></span>
+          <span class="span"></span>
+          <span class="span"></span>
+          <ul id="menu">
+            <!-- <li class="has-submenu">
+              <a
+                href="javascript:void(0);"
+                class="submenu-toggle"
+                onclick="toggleSubmenu(this)"
+              >
+                <span class="submenu-icon">+</span>Projects
+              </a>
+              <ul class="submenu">
+                <li><a href="/architecture.html">Architecture</a></li>
+                <li><a href="/index.html">Interior</a></li>
+                <li><a href="/products.html">Products</a></li>
+              </ul>
+            </li> -->
+            <li><a href="/index.html">Projects</a></li>
+            <li><a href="/news.html">News</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="contentWrapper">
+        <div class="container scroll-container">
+          <div class="content">
+            <style>
+              .newsCategories {
+                display: flex;
+                gap: 15px;
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                margin-bottom: 30px;
+              }
+              .newsCategories li {
+                padding: 10px 20px;
+                border: 1px solid #ccc;
+                border-radius: 30px;
+                color: #000;
+              }
+              .newsCategories li a {
+                color: #000;
+                text-decoration: none;
+              }
+              .newsCategories li.active {
+                padding: 10px 20px;
+                border: 1px solid #000;
+                border-radius: 50%;
+                color: #fff;
+                background-color: #000;
+              }
+              .newsCategories li.active a {
+                color: #fff;
+              }
+              .newsCard {
+                border: 1px solid #ccc;
+                padding: 20px;
+                margin-bottom: 30px;
+                border-radius: 10px;
+              }
+              .logoIcon {
+                width: 60px;
+              }
+              .logoIcon img {
+                width: 100%;
+                height: auto;
+              }
+              .cardHeader {
+                /* border-bottom: 1px solid #ccc;
+                padding-bottom: 10px; */
+                display: flex;
+                gap: 20px;
+              }
+              .newsTitle h2 {
+                margin: 0;
+                padding: 0 0 10px 0;
+              }
+              .newsMeta {
+                display: flex;
+                gap: 10px;
+                color: #555;
+              }
+              .cardFooter {
+                border-top: 1px solid #ccc;
+                padding-top: 10px;
+                display: flex;
+                justify-content: space-between;
+              }
+              .newsShare {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+              }
+              .shareIcons {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+              }
+              .shareIcons span {
+                width: 30px;
+                height: 30px;
+                background-color: #000;
+                border-radius: 100%;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+              }
+              .shareIcons span img {
+                width: 50%;
+                height: auto;
+                align-self: center;
+              }
+              .newsActions {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+              }
+              .newsShare {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+              }
+              .likeIcon {
+                width: 30px;
+                height: 30px;
+                background-color: #000;
+                border-radius: 100%;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+              }
+              .likeIcon a {
+                color: #fff;
+              }
+              .cardBody {
+                padding: 20px 0;
+              }
+              .cardBody img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+              }
+              .cardBody p {
+                text-align: justify;
+              }
+            </style>
+            <div class="newsContainer">
+              <div class="newsTabs">
+                <ul class="newsCategories">
+                  <li><a href="#">News</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Videos</a></li>
+                  <li><a href="#">Photos</a></li>
+                </ul>
+              </div>
+              <div class="newsCard">
+                <div class="cardHeader">
+                  <div class="logoIcon">
+                    <img src="/images/logo.png" alt="eyecatch architects" />
+                  </div>
+                  <div class="newsInfo">
+                    <div class="newsTitle">
+                      <h2>
+                        EyeCatch Architects Wins Second Place at FOAID 2024 – A
+                        Proud Moment for Telugu Architecture
+                      </h2>
+                    </div>
+                    <div class="newsMeta">
+                      <div class="newsCategory">News,</div>
+                      <div class="newsDate">Thursday February 6, 2025</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Header -->
+                <div class="cardBody">
+                  <div class="newsImage">
+                    <img src="/projects/smart-furniture/1.jpg" />
+                  </div>
+                  <p>
+                    EyeCatch Architects has secured second place in the
+                    prestigious Festival of Architecture and Interior Designing
+                    (FOAID) 2024, a nationwide event held annually in Delhi and
+                    Mumbai. Our firm was recognized in the highly competitive
+                    Conceptual Architecture category, with Chief Architect
+                    Pranay Mithilesh Pulipati receiving the award during the
+                    Delhi ceremony. This achievement marks a major milestone for
+                    EyeCatch Architects and brings pride to the Telugu
+                    architectural community. We are thrilled to share that our
+                    recognition was also featured on TV9, Telangana and Andhra
+                    Pradesh’s leading news channel. We extend our heartfelt
+                    thanks to TV9 for showcasing our success.
+                  </p>
+                </div>
+                <!-- Card Body -->
+                <div class="cardFooter">
+                  <div class="newsActions">
+                    <span>Like</span
+                    ><span class="likeIcon"
+                      ><a href="#" target="_blank"
+                        ><i class="bi bi-hand-thumbs-up"></i></a
+                    ></span>
+                  </div>
+                  <div class="newsShare">
+                    <span>Share:</span>
+                    <div class="shareIcons">
+                      <span><img src="/images/facebook.svg" /></span>
+                      <span><img src="/images/twitter.svg" /></span>
+                      <span><img src="/images/instagram.svg" /></span>
+                      <span><img src="/images/linkedin.svg" /></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+              </div>
+              <!-- News Card -->
+              <div class="newsCard"></div>
+              <!-- News Card -->
+              <div class="newsCard"></div>
+              <!-- News Card -->
+              <div class="newsCard"></div>
+              <!-- News Card -->
+
+              <footer class="footer">
+                <div class="footer-section">
+                  <div class="footer-link" data-target="emailSection">
+                    Email <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="emailSection">
+                    <p>New Projects: xyz.email.com</p>
+                    <p>Press: xyz.email.com</p>
+                    <p>Complaints: xyz.email.com</p>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="officeSection">
+                    Offices <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="officeSection">
+                    <div>
+                      <p class="sub-toggle" onclick="toggleAddressHyd()">
+                        Hyderabad
+                      </p>
+                      <div
+                        class="address"
+                        id="hyderabadAddress"
+                        style="display: block"
+                      >
+                        <p class="detailedAddress">
+                          <strong>Eyecatch Architects & Branding</strong><br />
+                          Plot No. 710, Flat No. 8-2-293/82/A/710/1, ROAD NO 36,
+                          Jubilee Hills, lane beside US polo Assn, Hyderabad,
+                          Telangana 500033. <br />Ph No: 8125225696<br />
+                        </p>
+                      </div>
+                      <p class="sub-toggle" onclick="toggleAddressVijayawada()">
+                        Vijayawada
+                      </p>
+                      <div
+                        class="address"
+                        id="vijayawadaAddress"
+                        style="display: none"
+                      >
+                        <p class="detailedAddress">
+                          <strong>Medha Aesthetics Pvt Ltd</strong><br />
+                          40-2-3/3C,1ST FLOOR, GOUSE STREET, MOGALRAJPURAM
+                          VIJAYAWADA-520010.<br />
+                          Ph No: 96189 02587<br />
+                        </p>
+                      </div>
+                      <p class="sub-toggle" onclick="toggleAddressTamil()">
+                        Tamilnadu
+                      </p>
+                      <div
+                        class="address"
+                        id="tamilnaduAddress"
+                        style="display: none"
+                      >
+                        <p class="detailedAddress">XYZ Address</p>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="socialSection">
+                    Social <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="socialSection">
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                    <p>LinkedIn</p>
+                    <p>Instagram</p>
+                    <p>Youtube</p>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="copyrightSection">
+                    Copyright <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="copyrightSection">
+                    <p>Privacy Policy</p>
+                    <p>Terms of Use</p>
+                    <p>Legal Disclaimer</p>
+                    <p>Cookie Policy</p>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <!-- Content-->
+        </div>
+        <!-- Container-->
+      </div>
+      <!-- Content Wrapper-->
+    </div>
+    <!-- Main Wrapper-->
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-wrapper {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-content {
+        will-change: transform;
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
+"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+
+    <script>
+      // ✅ Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // ✅ Initialize Locomotive Scroll
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector(".scroll-container"),
+        smooth: true,
+      });
+
+      // ✅ Sync ScrollTrigger with Locomotive Scroll
+      scroll.on("scroll", ScrollTrigger.update);
+
+      ScrollTrigger.scrollerProxy(".scroll-container", {
+        scrollTop(value) {
+          return arguments.length
+            ? scroll.scrollTo(value, 0, 0)
+            : scroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+        },
+        pinType: document.querySelector(".scroll-container").style.transform
+          ? "transform"
+          : "fixed",
+      });
+    </script>
+    <script>
+      function toggleSubmenu(el) {
+        const parentLi = el.closest("li.has-submenu");
+        const icon = el.querySelector(".submenu-icon");
+
+        parentLi.classList.toggle("open");
+        if (parentLi.classList.contains("open")) {
+          icon.textContent = "−";
+        } else {
+          icon.textContent = "+";
+        }
+      }
+    </script>
+    <script>
+      // Toggle Main Sections
+      document.querySelectorAll(".footer-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          const targetId = this.getAttribute("data-target");
+          const subContent = document.getElementById(targetId);
+          const toggleSymbol = this.querySelector(".toggle");
+
+          // Close all open sections
+          document.querySelectorAll(".sub-content").forEach((content) => {
+            if (content.id !== targetId) {
+              content.classList.remove("show");
+            }
+          });
+          document.querySelectorAll(".toggle").forEach((toggle) => {
+            if (toggle !== toggleSymbol) {
+              toggle.textContent = "+";
+              toggle.style.transform = "rotate(0deg)";
+            }
+          });
+
+          // Toggle current section
+          if (subContent.classList.contains("show")) {
+            subContent.classList.remove("show");
+            toggleSymbol.textContent = "+";
+            toggleSymbol.style.transform = "rotate(0deg)";
+          } else {
+            subContent.classList.add("show");
+            toggleSymbol.textContent = "-";
+            toggleSymbol.style.transform = "rotate(180deg)";
+          }
+        });
+      });
+
+      // Toggle Vijayawada Address
+      function toggleAddressHyd() {
+        document.getElementById("hyderabadAddress").style.display = "block";
+        document.getElementById("vijayawadaAddress").style.display = "none";
+        document.getElementById("tamilnaduAddress").style.display = "none";
+      }
+
+      // Toggle Tamilnadu Address
+      function toggleAddressTamil() {
+        document.getElementById("hyderabadAddress").style.display = "none";
+        document.getElementById("vijayawadaAddress").style.display = "none";
+        document.getElementById("tamilnaduAddress").style.display = "block";
+      }
+
+      function toggleAddressVijayawada() {
+        document.getElementById("hyderabadAddress").style.display = "none";
+        document.getElementById("vijayawadaAddress").style.display = "block";
+        document.getElementById("tamilnaduAddress").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
