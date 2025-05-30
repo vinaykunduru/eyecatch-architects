@@ -3217,7 +3217,6 @@
               </div>
               <!-- Project Item-->
 
-              <div class="projectItem"></div>
               <!-- Project Item-->
               <footer class="footer">
                 <div class="footer-section">
@@ -3320,13 +3319,13 @@
     <!-- Main Wrapper-->
     <style>
       .footer {
-        padding: 130px 0 30px 0;
+        padding: 100px 0 230px 0;
 
         font-size: 12px;
         display: flex;
         justify-content: center;
         gap: 50px;
-        margin-bottom: 240px;
+        margin-bottom: 300px;
       }
 
       .footer-section {
@@ -4074,6 +4073,7 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
           this.classList.add("active");
           this.style.width = `${window.innerWidth - 30}px`;
           this.style.height = `${window.innerHeight - 130}px`;
+          scroll.update();
 
           document
             .querySelectorAll(".ss-carousel .ss-carousel__item")
