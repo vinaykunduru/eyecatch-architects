@@ -536,6 +536,43 @@
         .col12 {
           width: 100%;
         }
+        @media all and (max-width: 576px) {
+          .contentAbt {
+            width: 96%;
+            max-width: auto;
+            margin: 60px auto 60px auto;
+          }
+          .heroVideo {
+            height: auto;
+          }
+          .row,
+          .rowG50 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          }
+          .col1,
+          .col2,
+          .col3,
+          .col4,
+          .col5,
+          .col6,
+          .col7,
+          .col8,
+          .col9,
+          .col10,
+          .col11,
+          .col12 {
+            width: 100%;
+          }
+          #clients .rowG50 {
+            display: block;
+          }
+          #clients .rowG50 .col2 {
+            width: 48%;
+            display: inline-block;
+          }
+        }
       </style>
       <div class="contentWrapper">
         <div class="container scroll-container">
@@ -778,7 +815,7 @@
               </div>
             </section>
 
-            <section class="services">
+            <section class="services" id="clients">
               <div class="sectionHead parallax-section">
                 <h2>Our Clients</h2>
               </div>
