@@ -690,8 +690,8 @@
                 <div class="col8">
                   <img src="https://placehold.co/800x400" class="w100" />
                   <p>
-                    The Managing Director of Medha Aesthetics Pvt. Ltd., brings
-                    a wealth of creative talent and industry experience to the
+                    The Managing Director of Eyecatch Architects., brings a
+                    wealth of creative talent and industry experience to the
                     company. As an accomplished artist, photographer, and
                     visualizer, Mr. Madhusudan's leadership inspires the team to
                     push boundaries and deliver exceptional results.
@@ -704,9 +704,9 @@
                   <img src="https://placehold.co/800x400" class="w100" />
                   <div class="teamMeta">
                     <h3>Pranay Mithilesh Pulipati</h3>
-                    <h5>Project Architect</h5>
+                    <h5>Principal architect</h5>
                     <div class="socialProfiles">
-                      <span><img src="/images/twitter.svg" /></span>
+                      <!-- <span><img src="/images/twitter.svg" /></span> -->
                       <span><img src="/images/instagram.svg" /></span>
                       <span><img src="/images/linkedin.svg" /></span>
                     </div>
@@ -1212,6 +1212,23 @@
       }
     </script>
 
+    <script>
+      // Disable right-click context menu
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      // Disable text selection
+      document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+      });
+
+      // Also prevent selection via CSS (backup)
+      document.body.style.userSelect = "none";
+      document.body.style.webkitUserSelect = "none";
+      document.body.style.msUserSelect = "none";
+      document.body.style.mozUserSelect = "none";
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

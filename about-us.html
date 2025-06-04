@@ -1123,6 +1123,23 @@
     </script>
 
     <script>
+      // Disable right-click context menu
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      // Disable text selection
+      document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+      });
+
+      // Also prevent selection via CSS (backup)
+      document.body.style.userSelect = "none";
+      document.body.style.webkitUserSelect = "none";
+      document.body.style.msUserSelect = "none";
+      document.body.style.mozUserSelect = "none";
+    </script>
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           anchor.addEventListener("click", function (e) {
