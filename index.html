@@ -14,18 +14,18 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-    />
+    /> -->
     <style>
-      @font-face {
-        font-family: Helvetica;
-        src: url(/fonts/Helvetica.ttf);
-      }
-      @font-face {
-        font-family: "Helvetica-Bold";
-        src: url(/fonts/Helvetica-Bold.ttf);
+      /* @font-face {
+        font-family: "tanmon";
+        src: url(/fonts/tan-mon-cheri.woff);
+      } */
+      /* @font-face {
+        font-family: "tanmon";
+        src: url(/fonts/tan-mon-cheri.ttf);
       }
       @font-face {
         font-family: "Helvetica-Light";
@@ -34,13 +34,26 @@
       @font-face {
         font-family: "Griffiths";
         src: url(/fonts/Griffiths.otf);
-      }
+      } */
+
+      /* @import url("https://fonts.googleapis.com/css2?family=Alata&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+      
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"); */
+
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
       body {
         padding: 0;
         margin: 0;
-        font-family: Helvetica;
+        /* font-family: Helvetica;
         font-family: "Poppins", sans-serif;
-        font-size: 14px;
+        font-family: "Cardo", serif;
+        font-family: "Raleway", sans-serif; */
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 16px;
+        line-height: 1.4;
       }
       h1,
       h2,
@@ -48,10 +61,15 @@
       h4,
       h5,
       h6 {
-        font-family: "Karla", sans-serif;
+        /* font-family: "Karla", sans-serif;
+        font-family: "Bodoni Moda", serif; */
+        font-family: "Libre Baskerville", serif;
+
         font-optical-sizing: auto;
-        font-weight: 700;
+        font-weight: 600;
         font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.5px;
       }
       .logo {
         width: 50px;
@@ -637,7 +655,7 @@
             <section class="section">
               <div class="row borderBottom parallax-section">
                 <div class="col4">
-                  <h2 class="sectionTitle">About Eyecatch Architects</h2>
+                  <h2 class="sectionTitle">About <br />Eyecatch Architects</h2>
                 </div>
                 <div class="col8">
                   <p>
@@ -692,6 +710,17 @@
               <div class="row parallax-section">
                 <div class="col4">
                   <h2 class="sectionTitle">Pulipati Madhusudan Rao</h2>
+                  <h5
+                    style="
+                      color: #555;
+                      font-size: 1.1rem;
+                      text-transform: uppercase;
+                      font-weight: 500;
+                      margin: 7px 0 0 0;
+                    "
+                  >
+                    Founder & Director
+                  </h5>
                 </div>
                 <div class="col8">
                   <img src="https://placehold.co/800x400" class="w100" />
@@ -924,6 +953,25 @@
                 <div class="col2">
                   <img src="images/clients/c18.jpg" class="w100" />
                 </div>
+              </div>
+
+              <div class="rowG50 parallax-section">
+                <div class="col2">
+                  <img src="images/clients/c19.jpg" class="w100" />
+                </div>
+                <div class="col2">
+                  <img src="images/clients/c20.jpg" class="w100" />
+                </div>
+                <div class="col2">
+                  <img src="images/clients/c21.jpg" class="w100" />
+                </div>
+                <div class="col2">
+                  <img src="images/clients/c22.jpg" class="w100" />
+                </div>
+                <div class="col2">
+                  <img src="images/clients/c23.jpg" class="w100" />
+                </div>
+                <div class="col2"></div>
               </div>
             </section>
             <footer class="footer" id="footer">
