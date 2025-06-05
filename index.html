@@ -338,7 +338,7 @@
         font-weight: 600;
       }
 
-      @media all and (max-width: 576px) {
+      @media all and (max-width: 768px) {
         #menu {
           width: 100vw;
           height: 100vh;
@@ -595,7 +595,19 @@
         #clients img {
           border: 1px solid #ddd;
         }
-        @media all and (max-width: 576px) {
+        @media all and (max-width: 768px) {
+          .heroVideo {
+            height: auto;
+            margin-top: 81px;
+            /* overflow: hidden; */
+            box-sizing: border-box;
+            text-align: center;
+            /* background-color: #000; */
+          }
+          .heroVideo video {
+            width: 100%;
+            height: auto;
+          }
           .contentAbt {
             width: 96%;
             max-width: auto;
