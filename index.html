@@ -304,6 +304,10 @@
         margin: 0;
         padding: 0;
       }
+      .emailLabel {
+        min-width: 85px;
+        display: inline-block;
+      }
       .sub-content p a {
         color: #000;
       }
@@ -549,6 +553,11 @@
           display: flex;
           gap: 50px;
         }
+        .rowG0 {
+          display: flex;
+          flex-direction: row;
+          gap: 0px;
+        }
         .w100 {
           width: 100%;
           height: auto;
@@ -618,6 +627,11 @@
           }
           .row,
           .rowG50 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          }
+          .rowG0 {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -817,86 +831,149 @@
                 </div>
               </div>
             </section>
-            <section class="services">
+
+            <section class="section" id="ourProcess">
               <div class="sectionHead parallax-section">
-                <h2>Our Verticals</h2>
+                <h2>Our Process</h2>
               </div>
-              <div class="rowG50 borderBottom">
-                <div class="col4 parallax-section">
-                  <img src="images/ser1.jpg" class="w100" />
-                  <h3>EyeCatch - Branding and Digital Marketing</h3>
-                  <p>
-                    Medha Aesthetics (EyeCatch) offers comprehensive branding
-                    services aimed at creating unique and memorable identities
-                    for diverse businesses. From logo design and brand strategy
-                    to packaging, marketing collateral, and digital advertising
-                    campaigns, our team ensures that each brand we develop
-                    stands out and excels in the competitive market.
-                  </p>
+              <style>
+                .processIcon {
+                  text-align: center;
+                  margin-bottom: 20px;
+                  margin-top: 20px;
+                }
+                .processIcon img {
+                  width: 60px;
+                  height: auto;
+                }
+                .processInfo {
+                  border-right: 1px solid #ccc;
+                  border-bottom: 1px solid #ccc;
+                  padding: 0px 20px 20px 20px;
+                }
+                #ourProcess .col3:last-child .processCard .processInfo {
+                  border-right: 0px solid #ccc;
+                }
+                .processTitle {
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                }
+                .processTitle h3 {
+                  align-self: center;
+                  text-transform: uppercase;
+                  margin: 0;
+                  padding: 0;
+                }
+                .processTitle span {
+                  width: 30px;
+                  height: 30px;
+                  border: 1px solid #ccc;
+                  border-radius: 100%;
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+                .processDesc {
+                  padding-left: 40px;
+                  min-height: 160px;
+                }
+                .processDesc p {
+                  padding-top: 0;
+                  margin-top: 5px;
+                }
+              </style>
+              <div class="rowG0 parallax-section">
+                <div class="col3">
+                  <div class="processCard">
+                    <div class="processIcon">
+                      <img src="/images/briefing.png" />
+                    </div>
+                    <div class="processInfo">
+                      <div class="processTitle">
+                        <span>01</span>
+                        <h3>Briefing</h3>
+                      </div>
+                      <div class="processDesc">
+                        <p>
+                          We begin with an exhaustive questionnaire to fully
+                          understand the client’s needs and expectations. The
+                          most important of all steps.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Process Card -->
                 </div>
-                <div class="col4 parallax-section">
-                  <img src="images/ser2.jpg" class="w100" />
-                  <h3>EyeCatch Architects and Interiors</h3>
-                  <p>
-                    Our architectural division specializes in designing
-                    functional and visually stunning spaces. Whether for
-                    commercial buildings, residential projects, or public
-                    spaces, Medha Aesthetics combines architectural expertise
-                    with artistic and aesthetic vision to bring each project to
-                    life. We specialize in the design and execution of both
-                    interiors and exteriors of retail spaces from bare cell to
-                    complete showrooms and villas.
-                  </p>
+                <!-- Col -->
+
+                <div class="col3">
+                  <div class="processCard">
+                    <div class="processIcon">
+                      <img src="/images/drawing.png" />
+                    </div>
+                    <div class="processInfo">
+                      <div class="processTitle">
+                        <span>02</span>
+                        <h3>Design</h3>
+                      </div>
+                      <div class="processDesc">
+                        <p>
+                          Translating the brief into the blueprint of what is to
+                          come. From moodboards to models, we design every last
+                          detail.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Process Card -->
                 </div>
-                <div class="col4 parallax-section">
-                  <img src="images/ser3.jpg" class="w100" />
-                  <h3>EyeCatch Home</h3>
-                  <p>
-                    Medha Aesthetics' furniture studio, situated in a 20,000 sq
-                    ft space at Rallaguda, Shamsabad, Hyderabad, crafts bespoke
-                    pieces that seamlessly blend form and function. From
-                    conceptualization to customization, our designers create
-                    furniture that enhances spaces and reflects our commitment
-                    to innovation and quality craftsmanship. Our furniture
-                    studio serves as an exclusive experience center cum sales
-                    point, showcasing a diverse range of world-class furniture
-                    and interior embellishments. We are planning to start a 5000
-                    sq ft display, supply, and sales showroom at Road number 12
-                    Banjara Hills, Hyderabad. We are also planning to let out
-                    franchises of our furniture showroom in Andhra Pradesh,
-                    Telangana, and Karnataka very soon.
-                  </p>
+                <!-- Col -->
+
+                <div class="col3">
+                  <div class="processCard">
+                    <div class="processIcon">
+                      <img src="/images/interior.png" />
+                    </div>
+                    <div class="processInfo">
+                      <div class="processTitle">
+                        <span>03</span>
+                        <h3>Execution</h3>
+                      </div>
+                      <div class="processDesc">
+                        <p>
+                          Bringing our designs to life by building it from the
+                          ground up. As we only take on end-to-end projects,
+                          everything from structural design to decor is executed
+                          in this phase.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Process Card -->
                 </div>
-              </div>
-            </section>
-            <section class="section">
-              <div class="sectionHead parallax-section">
-                <h2>Awards</h2>
-              </div>
-              <div class="row borderBottom parallax-section">
-                <div class="col4">
-                  <h2 class="sectionTitle">
-                    EyeCatch Architects Honored at FOAID 2024
-                  </h2>
+                <!-- Col -->
+
+                <div class="col3">
+                  <div class="processCard">
+                    <div class="processIcon"><img src="/images/key.png" /></div>
+                    <div class="processInfo">
+                      <div class="processTitle">
+                        <span>04</span>
+                        <h3>Handover</h3>
+                      </div>
+                      <div class="processDesc">
+                        <p>
+                          The most anticipated moment, where we hand our clients
+                          the keys to their new space, all ready to move in.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Process Card -->
                 </div>
-                <div class="col8">
-                  <p>
-                    EyeCatch Architects has secured second place in the
-                    prestigious Festival of Architecture and Interior Designing
-                    (FOAID) competition. Held annually in both Delhi and Mumbai,
-                    FOAID is a nationwide event that celebrates innovation and
-                    excellence in the fields of architecture and interior
-                    design.
-                  </p>
-                  <p>
-                    EyeCatch Architects stood out in the highly competitive
-                    Conceptual Architecture category. Our Chief Architect,
-                    Pranay Mithilesh Pulipati, proudly received the award during
-                    the ceremony held in Delhi. This recognition is a
-                    significant milestone for EyeCatch Architects and an honor
-                    for the Telugu architectural community.
-                  </p>
-                </div>
+                <!-- Col -->
               </div>
             </section>
 
@@ -986,6 +1063,91 @@
                 <div class="col2"></div>
               </div>
             </section>
+
+            <section class="section" style="display: none">
+              <div class="sectionHead parallax-section">
+                <h2>Awards</h2>
+              </div>
+              <div class="row borderBottom parallax-section">
+                <div class="col4">
+                  <h2 class="sectionTitle">
+                    EyeCatch Architects Honored at FOAID 2024
+                  </h2>
+                </div>
+                <div class="col8">
+                  <p>
+                    EyeCatch Architects has secured second place in the
+                    prestigious Festival of Architecture and Interior Designing
+                    (FOAID) competition. Held annually in both Delhi and Mumbai,
+                    FOAID is a nationwide event that celebrates innovation and
+                    excellence in the fields of architecture and interior
+                    design.
+                  </p>
+                  <p>
+                    EyeCatch Architects stood out in the highly competitive
+                    Conceptual Architecture category. Our Chief Architect,
+                    Pranay Mithilesh Pulipati, proudly received the award during
+                    the ceremony held in Delhi. This recognition is a
+                    significant milestone for EyeCatch Architects and an honor
+                    for the Telugu architectural community.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="services">
+              <div class="sectionHead parallax-section">
+                <h2>Our Verticals</h2>
+              </div>
+              <div class="rowG50 borderBottom">
+                <div class="col4 parallax-section">
+                  <img src="images/ser1.jpg" class="w100" />
+                  <h3>EyeCatch - Branding and Digital Marketing</h3>
+                  <p>
+                    Medha Aesthetics (EyeCatch) offers comprehensive branding
+                    services aimed at creating unique and memorable identities
+                    for diverse businesses. From logo design and brand strategy
+                    to packaging, marketing collateral, and digital advertising
+                    campaigns, our team ensures that each brand we develop
+                    stands out and excels in the competitive market.
+                  </p>
+                </div>
+                <div class="col4 parallax-section">
+                  <img src="images/ser2.jpg" class="w100" />
+                  <h3>EyeCatch Architects and Interiors</h3>
+                  <p>
+                    Our architectural division specializes in designing
+                    functional and visually stunning spaces. Whether for
+                    commercial buildings, residential projects, or public
+                    spaces, Medha Aesthetics combines architectural expertise
+                    with artistic and aesthetic vision to bring each project to
+                    life. We specialize in the design and execution of both
+                    interiors and exteriors of retail spaces from bare cell to
+                    complete showrooms and villas.
+                  </p>
+                </div>
+                <div class="col4 parallax-section">
+                  <img src="images/ser3.jpg" class="w100" />
+                  <h3>EyeCatch Home</h3>
+                  <p>
+                    Medha Aesthetics' furniture studio, situated in a 20,000 sq
+                    ft space at Rallaguda, Shamsabad, Hyderabad, crafts bespoke
+                    pieces that seamlessly blend form and function. From
+                    conceptualization to customization, our designers create
+                    furniture that enhances spaces and reflects our commitment
+                    to innovation and quality craftsmanship. Our furniture
+                    studio serves as an exclusive experience center cum sales
+                    point, showcasing a diverse range of world-class furniture
+                    and interior embellishments. We are planning to start a 5000
+                    sq ft display, supply, and sales showroom at Road number 12
+                    Banjara Hills, Hyderabad. We are also planning to let out
+                    franchises of our furniture showroom in Andhra Pradesh,
+                    Telangana, and Karnataka very soon.
+                  </p>
+                </div>
+              </div>
+            </section>
+
             <footer class="footer" id="footer">
               <div class="footer-section">
                 <div class="footer-link" data-target="emailSection">
@@ -993,19 +1155,19 @@
                 </div>
                 <div class="sub-content" id="emailSection">
                   <p>
-                    New Projects:
+                    <span class="emailLabel">New Projects:</span>
                     <a href="mailto:pranay@eyecatcharchitects.com"
                       >pranay@eyecatcharchitects.com</a
                     >
                   </p>
                   <p>
-                    Contact:
+                    <span class="emailLabel">Contact:</span>
                     <a href="mailto:contact@eyecatcharchitects.com"
                       >contact@eyecatcharchitects.com</a
                     >
                   </p>
                   <p>
-                    Careers:
+                    <span class="emailLabel">Careers:</span>
                     <a href="mailto:hr@eyecatcharchitects.com"
                       >hr@eyecatcharchitects.com</a
                     >
