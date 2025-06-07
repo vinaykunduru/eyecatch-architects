@@ -46,7 +46,9 @@
       @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"); */
 
       @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+      * {
+        box-sizing: border-box;
+      }
       body {
         padding: 0;
         margin: 0;
@@ -641,6 +643,9 @@
       .swiper-wrapper {
         padding-bottom: 60px;
       }
+      #clients .swiper-wrapper {
+        padding-bottom: 10px;
+      }
 
       .swiper-slide {
         text-align: center;
@@ -898,7 +903,7 @@
                   <img src="https://placehold.co/800x400" class="w100" />
                   <div class="teamMeta">
                     <h3>Medha Pulipati</h3>
-                    <h5>Interior Designer</h5>
+                    <h5>Principal Designer</h5>
                     <div class="socialProfiles">
                       <span><img src="/images/twitter.svg" /></span>
                       <span><img src="/images/instagram.svg" /></span>
@@ -1074,8 +1079,86 @@
               <div class="sectionHead parallax-section">
                 <h2>Our Clients</h2>
               </div>
-              <div class="rowG50 parallax-section">
-                <div class="col2">
+              <div class="rowG50 borderBottom parallax-section">
+                <!-- Swiper -->
+                <div class="swiper clientsSlider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="images/clients/c1.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c2.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c3.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c4.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c5.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c6.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c7.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c8.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c9.jpg" class="w100" />
+                    </div>
+
+                    <div class="swiper-slide">
+                      <img src="images/clients/c10.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c11.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c12.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c13.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c14.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c15.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c16.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c17.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c18.jpg" class="w100" />
+                    </div>
+
+                    <div class="swiper-slide">
+                      <img src="images/clients/c19.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c20.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c21.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c22.jpg" class="w100" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="images/clients/c23.jpg" class="w100" />
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+
+                <!-- <div class="col2">
                   <img src="images/clients/c1.jpg" class="w100" />
                 </div>
                 <div class="col2">
@@ -1092,10 +1175,10 @@
                 </div>
                 <div class="col2">
                   <img src="images/clients/c6.jpg" class="w100" />
-                </div>
+                </div> -->
               </div>
 
-              <div class="rowG50 parallax-section">
+              <!-- <div class="rowG50 parallax-section">
                 <div class="col2">
                   <img src="images/clients/c7.jpg" class="w100" />
                 </div>
@@ -1114,9 +1197,9 @@
                 <div class="col2">
                   <img src="images/clients/c12.jpg" class="w100" />
                 </div>
-              </div>
+              </div> -->
 
-              <div class="rowG50 parallax-section">
+              <!-- <div class="rowG50 parallax-section">
                 <div class="col2">
                   <img src="images/clients/c13.jpg" class="w100" />
                 </div>
@@ -1135,9 +1218,9 @@
                 <div class="col2">
                   <img src="images/clients/c18.jpg" class="w100" />
                 </div>
-              </div>
+              </div> -->
 
-              <div class="rowG50 borderBottom parallax-section">
+              <!-- <div class="rowG50 borderBottom parallax-section">
                 <div class="col2">
                   <img src="images/clients/c19.jpg" class="w100" />
                 </div>
@@ -1154,7 +1237,7 @@
                   <img src="images/clients/c23.jpg" class="w100" />
                 </div>
                 <div class="col2"></div>
-              </div>
+              </div> -->
             </section>
 
             <section class="section" id="testimonials">
@@ -1247,20 +1330,25 @@
                 <h2>Awards</h2>
               </div>
               <div class="row borderBottom parallax-section">
-                <div class="col6">
+                <div class="col3">
                   <div class="awardCard">
                     <div class="imgAward"><img src="images/FOAID.png" /></div>
                     <div class="awardInfo">
-                      <p>
-                        FOAID - Festival of Architecture And Interior
-                        Designing<br />Winners - Conceptual Architecture &
-                        Finalist - Ongoing Inteior design
-                      </p>
+                      <p>Conceptual Architecture & Finalist</p>
                     </div>
                   </div>
                 </div>
                 <!-- Col-->
-                <div class="col6">
+                <div class="col3">
+                  <div class="awardCard">
+                    <div class="imgAward"><img src="images/FOAID.png" /></div>
+                    <div class="awardInfo">
+                      <p>Ongoing Inteior design</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Col-->
+                <div class="col3">
                   <div class="awardCard">
                     <div class="imgAward">
                       <img src="images/begin-up.png" />
@@ -1269,7 +1357,19 @@
                       <p>
                         Trusted and promising Architecture & interior design
                         firm of the year 2025, Telangana
-                        <br />Golden Door Award For Excellence Consultancy In
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Col-->
+                <div class="col3">
+                  <div class="awardCard">
+                    <div class="imgAward">
+                      <img src="images/begin-up.png" />
+                    </div>
+                    <div class="awardInfo">
+                      <p>
+                        Golden Door Award For Excellence Consultancy In
                         Architecture & Interior Design Domain
                       </p>
                     </div>
@@ -1584,9 +1684,42 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script>
+      var swiper = new Swiper(".clientsSlider", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 8,
+            spaceBetween: 46,
+          },
+        },
+      });
+    </script>
+
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: ".swiper-pagination",
         },
