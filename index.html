@@ -355,7 +355,7 @@
       .contentAbt p {
       }
       .contentAbt section {
-        margin-bottom: 100px;
+        /* margin-bottom: 100px; */
       }
       .heroVideo {
         height: calc(100vh - 81px);
@@ -665,6 +665,7 @@
       #testimonials blockquote {
         max-width: 70%;
         margin: 0 auto 30px auto;
+        font-size: 16px;
       }
       .swiper-pagination-bullet-active {
         background-color: #000 !important;
@@ -1493,6 +1494,10 @@
                   background-color: #000;
                   color: #fff;
                 }
+                #ctaSection p a {
+                  text-decoration: none;
+                  color: #000;
+                }
               </style>
               <div class="rowG50 borderBottom">
                 <div
@@ -1504,8 +1509,11 @@
                   </h2>
                   <p>
                     Have a question for us? Let’s talk.<br />For all project
-                    inquiries, please email pranay@eyecatcharchitects.com with
-                    the subject NEW PROJECT
+                    inquiries, please email
+                    <a href="mailto:projects@eyecatcharchitects.com"
+                      >projects@eyecatcharchitects.com</a
+                    >
+                    with the subject NEW PROJECT
                   </p>
                 </div>
                 <div class="col4 ctaButtonSection parallax-section">
@@ -1527,13 +1535,27 @@
                   text-align: center;
                 }
                 #fooAbout img {
-                  width: 130px;
+                  width: 350px;
                   height: auto;
                 }
                 #fooAbout p {
-                  max-width: 70%;
+                  max-width: 80%;
                   margin-left: auto;
                   margin-right: auto;
+                }
+                #fooAbout .social {
+                  margin: 30px auto 0 auto;
+                  justify-content: center;
+                }
+                #fooAbout .borderRight {
+                  border-right: 1px solid #ccc;
+                }
+                .addressDiv {
+                  display: flex;
+                  margin-top: 30px;
+                }
+                .addressDiv div {
+                  flex: 1;
                 }
                 #abtMenu {
                   margin: 20px 0 0 0;
@@ -1554,19 +1576,47 @@
                   class="col8 parallax-section"
                   style="border-right: 1px solid #ccc"
                 >
-                  <img src="images/logo.png" />
-                  <p>
-                    <strong>Hyderabad</strong><br />
-                    Plot No. 710, Flat No. 8-2-293/82/A/710/1, ROAD NO 36,
-                    Jubilee Hills, lane beside US polo Assn, Hyderabad,
-                    Telangana 500033. <br />+91 8125225696<br />contact@eyecatcharchitects.in<br />
-                  </p>
-                  <p>
-                    <strong>Vijayawada</strong><br />
-                    MG Rd, Behind Kalaniketan, Mogalrajapuram, Sidhartha Nagar,
-                    Labbipet, Vijayawada, Andhra Pradesh 520010.<br />
-                    +91 96189 02587<br />contact@eyecatcharchitects.in<br />
-                  </p>
+                  <img src="images/logo-horizontal.png" />
+                  <div class="flex addressDiv">
+                    <div class="borderRight">
+                      <p>
+                        <strong>Hyderabad</strong><br />
+                        Plot No. 710, ROAD NO 36, Jubilee Hills, lane beside US
+                        polo Assn, Hyderabad, <br />Telangana 500033.
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        <strong>Vijayawada</strong><br />
+                        MG Rd, Behind Kalaniketan, Mogalrajapuram, Sidhartha
+                        Nagar, Labbipet, Vijayawada, <br />Andhra Pradesh
+                        520010.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="social">
+                    <div>
+                      <a
+                        href="https://www.facebook.com/EyeCatchArchitects"
+                        target="_blank"
+                        ><i class="bi bi-facebook"></i
+                      ></a>
+                    </div>
+                    <div>
+                      <a
+                        href="https://www.instagram.com/eyecatcharchitects/"
+                        target="_blank"
+                        ><i class="bi bi-instagram"></i
+                      ></a>
+                    </div>
+                    <div>
+                      <a
+                        href="https://www.linkedin.com/company/eyecatch-architects1"
+                        target="_blank"
+                        ><i class="bi bi-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
                 </div>
                 <div class="col4 parallax-section">
                   <h3>Pages</h3>
