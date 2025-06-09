@@ -60,6 +60,7 @@
 
         font-size: 16px;
         line-height: 1.4;
+        overflow-x: hidden;
       }
       h1,
       h2,
@@ -679,6 +680,23 @@
         padding: 0 0 5px 0;
       }
 
+      .profileSwipe {
+        height: auto !important;
+      }
+      .profileSwipe .swiper-slide {
+        padding-bottom: 0;
+      }
+      .profileSwipe img {
+        max-width: 100%;
+      }
+      .profileSwipe .swiper-wrapper {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+      .management .col6 {
+        overflow: hidden;
+      }
+
       @media all and (max-width: 768px) {
         #menu {
           width: 100vw;
@@ -944,53 +962,92 @@
                 </div>
               </div>
               <div class="spacer50"></div>
-              <div class="row borderBottom parallax-section">
+              <div class="row borderBottom parallax-section management">
                 <div class="col6 parallax-section">
-                  <img
-                    src="images/pranay-eyecatch-architects.jpg"
-                    class="w100"
-                  />
+                  <!-- Swiper -->
+                  <div class="swiper profileSwipe">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="images/pranay-eyecatch-1.jpg" class="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/pranay-award1.jpg" class="" />
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
                   <div class="teamMeta">
                     <h3>Pranay Mithilesh Pulipati</h3>
                     <h5>Principal architect</h5>
                     <div class="socialProfiles">
                       <!-- <span><img src="/images/twitter.svg" /></span> -->
-                      <span><img src="/images/instagram.svg" /></span>
-                      <span><img src="/images/linkedin.svg" /></span>
+                      <a
+                        href="https://www.instagram.com/mithileshpranay"
+                        target="_blank"
+                        ><span><img src="/images/instagram.svg" /></span
+                      ></a>
+                      <a
+                        href="https://www.linkedin.com/in/ar-pranay-mithilesh-pulipati-74188412a/"
+                        target="_blank"
+                        ><span><img src="/images/linkedin.svg" /></span
+                      ></a>
                     </div>
                   </div>
                   <p>
-                    Pulipati Pranay Mithilesh's journey in the field of
-                    architecture is a testament to his belief that every design
-                    involves a complex thought process. For him, architecture
-                    transcends mere aesthetics; it is fundamentally about user
-                    experience and the quality of spatial environments. This
-                    philosophy has been the cornerstone of his career, shaping
-                    his approach to every project he undertakes.
+                    Pulipati Pranay Mithilesh's journey in architecture is a
+                    testament to his belief that every design is a product of a
+                    complex thought process. For him, architecture goes beyond
+                    aesthetics—it is fundamentally about user experience and the
+                    quality of spatial environments. This philosophy has shaped
+                    his career, influencing his approach to every project he
+                    undertakes.
                   </p>
                   <p>
-                    Pranay's academic journey began at Dayananda Sagar
-                    Institutions in India, where he earned his Bachelor's degree
-                    in Architecture.
+                    Pranay began his academic journey at Dayananda Sagar
+                    Institutions in India, where he earned his Bachelor’s degree
+                    in Architecture. His thirst for knowledge and drive to push
+                    the boundaries of conventional architectural practices led
+                    him to the University of Liverpool in the UK, where he
+                    pursued a Master’s degree in Architecture. This advanced
+                    education not only expanded his perspective but also exposed
+                    him to diverse architectural styles and innovative design
+                    philosophies.
                   </p>
                   <p>
-                    His thirst for knowledge and desire to push the boundaries
-                    of traditional architectural practices led him to the
-                    University of Liverpool in the UK, where he completed his
-                    Master's degree in Architecture. This advanced education not
-                    only broadened his horizons but also exposed him to diverse
-                    architectural styles and innovative design philosophies.
+                    Among his notable recognitions is the FOAID - Festival of
+                    Architecture and Interior Designing 2025, where he earned
+                    honors in two categories—Conceptual Architecture and
+                    Finalist - Ongoing Interior Design. Additionally, he has
+                    been recognized by Bigin Up as the Trusted and Promising
+                    Architecture & Interior Designer of the Year 2025,
+                    Telangana, and has received the Golden Door Award for
+                    Excellence in Consultancy within the Architecture & Interior
+                    Design Domain.
                   </p>
                   <p>
                     Currently, Pranay serves as the Chief Architect at EyeCatch
-                    Architects in India.
+                    Architects in India, where he continues to push creative
+                    boundaries and redefine spatial experiences.
                   </p>
                 </div>
                 <div class="col6 parallax-section">
-                  <img
-                    src="images/medha-eyecatch-architects.jpg"
-                    class="w100"
-                  />
+                  <!-- Swiper -->
+                  <div class="swiper profileSwipe">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img
+                          src="images/medha-eyecatch-architects.jpg"
+                          class=""
+                        />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="images/medha-award1.jpg" class="" />
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+
                   <div class="teamMeta">
                     <h3>Medha Pulipati</h3>
                     <h5>Principal Designer</h5>
@@ -1610,9 +1667,7 @@
                   class="col8 parallax-section"
                   style="border-right: 1px solid #ccc"
                 >
-                  <h2>
-                    Are you thinking of an aesthetic makeover for your ambiance?
-                  </h2>
+                  <h2>Seeking to enhance the visual appeal of your space?</h2>
                   <p>
                     Have a question for us? Let’s talk.<br />For all project
                     inquiries, please email
@@ -1902,7 +1957,13 @@
                   Copyright <span class="toggle">+</span>
                 </div>
                 <div class="sub-content" id="copyrightSection">
-                  <p><a href="#">Policy</a></p>
+                  <p>
+                    <a
+                      href="docs/Privacy Policy-ECArchitects.pdf"
+                      target="_blank"
+                      >Policy</a
+                    >
+                  </p>
                   <p><a href="#">Terms of Use</a></p>
                   <p><a href="#">Legal Disclaimer</a></p>
                 </div>
@@ -1996,6 +2057,18 @@
             slidesPerView: 8,
             spaceBetween: 46,
           },
+        },
+      });
+    </script>
+
+    <script>
+      var swiper = new Swiper(".profileSwipe", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
         },
       });
     </script>
