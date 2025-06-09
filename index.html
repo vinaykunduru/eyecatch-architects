@@ -267,17 +267,25 @@
       .footer {
         padding: 100px 0 230px 0;
 
-        font-size: 12px;
+        font-size: 11px;
         display: flex;
         justify-content: center;
-        gap: 50px;
+        gap: 30px;
         margin-bottom: 300px;
+
+        width: 94%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 50px;
+        margin-right: -50px;
       }
 
       .footer-section {
         margin: 10px 0;
         position: relative;
         min-width: 150px;
+        flex: 1;
+        /* text-align: center; */
       }
 
       .footer-link {
@@ -699,6 +707,14 @@
         padding-bottom: 20px;
         margin-bottom: 20px;
       }
+      .management::before {
+        align-self: stretch;
+        content: "";
+        border: 1px solid #ccc;
+      }
+      .management .col6:first-child {
+        order: -1;
+      }
       .management .col6 {
         overflow: hidden;
       }
@@ -926,10 +942,10 @@
                         />
                       </div>
                       <div class="swiper-slide">
-                        <img src="images/pranay-award1.jpg" class="" />
+                        <img src="images/pranay-foaid-award1.jpg" class="" />
                       </div>
                       <div class="swiper-slide">
-                        <img src="images/pranay-foaid-award.jpg" class="" />
+                        <img src="images/pranay-award1.jpg" class="" />
                       </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -1623,7 +1639,7 @@
                   color: #000;
                 }
               </style>
-              <div class="rowG50 borderBottom" style="border-bottom: 0">
+              <div class="rowG50 borderBottom">
                 <div
                   class="col8 parallax-section"
                   style="border-right: 1px solid #ccc"
@@ -1674,7 +1690,7 @@
                 }
                 .addressDiv {
                   display: flex;
-                  margin-top: 30px;
+                  margin-top: 10px;
                 }
                 .addressDiv div {
                   flex: 1;
@@ -1693,7 +1709,7 @@
                   text-transform: uppercase;
                 }
               </style>
-              <div class="rowG50 borderBottom">
+              <div class="rowG50 borderBottom" style="border-bottom: 0">
                 <div
                   class="col8 parallax-section"
                   style="border-right: 1px solid #ccc"
@@ -2006,7 +2022,7 @@
           clickable: true,
         },
         breakpoints: {
-          640: {
+          320: {
             slidesPerView: 2,
             spaceBetween: 20,
           },
