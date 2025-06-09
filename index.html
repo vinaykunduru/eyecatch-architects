@@ -390,7 +390,7 @@
         margin-bottom: 00px;
       }
       .abtWidget h3 {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
         margin: 0 0 20px 0;
         padding: 0;
       }
@@ -713,6 +713,60 @@
     </style>
   </head>
   <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <img src="/images/logo-animation.gif" alt="Loading..." />
+    </div>
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.6s ease, visibility 0.6s;
+        text-align: center;
+      }
+      #preloader img {
+        width: 60%;
+        height: auto;
+      }
+
+      #preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .mainWrapper {
+        transform: translateY(50px);
+        opacity: 0;
+        transition: transform 0.8s ease, opacity 0.8s ease;
+      }
+
+      .mainWrapper.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        const mainWrapper = document.querySelector(".mainWrapper");
+
+        // Match the duration of your logo-animation.gif (e.g., 3000ms)
+        const gifDuration = 3000;
+
+        setTimeout(() => {
+          preloader.classList.add("hidden");
+          mainWrapper.classList.add("visible");
+        }, gifDuration);
+      });
+    </script>
     <div class="mainWrapper" style="position: relative">
       <div class="header">
         <div class="headerContainer">
@@ -829,14 +883,14 @@
                   <div class="rowG50 parallax-section">
                     <div class="col6">
                       <div class="abtWidget">
-                        <h3>30 years <br />experience</h3>
-                        <p>Est. 1991</p>
+                        <h3>30 years experience</h3>
+                        <p>Est. 1995</p>
                       </div>
                     </div>
                     <div class="col6">
                       <div class="abtWidget">
-                        <h3>350,000 <br />sqft</h3>
-                        <p>currently under construction</p>
+                        <h3>350,000 sqft</h3>
+                        <p>Completed</p>
                       </div>
                     </div>
                   </div>
@@ -845,13 +899,13 @@
                     <div class="col6">
                       <div class="abtWidget noBorder">
                         <h3>35 team members</h3>
-                        <p>Estd. in 2014</p>
+                        <p></p>
                       </div>
                     </div>
                     <div class="col6">
                       <div class="abtWidget noBorder">
-                        <h3>100 <br />projects</h3>
-                        <p>currently under construction</p>
+                        <h3>100+ projects</h3>
+                        <p>Completed</p>
                       </div>
                     </div>
                   </div>
@@ -876,7 +930,10 @@
                   </h5>
                 </div>
                 <div class="col8">
-                  <img src="https://placehold.co/800x400" class="w100" />
+                  <img
+                    src="images/madhu-eyecatch-architects.jpg"
+                    class="w100"
+                  />
                   <p>
                     The Managing Director of Eyecatch Architects., brings a
                     wealth of creative talent and industry experience to the
@@ -889,7 +946,10 @@
               <div class="spacer50"></div>
               <div class="row borderBottom parallax-section">
                 <div class="col6 parallax-section">
-                  <img src="https://placehold.co/800x400" class="w100" />
+                  <img
+                    src="images/pranay-eyecatch-architects.jpg"
+                    class="w100"
+                  />
                   <div class="teamMeta">
                     <h3>Pranay Mithilesh Pulipati</h3>
                     <h5>Principal architect</h5>
@@ -908,9 +968,29 @@
                     philosophy has been the cornerstone of his career, shaping
                     his approach to every project he undertakes.
                   </p>
+                  <p>
+                    Pranay's academic journey began at Dayananda Sagar
+                    Institutions in India, where he earned his Bachelor's degree
+                    in Architecture.
+                  </p>
+                  <p>
+                    His thirst for knowledge and desire to push the boundaries
+                    of traditional architectural practices led him to the
+                    University of Liverpool in the UK, where he completed his
+                    Master's degree in Architecture. This advanced education not
+                    only broadened his horizons but also exposed him to diverse
+                    architectural styles and innovative design philosophies.
+                  </p>
+                  <p>
+                    Currently, Pranay serves as the Chief Architect at EyeCatch
+                    Architects in India.
+                  </p>
                 </div>
                 <div class="col6 parallax-section">
-                  <img src="https://placehold.co/800x400" class="w100" />
+                  <img
+                    src="images/medha-eyecatch-architects.jpg"
+                    class="w100"
+                  />
                   <div class="teamMeta">
                     <h3>Medha Pulipati</h3>
                     <h5>Principal Designer</h5>
@@ -921,13 +1001,35 @@
                     </div>
                   </div>
                   <p>
-                    Pulipati Pranay Mithilesh's journey in the field of
-                    architecture is a testament to his belief that every design
-                    involves a complex thought process. For him, architecture
-                    transcends mere aesthetics; it is fundamentally about user
-                    experience and the quality of spatial environments. This
-                    philosophy has been the cornerstone of his career, shaping
-                    his approach to every project he undertakes.
+                    A visionary interior architect, Medha Pulipati seamlessly
+                    blends aesthetics and functionality to create immersive
+                    spaces. Since joining EyeCatch in June 2023, she has led
+                    impactful design projects, transforming client visions into
+                    refined environments.
+                  </p>
+                  <p>
+                    With a diploma and master’s degree from Florence Design
+                    Academy (FDA), Italy, Medha brings a global perspective to
+                    spatial storytelling. She specializes in concept
+                    development, space planning, and material selection,
+                    ensuring precision and creativity in execution. Her
+                    expertise in coordinating with designers, animators,
+                    architects, and contractors ensures cohesion and compliance
+                    with industry standards.
+                  </p>
+                  <p>
+                    Beyond design, Medha is a mentor and innovator, fostering
+                    talent within her team. Her notable projects—including
+                    Perumal Silks, Amyra, Goyaz, Ladia, and Anubhava
+                    Sweets—reflect her ability to merge tradition with modern
+                    principles.
+                  </p>
+                  <p>
+                    Proficient in AutoCAD, SketchUp, V-Ray, and Adobe Creative
+                    Suite, she leverages cutting-edge tools to bring designs to
+                    life. Through strategic planning, client collaboration, and
+                    meticulous attention to detail, she continues to elevate
+                    interior spaces with vision and precision.
                   </p>
                 </div>
               </div>
@@ -1269,31 +1371,35 @@
                           some level, they've understood what Goyaz stands for,
                           and I think that inspired to bring out these designs
                           and experience. For example, in Panjagutta, we have a
-                          new bridal lounge where I'm currently sitting at, and
-                          I think this completely deserves an applause. EyeCatch
-                          your're the reason for it, and we're very happy
-                          working with them.
+                          new bridal lounge which completely deserves an
+                          applause. EyeCatch architects your're the reason for
+                          it, and we're very happy working with you.
                         </blockquote>
                         <div class="testimonialMeta">
                           <h4>Mrs Priyanka</h4>
                           <em>Managing Director, Goyaz</em>
                         </div>
                       </div>
-                      <!-- <div class="swiper-slide">
+                      <div class="swiper-slide">
                         <blockquote>
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout. The point of using Lorem Ipsum
-                          is that it has a more-or-less normal distribution of
-                          letters, as opposed to using 'Content here, content
-                          here', making it look like readable English.
+                          EyeCatch, true to its name, has created a remarkably
+                          attractive and eye-catching design. Especially, the
+                          façade has turned out exceptionally well, showcasing
+                          fine, intricate craftsmanship-arguably one of the best
+                          façades in the country. The team, led by Mr. Madhu, MD
+                          of EyeCatch, has not only delivered a stunning design
+                          but has also been thoroughly involved in the execution
+                          of the interiors, demonstrating remarkable commitment
+                          and timeliness throughout the project. I would like to
+                          extend my sincere gratitude to Mr. Madhu and his team
+                          for their outstanding work.
                         </blockquote>
                         <div class="testimonialMeta">
-                          <h4>Ananya Mehta</h4>
-                          <em>Interior Designer, Urban Nest Interiors</em>
+                          <h4>CH Shailaja Kiron</h4>
+                          <em>Managing Director, Margadarshi and Kalanjali</em>
                         </div>
                       </div>
-                      <div class="swiper-slide">
+                      <!-- <div class="swiper-slide">
                         <blockquote>
                           Contrary to popular belief, Lorem Ipsum is not simply
                           random text. It has roots in a piece of classical
@@ -1581,8 +1687,8 @@
                     <div class="borderRight">
                       <p>
                         <strong>Hyderabad</strong><br />
-                        Plot No. 710, ROAD NO 36, Jubilee Hills, lane beside US
-                        polo Assn, Hyderabad, <br />Telangana 500033.
+                        Plot No. 710, Road No. 36, Aditya Enclave, Venkatagiri,
+                        Jubilee Hills, Hyderabad, Telangana 500033.
                       </p>
                     </div>
                     <div>
@@ -1674,9 +1780,9 @@
                     >
                       <p class="detailedAddress">
                         <strong>Eyecatch Architects</strong><br />
-                        Plot No. 710, Flat No. 8-2-293/82/A/710/1, ROAD NO 36,
-                        Jubilee Hills, lane beside US polo Assn, Hyderabad,
-                        Telangana 500033. <br />+91 8125225696<br />contact@eyecatcharchitects.in<br />
+                        Plot No. 710, Road No. 36, Aditya Enclave, Venkatagiri,
+                        Jubilee Hills, Hyderabad, Telangana 500033 <br />+91
+                        8125225696<br />contact@eyecatcharchitects.in<br />
                       </p>
                     </div>
                     <p class="sub-toggle" onclick="toggleAddressVijayawada()">
