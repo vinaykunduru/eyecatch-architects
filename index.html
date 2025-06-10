@@ -521,6 +521,13 @@
       .offsetMd2 {
         margin-left: 16%;
       }
+      .offsetMd1 {
+        margin-left: 8.33%;
+      }
+      .offsetLR1 {
+        margin-left: 8.33%;
+        margin-right: 8.33%;
+      }
       #clients .rowG50 {
         margin-bottom: 30px;
       }
@@ -743,6 +750,15 @@
         overflow: hidden;
       }
 
+      #vertical::before {
+        align-self: stretch;
+        content: "";
+        border: 1px solid #ccc;
+      }
+      #vertical .col4:first-child {
+        order: -1;
+      }
+
       @media all and (max-width: 768px) {
         #menu {
           width: 100vw;
@@ -911,7 +927,7 @@
                   <div class="rowG50 parallax-section">
                     <div class="col6">
                       <div class="abtWidget noBorder">
-                        <h3>50+ Crew</h3>
+                        <h3>20 Crew</h3>
                         <p></p>
                       </div>
                     </div>
@@ -1593,8 +1609,8 @@
               <div class="sectionHead parallax-section">
                 <h2>Our Verticals</h2>
               </div>
-              <div class="rowG50 borderBottom">
-                <div class="col4 parallax-section offsetMd2">
+              <div class="rowG50 borderBottom" id="vertical">
+                <div class="col4 parallax-section offsetLR1">
                   <img src="images/ser1.jpg" class="w100" />
                   <h3>EyeCatch - Branding and Digital Marketing</h3>
                   <p>
@@ -1620,10 +1636,10 @@
                     complete showrooms and villas.
                   </p>
                 </div> -->
-                <div class="col4 parallax-section">
+                <div class="col4 parallax-section offsetLR1">
                   <img src="images/ser3.jpg" class="w100" />
                   <h3>EyeCatch Home</h3>
-                  <p>
+                  <p style="padding-bottom: 0; margin-bottom: 0">
                     Medha Aesthetics' furniture studio, situated in a 20,000 sq
                     ft space at Rallaguda, Shamsabad, Hyderabad, crafts bespoke
                     pieces that seamlessly blend form and function. From
