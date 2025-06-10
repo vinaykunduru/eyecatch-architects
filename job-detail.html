@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: Helvetica;
+        src: url(/fonts/Helvetica.ttf);
+      }
+      @font-face {
+        font-family: "Helvetica-Bold";
+        src: url(/fonts/Helvetica-Bold.ttf);
+      }
+      @font-face {
+        font-family: "Helvetica-Light";
+        src: url(/fonts/helvetica-light.ttf);
+      }
+      @font-face {
+        font-family: "Griffiths";
+        src: url(/fonts/Griffiths.otf);
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: Helvetica;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Karla", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .logo {
+        width: 50px;
+        height: auto;
+        padding: 5px 0;
+      }
+      .logo img {
+        width: 100%;
+      }
+      .header {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        z-index: 999;
+      }
+      .headerContainer {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        justify-content: space-between;
+        vertical-align: middle;
+      }
+
+      .css-mobile-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .css-mobile-menu #menuToggle {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        padding-right: 1.5rem;
+        z-index: 9999;
+        -webkit-user-select: none;
+        user-select: none;
+        right: 0;
+        top: 35px;
+      }
+      .css-mobile-menu #menuToggle input {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+      }
+      .css-mobile-menu #menuToggle span.span {
+        display: flex;
+        width: 29px;
+        height: 2px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #4a4a4a;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 5px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+      }
+      .css-mobile-menu #menuToggle span.span:first-child {
+        transform-origin: 0% 0%;
+      }
+      .css-mobile-menu #menuToggle span.span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-3px, -1px);
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+      #menu {
+        position: absolute;
+        width: auto;
+        min-width: 50px;
+        height: 100vh;
+        margin: -50px 0 0 -50px;
+        padding: 50px 30px 0 50px;
+        padding-top: 110px;
+        background-color: #fff;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translateX(100%);
+        top: 0;
+        right: 0;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        list-style: none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      #menu li {
+        padding: 10px 0;
+        transition-delay: 2s;
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      #menu li a {
+        color: #4a4a4a;
+        text-decoration: none;
+      }
+      .css-mobile-menu #menuToggle input:checked ~ ul {
+        transform: none;
+      }
+      /* Hide submenu initially */
+      #menu .has-submenu .submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 15px;
+        list-style: none;
+      }
+
+      /* When open, show submenu */
+      #menu .has-submenu.open .submenu {
+        max-height: 300px;
+      }
+
+      /* Style the icon specifically in the menu */
+      #menu .submenu-toggle {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      #menu .submenu-icon {
+        /* font-weight: bold; */
+        font-size: 14px;
+        margin-right: 5px;
+        line-height: 1;
+      }
+
+      .social {
+        display: flex;
+        gap: 20px;
+        margin: 34px 60px 0 0;
+      }
+      .social i {
+        font-size: 18px;
+        color: #4a4a4a;
+      }
+
+      .content {
+        /* padding-top: 100px; */
+        max-width: 80%;
+        margin: 120px auto;
+        padding-bottom: 250px;
+      }
+      .content h1 {
+        text-transform: uppercase;
+        font-size: 2.6rem;
+      }
+
+      .content h2 {
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+      .content p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .philosophy {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: "Griffiths";
+        font-size: 25px;
+      }
+      .grid2 {
+        display: flex;
+        gap: 50px;
+      }
+      .grid2 section {
+        width: 50%;
+      }
+      video {
+        width: 50%;
+        height: auto;
+      }
+
+      .footer {
+        padding: 100px 0 230px 0;
+
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 300px;
+      }
+
+      .footer-section {
+        margin: 10px 0;
+        position: relative;
+        min-width: 150px;
+      }
+
+      .footer-link {
+        cursor: pointer;
+        font-size: 14px;
+        margin: 10px 0;
+        display: inline-block;
+        position: relative;
+      }
+
+      .footer-link .toggle {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+      }
+
+      .sub-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        opacity: 0;
+      }
+      .sub-content a {
+        color: #000;
+      }
+      .address {
+        transition: all 0.5s ease;
+        /* opacity: 0; */
+      }
+      .sub-content p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sub-content.show {
+        max-height: 500px; /* Large enough to hold content */
+        opacity: 1;
+        /* padding-top: 10px; */
+      }
+
+      .sub-toggle {
+        /* color: #00bcd4; */
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      .detailedAddress {
+        max-width: 200px;
+      }
+      .detailedAddress strong {
+        font-weight: 600;
+      }
+
+      @media all and (max-width: 576px) {
+        #menu {
+          width: 100vw;
+          height: 100vh;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+        #menu li {
+          padding: 1rem 2rem;
+        }
+        .css-mobile-menu #menuToggle {
+          padding-right: 1rem;
+        }
+
+        .footer {
+          padding: 50px 0 100px 0;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-start;
+          gap: 0;
+          margin-bottom: 100px;
+          flex-wrap: wrap;
+        }
+        .footer-section {
+          margin: 10px 0;
+          position: relative;
+          min-width: 20%;
+          width: 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainWrapper" style="position: relative">
+      <div class="header">
+        <div class="headerContainer">
+          <div class="logo">
+            <a href="/index.html"><img src="/images/logo.png" /></a>
+          </div>
+          <!-- Logo -->
+          <div class="topNav" style="display: none">
+            <span><a href="#">Architecture</a></span>
+            <span><a href="#">Landscape</a></span>
+            <span><a href="/products.html">Products</a></span>
+            <!-- <span>Nav1</span>
+            <span>Nav1</span> -->
+          </div>
+          <!-- Top Nav -->
+          <div class="social">
+            <div>
+              <a
+                href="https://www.facebook.com/EyeCatchArchitects"
+                target="_blank"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </div>
+            <div>
+              <a
+                href="https://www.instagram.com/eyecatcharchitects/"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </div>
+            <div>
+              <a
+                href="https://www.linkedin.com/company/eyecatch-architects1"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <!-- Social -->
+        </div>
+        <!-- Header Container-->
+      </div>
+      <!-- Main Nav-->
+      <nav class="css-mobile-menu" role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span class="span"></span>
+          <span class="span"></span>
+          <span class="span"></span>
+          <ul id="menu">
+            <!-- <li class="has-submenu">
+              <a
+                href="javascript:void(0);"
+                class="submenu-toggle"
+                onclick="toggleSubmenu(this)"
+              >
+                <span class="submenu-icon">+</span>Projects
+              </a>
+              <ul class="submenu">
+                <li><a href="/architecture.html">Architecture</a></li>
+                <li><a href="/index.html">Interior</a></li>
+                <li><a href="/products.html">Products</a></li>
+              </ul>
+            </li> -->
+            <li><a href="/index.html">Projects</a></li>
+            <li><a href="/news-events.html">News</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <!-- <li><a href="#">People</a></li> -->
+            <li><a href="/careers.html">Careers</a></li>
+
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Main Wrapper-->
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-wrapper {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-content {
+        will-change: transform;
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Parallax for images
+      gsap.utils.toArray(".parallax-img").forEach((img) => {
+        gsap.to(img, {
+          y: -100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: img,
+            start: "top bottom", // start when image enters viewport
+            scrub: true,
+          },
+        });
+      });
+
+      // Parallax for section fade and rise
+      gsap.utils.toArray(".parallax-section").forEach((section) => {
+        gsap.from(section, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    </script>
+
+    <script>
+      function toggleSubmenu(el) {
+        const parentLi = el.closest("li.has-submenu");
+        const icon = el.querySelector(".submenu-icon");
+
+        parentLi.classList.toggle("open");
+        if (parentLi.classList.contains("open")) {
+          icon.textContent = "−";
+        } else {
+          icon.textContent = "+";
+        }
+      }
+    </script>
+    <script>
+      function toggleSubmenu(el) {
+        const parentLi = el.closest("li.has-submenu");
+        const icon = el.querySelector(".submenu-icon");
+
+        parentLi.classList.toggle("open");
+        if (parentLi.classList.contains("open")) {
+          icon.textContent = "−";
+        } else {
+          icon.textContent = "+";
+        }
+      }
+    </script>
+    <script>
+      // Toggle Main Sections
+      document.querySelectorAll(".footer-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          const targetId = this.getAttribute("data-target");
+          const subContent = document.getElementById(targetId);
+          const toggleSymbol = this.querySelector(".toggle");
+
+          // Close all open sections
+          document.querySelectorAll(".sub-content").forEach((content) => {
+            if (content.id !== targetId) {
+              content.classList.remove("show");
+            }
+          });
+          document.querySelectorAll(".toggle").forEach((toggle) => {
+            if (toggle !== toggleSymbol) {
+              toggle.textContent = "+";
+              toggle.style.transform = "rotate(0deg)";
+            }
+            setTimeout(() => {
+              window.scrollInstance && window.scrollInstance.update();
+            }, 400); // delay to wait for animation
+          });
+
+          // Toggle current section
+          if (subContent.classList.contains("show")) {
+            subContent.classList.remove("show");
+            toggleSymbol.textContent = "+";
+            toggleSymbol.style.transform = "rotate(0deg)";
+          } else {
+            subContent.classList.add("show");
+            toggleSymbol.textContent = "-";
+            toggleSymbol.style.transform = "rotate(180deg)";
+          }
+        });
+      });
+
+      // Toggle Vijayawada Address
+      function toggleAddressHyd() {
+        document.getElementById("hyderabadAddress").style.display = "block";
+        document.getElementById("vijayawadaAddress").style.display = "none";
+        document.getElementById("tamilnaduAddress").style.display = "none";
+      }
+
+      // Toggle Tamilnadu Address
+      function toggleAddressTamil() {
+        document.getElementById("hyderabadAddress").style.display = "none";
+        document.getElementById("vijayawadaAddress").style.display = "none";
+        document.getElementById("tamilnaduAddress").style.display = "block";
+      }
+
+      function toggleAddressVijayawada() {
+        document.getElementById("hyderabadAddress").style.display = "none";
+        document.getElementById("vijayawadaAddress").style.display = "block";
+        document.getElementById("tamilnaduAddress").style.display = "none";
+      }
+    </script>
+
+    <script>
+      // Disable right-click context menu
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      // Disable text selection
+      document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+      });
+
+      // Also prevent selection via CSS (backup)
+      document.body.style.userSelect = "none";
+      document.body.style.webkitUserSelect = "none";
+      document.body.style.msUserSelect = "none";
+      document.body.style.mozUserSelect = "none";
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
