@@ -150,10 +150,10 @@
         transform: rotate(-45deg) translate(0, -1px);
       }
       #menu {
-        position: absolute;
+        position: fixed;
         width: auto;
         min-width: 50px;
-        height: 100vh;
+        height: 100%;
         margin: -50px 0 0 -50px;
         padding: 50px 30px 0 50px;
         padding-top: 110px;
@@ -163,6 +163,7 @@
         transform: translateX(100%);
         top: 0;
         right: 0;
+        bottom: 0;
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
         list-style: none;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -311,7 +312,7 @@
         text-align: center;
       }
       #preloader img {
-        width: 30%;
+        width: 20%;
         height: auto;
       }
 
