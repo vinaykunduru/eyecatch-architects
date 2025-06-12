@@ -451,7 +451,7 @@
           <div class="job-listing">
             <!-- Header Row -->
             <div class="job-header">
-              <span class="toggle-iconh"></span>
+              <!-- <span class="toggle-iconh"></span> -->
               <span class="job-title">TITLE</span>
               <span class="job-area">JOB AREA</span>
               <span class="job-location">LOCATION</span>
@@ -459,9 +459,10 @@
             </div>
 
             <!-- Job Items -->
-            <div class="job-item">
+            <a href="job-detail.html" target="_blank"
+                    ><div class="job-item">
               <div class="job-summary">
-                <span class="toggle-icon">+</span>
+                <!-- <span class="toggle-icon">+</span> -->
                 <span class="job-title"
                   >Junior Architect (1-3 Years of Experience)</span
                 >
@@ -469,7 +470,7 @@
                 <span class="job-location">Hyderabad</span>
                 <span class="job-deadline">As soon as possible</span>
               </div>
-              <div class="job-description">
+              <!-- <div class="job-description">
                 <p>
                   We are looking for a creative and detail-oriented Junior
                   Architect to join our team. The ideal candidate should have a
@@ -512,12 +513,14 @@
                     Passion for interior design and a keen eye for aesthetics.
                   </li>
                 </ul>
-              </div>
-            </div>
+              </div> -->
+            </div></a
+                  >
 
-            <div class="job-item">
+           <a href="job-detail.html" target="_blank"
+                    > <div class="job-item">
               <div class="job-summary">
-                <span class="toggle-icon">+</span>
+                
                 <span class="job-title"
                   >Senior Architects (5+ Years of Experience)</span
                 >
@@ -525,30 +528,31 @@
                 <span class="job-location">Hyderabad</span>
                 <span class="job-deadline">As soon as possible</span>
               </div>
-              <div class="job-description">
+              <!-- <div class="job-description">
                 <p>
                   Coordinate internal HR activities and support team growth and
                   well-being.
                 </p>
-              </div>
-            </div>
+              </div> -->
+            </div></a>
 
-            <div class="job-item">
+            <a href="job-detail.html" target="_blank"
+                    ><div class="job-item">
               <div class="job-summary">
-                <span class="toggle-icon">+</span>
+                <!-- <span class="toggle-icon">+</span> -->
                 <span class="job-title"
                   >2D Draftsman (4+ Years of Experience)</span
                 >
                 <span class="job-area">Architecture</span>
                 <span class="job-location">Hyderabad</span>
                 <span class="job-deadline">As soon as possible</span>
-              </div>
-              <div class="job-description">
+              </div></a>
+              <!-- <div class="job-description">
                 <p>
                   Oversee design implementation and work closely with
                   contractors and engineers during construction.
                 </p>
-              </div>
+              </div> -->
             </div>
           </div>
           <style>
@@ -562,7 +566,7 @@
             .job-header,
             .job-summary {
               display: grid;
-              grid-template-columns: 30px 1.5fr 1fr 1fr 1fr;
+              grid-template-columns: 1.5fr 1fr 1fr 1fr;
               gap: 10px;
               padding: 10px;
               /* font-weight: bold; */
@@ -578,6 +582,10 @@
               cursor: pointer;
               background-color: #fff;
               transition: background 0.3s;
+            }
+            .job-listing a {
+              text-decoration: none;
+              color: #000;
             }
 
             .job-summary:hover {
@@ -608,26 +616,24 @@
             }
           </style>
 
-          <script>
+          <!-- <script>
             document.querySelectorAll(".job-summary").forEach((summary) => {
               summary.addEventListener("click", () => {
                 const item = summary.closest(".job-item");
                 const isOpen = item.classList.contains("open");
 
-                // Close all
                 document.querySelectorAll(".job-item").forEach((el) => {
                   el.classList.remove("open");
                   el.querySelector(".toggle-icon").textContent = "+";
                 });
 
-                // Open this one if it wasn’t already
                 if (!isOpen) {
                   item.classList.add("open");
                   summary.querySelector(".toggle-icon").textContent = "–";
                 }
               });
             });
-          </script>
+          </script> -->
 
           <footer class="footer" id="footer">
             <div class="footer-section">

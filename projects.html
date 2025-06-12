@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -767,6 +771,9 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <button class="mute-toggle" aria-label="Toggle Mute">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
                         </li>
 
                         <li class="ss-carousel__item imgBlock">
@@ -3683,6 +3690,23 @@
       .ss-carousel .ss-carousel__item.videoBlock.overlyText video {
         max-height: 84%;
       }
+      .mute-toggle {
+        position: absolute;
+        bottom: 20px;
+        right: 50%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        font-size: 18px;
+        padding: 8px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .mute-toggle:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
       .overlyText p {
         position: absolute;
         bottom: 0;
@@ -4545,6 +4569,32 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
       });
 
       window.addEventListener("resize", refreshVisibleMaps);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // alert();
+        const videoBlocks = document.querySelectorAll(".videoBlock");
+
+        videoBlocks.forEach((block) => {
+          const video = block.querySelector("video");
+          const button = block.querySelector(".mute-toggle");
+          const icon = button.querySelector("i");
+
+          button.addEventListener("click", () => {
+            // alert();
+            video.muted = !video.muted;
+
+            if (video.muted) {
+              icon.classList.remove("fa-volume-up");
+              icon.classList.add("fa-volume-mute");
+            } else {
+              icon.classList.remove("fa-volume-mute");
+              icon.classList.add("fa-volume-up");
+            }
+          });
+        });
+      });
     </script>
 
     <script>
