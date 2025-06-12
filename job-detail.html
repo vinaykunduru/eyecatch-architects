@@ -51,7 +51,7 @@
       }
 
       .footer {
-        padding: 30px 0;
+        padding: 30px;
         background-color: #000;
 
         font-size: 12px;
@@ -59,11 +59,29 @@
         justify-content: center;
         gap: 50px;
       }
+      .fooCol {
+        color: #eee;
+        width: 33%;
+      }
+      .fooCol .shareIcons span {
+        background-color: #444;
+      }
 
       .footer-section {
         margin: 10px 0;
         position: relative;
         min-width: 150px;
+      }
+      .sendBtn {
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 24px;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+
+        border-top: 1px dotted #ccc;
       }
 
       @media all and (max-width: 576px) {
@@ -116,6 +134,9 @@
       .sideSection p {
         padding-top: 0;
         margin-top: 0;
+      }
+      .sideSection p a {
+        text-decoration: none;
       }
 
       .shareIcons {
@@ -390,12 +411,55 @@
               collaboration, experimentation, and innovation, bringing fresh
               perspectives to every project.
             </p>
+            <p>
+              Read more about us on <a href="#" target="_blank">EyeCatch</a>
+            </p>
+          </div>
+
+          <div class="sideSection">
+            <a href="#" class="sendBtn" style=""> Send Application </a>
           </div>
         </div>
         <!-- sidebar -->
       </div>
       <!-- contectSection -->
-      <div class="footer"></div>
+      <div class="footer">
+        <div class="fooCol">
+          <h3>Hyderabad</h3>
+          <p>
+            Plot No. 710, Road No. 36, Aditya Enclave, Venkatagiri, Jubilee
+            Hills, Hyderabad, Telangana 500033. <br />+91 8125225696<br />contact@eyecatcharchitects.in<br />
+          </p>
+        </div>
+        <div class="fooCol">
+          <h3>Vijayawada</h3>
+          <p>
+            MG Rd, Behind Kalaniketan, Mogalrajapuram, Sidhartha Nagar,
+            Labbipet, Vijayawada, Andhra Pradesh 520010.<br />
+            +91 96189 02587<br />contact@eyecatcharchitects.in
+          </p>
+        </div>
+        <div class="fooCol">
+          <h3>Follow us</h3>
+          <div class="shareIcons">
+            <a
+              href="https://www.facebook.com/EyeCatchArchitects"
+              target="_blank"
+              ><span><img src="/images/facebook.svg" /></span
+            ></a>
+            <a
+              href="https://www.instagram.com/eyecatcharchitects/"
+              target="_blank"
+              ><span><img src="/images/instagram.svg" /></span
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/eyecatch-architects1"
+              target="_blank"
+              ><span><img src="/images/linkedin.svg" /></span
+            ></a>
+          </div>
+        </div>
+      </div>
       <!-- footer -->
     </div>
     <!-- Main Wrapper-->
@@ -522,23 +586,20 @@
       }
     </script>
 
-    <script>
-      // Disable right-click context menu
+    <!-- <script>
       document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
       });
 
-      // Disable text selection
       document.addEventListener("selectstart", function (e) {
         e.preventDefault();
       });
 
-      // Also prevent selection via CSS (backup)
       document.body.style.userSelect = "none";
       document.body.style.webkitUserSelect = "none";
       document.body.style.msUserSelect = "none";
       document.body.style.mozUserSelect = "none";
-    </script>
+    </script> -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
