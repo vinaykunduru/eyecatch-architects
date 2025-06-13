@@ -762,7 +762,7 @@
                           </div>
                         </li>
                         <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
+                          <video muted autoplay loop playsinline preload="none">
                             <source
                               src="/projects/smart-furniture/Website Video.mp4"
                               type="video/mp4"
@@ -1096,7 +1096,7 @@
                         </li>
 
                         <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
+                          <video muted autoplay loop playsinline preload="none">
                             <source
                               src="/projects/aakruti/Aakruthi-Full Video 5.mp4"
                               type="video/mp4"
@@ -1105,6 +1105,9 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <button class="mute-toggle">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
                         </li>
 
                         <li class="ss-carousel__item slideBlock">
@@ -1416,7 +1419,7 @@
                         </li>
 
                         <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
+                          <video muted autoplay loop playsinline preload="none">
                             <source
                               src="/projects/anubhava/Anubhava Sweets Colour.mp4"
                               type="video/mp4"
@@ -1425,6 +1428,9 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <button class="mute-toggle">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
                         </li>
 
                         <li class="ss-carousel__item imgBlock">
@@ -1691,7 +1697,7 @@
                         </li>
 
                         <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
+                          <video muted autoplay loop playsinline preload="none">
                             <source
                               src="/projects/padmam/Padmam.mp4"
                               type="video/mp4"
@@ -1700,6 +1706,9 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <button class="mute-toggle">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
                         </li>
 
                         <li class="ss-carousel__item imgBlock">
@@ -2113,7 +2122,7 @@
                           </div>
                         </li> -->
                         <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
+                          <video muted autoplay loop playsinline preload="none">
                             <source
                               src="/projects/ladia/Ladia Website Full Video new.mp4"
                               type="video/mp4"
@@ -2122,6 +2131,9 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <button class="mute-toggle">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
                         </li>
 
                         <li class="ss-carousel__item textBlock">
@@ -2352,7 +2364,13 @@
                           <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                               <div class="swiper-slide">
-                                <video muted autoplay loop>
+                                <video
+                                  muted
+                                  autoplay
+                                  loop
+                                  playsinline
+                                  preload="none"
+                                >
                                   <source
                                     src="/projects/kps/Kps Video 1.mp4"
                                     type="video/mp4"
@@ -2361,6 +2379,9 @@
 
                                   Your browser does not support the video tag.
                                 </video>
+                                <button class="mute-toggle">
+                                  <i class="fas fa-volume-mute"></i>
+                                </button>
                               </div>
                               <div class="swiper-slide">
                                 <video muted autoplay loop>
@@ -2791,7 +2812,7 @@
                         </li>
 
                         <li class="ss-carousel__item videoBlock">
-                          <video muted="" autoplay="" loop="">
+                          <video muted autoplay loop playsinline preload="none">
                             <source
                               src="/projects/amyra/Amrya Full Video new.mp4"
                               type="video/mp4"
@@ -2800,6 +2821,9 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <button class="mute-toggle">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
                         </li>
                         <li class="ss-carousel__item imgBlock">
                           <img
@@ -3112,7 +3136,7 @@
                         </li>
 
                         <li class="ss-carousel__item videoBlock">
-                          <video muted autoplay loop>
+                          <video muted autoplay loop playsinline preload="none">
                             <source
                               src="/projects/goyaz/Full-Video.mp4"
                               type="video/mp4"
@@ -3121,6 +3145,9 @@
 
                             Your browser does not support the video tag.
                           </video>
+                          <button class="mute-toggle">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
                         </li>
                         <li class="ss-carousel__item textBlock">
                           <div class="ss-carousel__description">
@@ -3693,15 +3720,22 @@
       .mute-toggle {
         position: absolute;
         bottom: 20px;
-        right: 50%;
+        right: 30px;
         background: rgba(0, 0, 0, 0.6);
         color: white;
         border: none;
-        font-size: 18px;
-        padding: 8px 10px;
-        border-radius: 50%;
+        font-size: 14px;
+        padding: 10px 10px;
+        border-radius: 100%;
         cursor: pointer;
-        z-index: 10;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+      }
+      .mute-toggle i {
+        align-self: center;
       }
 
       .mute-toggle:hover {
@@ -4570,28 +4604,109 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
 
       window.addEventListener("resize", refreshVisibleMaps);
     </script>
-
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // alert();
         const videoBlocks = document.querySelectorAll(".videoBlock");
 
         videoBlocks.forEach((block) => {
           const video = block.querySelector("video");
           const button = block.querySelector(".mute-toggle");
+          if (!video || !button) return;
+
           const icon = button.querySelector("i");
 
           button.addEventListener("click", () => {
-            // alert();
-            video.muted = !video.muted;
+            const isMuted = video.muted;
 
-            if (video.muted) {
-              icon.classList.remove("fa-volume-up");
-              icon.classList.add("fa-volume-mute");
-            } else {
-              icon.classList.remove("fa-volume-mute");
-              icon.classList.add("fa-volume-up");
+            // First mute all other videos
+            videoBlocks.forEach((otherBlock) => {
+              const otherVideo = otherBlock.querySelector("video");
+              const otherButton = otherBlock.querySelector(".mute-toggle");
+              const otherIcon = otherButton?.querySelector("i");
+
+              if (otherVideo && otherVideo !== video) {
+                otherVideo.muted = true;
+                if (otherIcon) {
+                  otherIcon.classList.remove("fa-volume-up");
+                  otherIcon.classList.add("fa-volume-mute");
+                }
+              }
+            });
+
+            // Now toggle current video
+            video.muted = !isMuted;
+            video.play().catch(() => {}); // force play (some browsers pause on mute toggle)
+
+            icon.classList.toggle("fa-volume-mute", video.muted);
+            icon.classList.toggle("fa-volume-up", !video.muted);
+          });
+        });
+      });
+    </script> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const videoBlocks = document.querySelectorAll(".videoBlock");
+        const projectItems = document.querySelectorAll(".projectItem");
+
+        // Mute all initially
+        videoBlocks.forEach((block) => {
+          const video = block.querySelector("video");
+          if (video) video.muted = true;
+        });
+
+        // Mute/unmute toggle with icon
+        videoBlocks.forEach((block) => {
+          const video = block.querySelector("video");
+          const button = block.querySelector(".mute-toggle");
+          if (!video || !button) return;
+          const icon = button.querySelector("i");
+
+          button.addEventListener("click", (e) => {
+            e.stopPropagation(); // ❗ Prevent bubbling to projectItem
+
+            const isMuted = video.muted;
+
+            // Mute all other videos
+            videoBlocks.forEach((otherBlock) => {
+              const otherVideo = otherBlock.querySelector("video");
+              const otherIcon = otherBlock.querySelector(".mute-toggle i");
+              if (otherVideo && otherVideo !== video) {
+                otherVideo.muted = true;
+                if (otherIcon) {
+                  otherIcon.classList.remove("fa-volume-up");
+                  otherIcon.classList.add("fa-volume-mute");
+                }
+              }
+            });
+
+            // Toggle this video
+            video.muted = !isMuted;
+            if (!video.muted) {
+              video.play().catch(() => {});
             }
+
+            // Update icon
+            icon.classList.toggle("fa-volume-mute", video.muted);
+            icon.classList.toggle("fa-volume-up", !video.muted);
+          });
+        });
+
+        // Mute all videos when a projectItem (not button) is clicked
+        projectItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            videoBlocks.forEach((block) => {
+              const video = block.querySelector("video");
+              const icon = block.querySelector(".mute-toggle i");
+
+              if (video) {
+                video.muted = true;
+                if (icon) {
+                  icon.classList.remove("fa-volume-up");
+                  icon.classList.add("fa-volume-mute");
+                }
+              }
+            });
           });
         });
       });
