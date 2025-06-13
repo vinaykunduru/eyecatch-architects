@@ -84,22 +84,6 @@
         border-top: 1px dotted #ccc;
       }
 
-      @media all and (max-width: 576px) {
-        #menu {
-          width: 100vw;
-          height: 100vh;
-          padding-left: 0;
-          padding-right: 0;
-          text-align: center;
-        }
-        #menu li {
-          padding: 1rem 2rem;
-        }
-        .css-mobile-menu #menuToggle {
-          padding-right: 1rem;
-        }
-      }
-
       body {
         background-color: #ddd;
       }
@@ -194,6 +178,41 @@
       .swiper-button-next,
       .swiper-button-prev {
         color: #fff;
+      }
+      @media all and (max-width: 768px) {
+        #menu {
+          width: 100vw;
+          height: 100vh;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+        #menu li {
+          padding: 1rem 2rem;
+        }
+        .css-mobile-menu #menuToggle {
+          padding-right: 1rem;
+        }
+
+        .mainWrapper {
+          width: 100%;
+        }
+        .contectSection {
+          flex-direction: column;
+        }
+        .mainContent {
+          width: auto;
+        }
+        .contectSection .sidebar {
+          width: auto;
+        }
+        .footer {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .fooCol {
+          width: auto;
+        }
       }
     </style>
   </head>
