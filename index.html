@@ -8,9 +8,14 @@
     <link rel="shortcut icon" href="/images/favicon.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="css/glightbox.min.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link
       rel="stylesheet"
@@ -154,6 +159,30 @@
       }
       .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px);
+      }
+      .mute-toggle {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        font-size: 14px;
+        padding: 10px 10px;
+        border-radius: 100%;
+        cursor: pointer;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+      }
+      .mute-toggle i {
+        align-self: center;
+      }
+
+      .mute-toggle:hover {
+        background: rgba(0, 0, 0, 0.8);
       }
       #menu {
         position: absolute;
@@ -768,6 +797,21 @@
         order: -1;
       }
 
+      .newsCard {
+      }
+      .newsThumb {
+        margin-bottom: 10px;
+      }
+      .newsThumb img {
+        width: 100%;
+      }
+      .newsTitle h3 {
+      }
+      .newsTitle h3 a {
+        color: #000;
+        text-decoration: none;
+      }
+
       @media all and (max-width: 768px) {
         #menu {
           width: 100vw;
@@ -877,7 +921,7 @@
 
       <div class="contentWrapper">
         <div class="container scroll-container">
-          <div class="heroVideo">
+          <div class="heroVideo" style="position: relative">
             <video
               width="1280"
               controlslist="nodownload"
@@ -885,6 +929,7 @@
               muted
               autoplay
               loop
+              preload="none"
               poster="images/poster-blank.png"
             >
               <source
@@ -892,6 +937,9 @@
                 type="video/mp4"
               />
             </video>
+            <button class="mute-toggle" aria-label="Toggle Mute">
+              <i class="fas fa-volume-mute"></i>
+            </button>
           </div>
           <div class="contentAbt">
             <section class="section">
@@ -1613,6 +1661,57 @@
                 </div> -->
               </div>
             </section>
+            <section>
+              <div class="sectionHead parallax-section">
+                <h2>Press & Articles</h2>
+              </div>
+              <div class="row borderBottom">
+                <div class="col4">
+                  <div class="newsCard">
+                    <div class="newsThumb">
+                      <a
+                        href="https://www.youtube.com/watch?v=VwTmeN1omTA&pp=ygUIZXllY2F0Y2g%3D"
+                        class="glightbox3"
+                        ><img src="images/8.jpg"
+                      /></a>
+                    </div>
+                    <div class="newsTitle">
+                      <h3>
+                        <a
+                          href="https://www.youtube.com/watch?v=VwTmeN1omTA&ab_channel=EyeCatchAdvertising"
+                          class="glightbox3"
+                          >EyeCatch Interiors | Our Client | Bhama Emporio |
+                          Vijayawada |
+                        </a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- Col -->
+                <div class="col4">
+                  <div class="newsCard">
+                    <div class="newsThumb">
+                      <a
+                        href="https://www.youtube.com/watch?v=VwTmeN1omTA&pp=ygUIZXllY2F0Y2g%3D"
+                        class="glightbox3"
+                        ><img src="images/6.jpg"
+                      /></a>
+                    </div>
+                    <div class="newsTitle">
+                      <h3>
+                        <a
+                          href="https://www.youtube.com/watch?v=VwTmeN1omTA&ab_channel=EyeCatchAdvertising"
+                          class="glightbox3"
+                          >EyeCatch Interiors | Our Client | Bhama Emporio |
+                          Vijayawada |
+                        </a>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- Col -->
+              </div>
+            </section>
 
             <section class="services">
               <div class="sectionHead parallax-section">
@@ -2204,6 +2303,89 @@
         document.getElementById("vijayawadaAddress").style.display = "block";
         document.getElementById("tamilnaduAddress").style.display = "none";
       }
+    </script>
+    <script src="js/glightbox.min.js"></script>
+    <script>
+      var lightbox = GLightbox();
+      lightbox.on("open", (target) => {
+        console.log("lightbox opened");
+      });
+      var lightboxDescription = GLightbox({
+        selector: ".glightbox2",
+      });
+      var lightboxVideo = GLightbox({
+        selector: ".glightbox3",
+      });
+      lightboxVideo.on("slide_changed", ({ prev, current }) => {
+        console.log("Prev slide", prev);
+        console.log("Current slide", current);
+
+        const { slideIndex, slideNode, slideConfig, player } = current;
+
+        if (player) {
+          if (!player.ready) {
+            // If player is not ready
+            player.on("ready", (event) => {
+              // Do something when video is ready
+            });
+          }
+
+          player.on("play", (event) => {
+            console.log("Started play");
+          });
+
+          player.on("volumechange", (event) => {
+            console.log("Volume change");
+          });
+
+          player.on("ended", (event) => {
+            console.log("Video ended");
+          });
+        }
+      });
+
+      var lightboxInlineIframe = GLightbox({
+        selector: ".glightbox4",
+      });
+
+      /* var exampleApi = GLightbox({ selector: null });
+            exampleApi.insertSlide({
+                href: 'https://picsum.photos/1200/800',
+            });
+            exampleApi.insertSlide({
+                width: '500px',
+                content: '<p>Example</p>'
+            });
+            exampleApi.insertSlide({
+                href: 'https://www.youtube.com/watch?v=WzqrwPhXmew',
+            });
+            exampleApi.insertSlide({
+                width: '200vw',
+                content: document.getElementById('inline-example')
+            });
+            exampleApi.open(); */
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const heroSection = document.querySelector(".heroVideo");
+        const video = heroSection.querySelector("video");
+        const button = heroSection.querySelector(".mute-toggle");
+        const icon = button.querySelector("i");
+
+        button.addEventListener("click", () => {
+          video.muted = !video.muted;
+
+          if (video.muted) {
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-volume-mute");
+          } else {
+            icon.classList.remove("fa-volume-mute");
+            icon.classList.add("fa-volume-up");
+            video.play().catch(() => {}); // ensure it plays when unmuted
+          }
+        });
+      });
     </script>
 
     <script>

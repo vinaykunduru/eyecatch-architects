@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Karla", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .logo {
+        width: 240px;
+        height: auto;
+        padding: 5px 0;
+        margin: 0 auto;
+      }
+      .logo img {
+        width: 100%;
+      }
+
+      .footer {
+        padding: 30px;
+        background-color: #000;
+
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
+      .fooCol {
+        color: #eee;
+        width: 33%;
+      }
+      .fooCol .shareIcons span {
+        background-color: #444;
+      }
+
+      .footer-section {
+        margin: 10px 0;
+        position: relative;
+        min-width: 150px;
+      }
+      .sendBtn {
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 24px;
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+
+        border-top: 1px dotted #ccc;
+      }
+
+      @media all and (max-width: 576px) {
+        #menu {
+          width: 100vw;
+          height: 100vh;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+        #menu li {
+          padding: 1rem 2rem;
+        }
+        .css-mobile-menu #menuToggle {
+          padding-right: 1rem;
+        }
+      }
+
+      body {
+        background-color: #ddd;
+      }
+      .mainWrapper {
+        width: 1000px;
+        background-color: #fff;
+        margin: 0 auto;
+      }
+
+      .contectSection {
+        display: flex;
+      }
+      .mainContent {
+        padding: 30px;
+        width: 680px;
+        box-sizing: border-box;
+      }
+      .contectSection .sidebar {
+        background-color: #f5f5f5;
+        width: 320px;
+        padding: 30px;
+        box-sizing: border-box;
+      }
+
+      .sideSection {
+        margin-bottom: 30px;
+      }
+      .sideSection h3 {
+        margin: 0 0 5px 0;
+        padding: 0;
+      }
+      .sideSection p {
+        padding-top: 0;
+        margin-top: 0;
+      }
+      .sideSection p a {
+        text-decoration: none;
+      }
+
+      .shareIcons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .shareIcons span {
+        width: 30px;
+        height: 30px;
+        background-color: #000;
+        border-radius: 100%;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+      .shareIcons span img {
+        width: 50%;
+        height: auto;
+        align-self: center;
+      }
+
+      .sideMap {
+        padding: 15px 0;
+        margin: 15px 0;
+        border-top: 1px dotted #333;
+        border-bottom: 1px dotted #333;
+      }
+      .sideMap iframe {
+        width: 100%;
+        height: 180px;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainWrapper" style="position: relative">
+      <div class="header">
+        <div class="logo">
+          <a href="/index.html"><img src="/images/logo-horizontal.png" /></a>
+        </div>
+        <!-- Logo -->
+      </div>
+      <!-- Header-->
+      <div class="heroSection">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="news/news1.jpg" /></div>
+            <div class="swiper-slide"><img src="news/news2.jpg" /></div>
+            <div class="swiper-slide"><img src="news/news3.jpg" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+      <!-- Hero Section-->
+      <div class="contectSection">
+        <div class="mainContent">
+          <h1>Junior Architect (1-3 Years of Experience)</h1>
+          <section>
+            <p>
+              EyeCatch Architects is a dynamic collective of 50+ architects,
+              engineers, inventors, designers, researchers, video editors, and
+              consultants from Andhra Pradesh, Telangana, and Karnataka, all
+              working together from our corporate office in Hyderabad,
+              Telangana.
+            </p>
+            <p>
+              Our portfolio spans innovative architecture, immersive design, and
+              groundbreaking research, shaping environments that inspire and
+              endure. From transforming urban landscapes to redefining interior
+              experiences, our projects merge creativity with technical
+              precision, ensuring lasting impact.
+            </p>
+            <p>
+              At EyeCatch, we believe in visual storytelling, crafting spaces
+              that captivate and engage. Our multidisciplinary team thrives on
+              collaboration, experimentation, and innovation, bringing fresh
+              perspectives to every project.
+            </p>
+            <p>
+              While our expertise is driven by visionary leadership, we maintain
+              a flat hierarchy to foster creativity, allowing diverse minds to
+              contribute meaningfully. Our knowledge-sharing initiatives include
+              workshops, study programs, and industry collaborations, ensuring
+              continuous growth and evolution.
+            </p>
+            <p>
+              With a deep commitment to excellence and forward-thinking
+              solutions, EyeCatch Architects is shaping the future—one bold,
+              transformative design at a time.
+            </p>
+          </section>
+
+          <section>
+            <h3>Join Us on Our Mission</h3>
+            <p>
+              If you are a Junior Architect, we’re looking for someone who has:
+            </p>
+            <ul>
+              <li>
+                Completed an accredited bachelor's or master's degree in
+                architecture or design.
+              </li>
+              <li>
+                1+ years of postgraduate experience in architecture or a related
+                field.
+              </li>
+              <li>Willingness to relocate to Hyderabad or Vijayawada.</li>
+              <li>
+                Proficiency in AutoCAD, SketchUp, V-Ray, Enscape, and Adobe
+                Creative Cloud (Photoshop, Illustrator, and InDesign).
+              </li>
+              <li>Strong conceptual and design skills.</li>
+              <li>
+                Ability to develop design options in collaboration with design
+                teams and take initiative in response to project leadership.
+              </li>
+              <li>
+                Ability to develop and edit drawings and models related to
+                projects.
+              </li>
+              <li>
+                Strong organizational skills, ability to work under pressure,
+                meet deadlines, and manage time efficiently.
+              </li>
+              <li>
+                A flexible and open attitude towards new and iterative ways of
+                working.
+              </li>
+              <li>
+                Excellent communication skills, with fluency in English, Hindi,
+                and Telugu (spoken).
+              </li>
+              <li>
+                Well-rounded project experience in Concept Design and Detailed
+                Design is preferred.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>At EyeCatch Architects, We Value:</h3>
+            <ul>
+              <li>
+                <strong>Proactive Mindset</strong> – Take initiative, explore
+                new ideas, conduct research, and aim to prevent problems before
+                they arise.
+              </li>
+              <li>
+                <strong>Dependability</strong> – Be someone leadership can count
+                on to follow through and deliver results.
+              </li>
+              <li>
+                <strong>Accountability</strong> – Own your decisions and
+                actions, whether in daily tasks or long-term goals.
+              </li>
+              <li>
+                <strong>Consistency</strong> – Demonstrate reliability by
+                delivering quality work time and again.
+              </li>
+              <li>
+                <strong>Tenacity</strong> – Stay committed, show up with
+                enthusiasm, contribute your best, and persevere through
+                challenges.
+              </li>
+              <li>
+                <strong>Independence</strong> – Take charge of tasks and
+                projects confidently while knowing when to seek guidance.
+              </li>
+              <li>
+                <strong>Intelligence & Curiosity</strong> – Think critically,
+                stay informed, be resourceful, and always keep the bigger
+                picture in mind.
+              </li>
+              <li>
+                <strong>Generosity</strong> – Share your knowledge, support your
+                teammates, and take time to mentor when possible.
+              </li>
+              <li>
+                <strong>Kindness</strong> – Be respectful, collaborative, and
+                approachable. Foster a positive work culture and enjoy the
+                journey together.
+              </li>
+            </ul>
+          </section>
+        </div>
+        <!-- mainContent -->
+        <div class="sidebar">
+          <!-- <div class="sideSection">
+            <h3>Share:</h3>
+            <div class="shareIcons">
+              <span><img src="/images/facebook.svg" /></span>
+              <span><img src="/images/twitter.svg" /></span>
+              <span><img src="/images/instagram.svg" /></span>
+              <span><img src="/images/linkedin.svg" /></span>
+            </div>
+          </div> -->
+
+          <div class="sideSection">
+            <h3>Job Area:</h3>
+            <p>Hyderabad</p>
+          </div>
+
+          <div class="sideSection">
+            <h3>Application Deadline:</h3>
+            <p>As soon as possible</p>
+          </div>
+
+          <div class="sideSection">
+            <h3>Location:</h3>
+            <p>
+              Plot No. 710, Road No. 36, Aditya Enclave, Venkatagiri, Jubilee
+              Hills, Hyderabad, Telangana 500033.
+            </p>
+            <div class="sideMap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.9914923904425!2d78.4029839!3d17.4359707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463fac970f%3A0x1a5233d6286588b2!2sEyeCatch%20Architects!5e0!3m2!1sen!2sin!4v1749551054612!5m2!1sen!2sin"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <div class="sideSection">
+            <h3>Join EyeCatch</h3>
+            <p>
+              EyeCatch Architects is a dynamic collective of 50+ architects,
+              engineers, inventors, designers, researchers, video editors, and
+              consultants from Andhra Pradesh, Telangana, and Karnataka, all
+              working together from our corporate office in Hyderabad,
+              Telangana.
+            </p>
+            <p>
+              Our portfolio spans innovative architecture, immersive design, and
+              groundbreaking research, shaping environments that inspire and
+              endure. From transforming urban landscapes to redefining interior
+              experiences, our projects merge creativity with technical
+              precision, ensuring lasting impact.
+            </p>
+            <p>
+              At EyeCatch, we believe in visual storytelling, crafting spaces
+              that captivate and engage. Our multidisciplinary team thrives on
+              collaboration, experimentation, and innovation, bringing fresh
+              perspectives to every project.
+            </p>
+            <p>
+              Read more about us on
+              <a href="index.html" target="_blank">EyeCatch Aechitects</a>
+            </p>
+            <p>Send your resume/portfolio.</p>
+          </div>
+
+          <div class="sideSection">
+            <a href="mailto:hr@eyecatcharchitects.com" class="sendBtn" style="">
+              Send Application
+            </a>
+          </div>
+        </div>
+        <!-- sidebar -->
+      </div>
+      <!-- contectSection -->
+      <div class="footer">
+        <div class="fooCol">
+          <h3>Hyderabad</h3>
+          <p>
+            Plot No. 710, Road No. 36, Aditya Enclave, Venkatagiri, Jubilee
+            Hills, Hyderabad, Telangana 500033. <br />+91 8125225696<br />contact@eyecatcharchitects.in<br />
+          </p>
+        </div>
+        <div class="fooCol">
+          <h3>Vijayawada</h3>
+          <p>
+            MG Rd, Behind Kalaniketan, Mogalrajapuram, Sidhartha Nagar,
+            Labbipet, Vijayawada, Andhra Pradesh 520010.<br />
+            +91 96189 02587<br />contact@eyecatcharchitects.in
+          </p>
+        </div>
+        <div class="fooCol">
+          <h3>Follow us</h3>
+          <div class="shareIcons">
+            <a
+              href="https://www.facebook.com/EyeCatchArchitects"
+              target="_blank"
+              ><span><img src="/images/facebook.svg" /></span
+            ></a>
+            <a
+              href="https://www.instagram.com/eyecatcharchitects/"
+              target="_blank"
+              ><span><img src="/images/instagram.svg" /></span
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/eyecatch-architects1"
+              target="_blank"
+              ><span><img src="/images/linkedin.svg" /></span
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+    </div>
+    <!-- Main Wrapper-->
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-wrapper {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-content {
+        will-change: transform;
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Parallax for images
+      gsap.utils.toArray(".parallax-img").forEach((img) => {
+        gsap.to(img, {
+          y: -100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: img,
+            start: "top bottom", // start when image enters viewport
+            scrub: true,
+          },
+        });
+      });
+
+      // Parallax for section fade and rise
+      gsap.utils.toArray(".parallax-section").forEach((section) => {
+        gsap.from(section, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <script>
+      // Toggle Main Sections
+      document.querySelectorAll(".footer-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          const targetId = this.getAttribute("data-target");
+          const subContent = document.getElementById(targetId);
+          const toggleSymbol = this.querySelector(".toggle");
+
+          // Close all open sections
+          document.querySelectorAll(".sub-content").forEach((content) => {
+            if (content.id !== targetId) {
+              content.classList.remove("show");
+            }
+          });
+          document.querySelectorAll(".toggle").forEach((toggle) => {
+            if (toggle !== toggleSymbol) {
+              toggle.textContent = "+";
+              toggle.style.transform = "rotate(0deg)";
+            }
+            setTimeout(() => {
+              window.scrollInstance && window.scrollInstance.update();
+            }, 400); // delay to wait for animation
+          });
+
+          // Toggle current section
+          if (subContent.classList.contains("show")) {
+            subContent.classList.remove("show");
+            toggleSymbol.textContent = "+";
+            toggleSymbol.style.transform = "rotate(0deg)";
+          } else {
+            subContent.classList.add("show");
+            toggleSymbol.textContent = "-";
+            toggleSymbol.style.transform = "rotate(180deg)";
+          }
+        });
+      });
+
+      // Toggle Vijayawada Address
+      function toggleAddressHyd() {
+        document.getElementById("hyderabadAddress").style.display = "block";
+        document.getElementById("vijayawadaAddress").style.display = "none";
+        document.getElementById("tamilnaduAddress").style.display = "none";
+      }
+
+      // Toggle Tamilnadu Address
+      function toggleAddressTamil() {
+        document.getElementById("hyderabadAddress").style.display = "none";
+        document.getElementById("vijayawadaAddress").style.display = "none";
+        document.getElementById("tamilnaduAddress").style.display = "block";
+      }
+
+      function toggleAddressVijayawada() {
+        document.getElementById("hyderabadAddress").style.display = "none";
+        document.getElementById("vijayawadaAddress").style.display = "block";
+        document.getElementById("tamilnaduAddress").style.display = "none";
+      }
+    </script>
+
+    <!-- <script>
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+      });
+
+      document.body.style.userSelect = "none";
+      document.body.style.webkitUserSelect = "none";
+      document.body.style.msUserSelect = "none";
+      document.body.style.mozUserSelect = "none";
+    </script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
