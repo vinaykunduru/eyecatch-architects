@@ -94,6 +94,41 @@
         vertical-align: middle;
       }
 
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.6s ease, visibility 0.6s;
+        text-align: center;
+      }
+      #preloader img {
+        width: 20%;
+        height: auto;
+      }
+
+      #preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .mainWrapper {
+        transform: translateY(50px);
+        opacity: 0;
+        transition: transform 0.8s ease, opacity 0.8s ease;
+      }
+
+      .mainWrapper.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
       .css-mobile-menu {
         display: flex;
         justify-content: center;
@@ -274,7 +309,10 @@
         height: auto;
       }
 
-      @media all and (max-width: 576px) {
+      @media all and (max-width: 768px) {
+        .container{
+          max-width: 92%;
+        }
         #menu {
           width: 100vw;
           height: 100vh;
@@ -288,6 +326,17 @@
         .css-mobile-menu #menuToggle {
           padding-right: 1rem;
         }
+        
+        .mainWrapper,
+        .contentWrapper {
+          padding-bottom: 0 !important;
+        }
+        .content {
+          padding-bottom: 0;
+        }
+        #preloader img {
+          width: 50%;
+        }
       }
     </style>
   </head>
@@ -297,40 +346,7 @@
       <img src="/images/crow-animation.gif" alt="Loading..." />
     </div>
     <style>
-      #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #fff;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: opacity 0.6s ease, visibility 0.6s;
-        text-align: center;
-      }
-      #preloader img {
-        width: 20%;
-        height: auto;
-      }
-
-      #preloader.hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .mainWrapper {
-        transform: translateY(50px);
-        opacity: 0;
-        transition: transform 0.8s ease, opacity 0.8s ease;
-      }
-
-      .mainWrapper.visible {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      
     </style>
     <script>
       window.addEventListener("load", function () {
@@ -464,11 +480,12 @@
               <div class="job-summary">
                 <!-- <span class="toggle-icon">+</span> -->
                 <span class="job-title"
-                  >Junior Architect (1-3 Years of Experience)</span
+                  ><span class="mob-title mobileLabel">TITLE:</span>Junior Architect (1-3 Years of Experience)</span
                 >
-                <span class="job-area">Architecture</span>
-                <span class="job-location">Hyderabad</span>
-                <span class="job-deadline">As soon as possible</span>
+                <span class="job-area"><span class="mob-area mobileLabel">JOB AREA:</span>Architecture</span>
+                <span class="job-location"><span class="mob-location mobileLabel">LOCATION:</span>Hyderabad</span>
+                <span class="job-deadline"><span class="mob-deadline mobileLabel">DEADLINE:</span>As soon as possible</span>
+                <div class="moreBtn"><span>Details</span></div>
               </div>
               <!-- <div class="job-description">
                 <p>
@@ -522,11 +539,12 @@
               <div class="job-summary">
                 
                 <span class="job-title"
-                  >Senior Architect (5+ Years of Experience)</span
+                  ><span class="mob-title mobileLabel">TITLE:</span>Senior Architect (5+ Years of Experience)</span
                 >
-                <span class="job-area">Architecture</span>
-                <span class="job-location">Hyderabad</span>
-                <span class="job-deadline">As soon as possible</span>
+                <span class="job-area"><span class="mob-area mobileLabel">JOB AREA:</span>Architecture</span>
+                <span class="job-location"><span class="mob-location mobileLabel">LOCATION:</span>Hyderabad</span>
+                <span class="job-deadline"><span class="mob-deadline mobileLabel">DEADLINE:</span>As soon as possible</span>
+                <div class="moreBtn"><span>Details</span></div>
               </div>
               <!-- <div class="job-description">
                 <p>
@@ -541,11 +559,12 @@
               <div class="job-summary">
                 <!-- <span class="toggle-icon">+</span> -->
                 <span class="job-title"
-                  >2D Draftsman (4+ Years of Experience)</span
+                  ><span class="mob-title mobileLabel">TITLE:</span>2D Draftsman (4+ Years of Experience)</span
                 >
-                <span class="job-area">Architecture</span>
-                <span class="job-location">Hyderabad</span>
-                <span class="job-deadline">As soon as possible</span>
+                <span class="job-area"><span class="mob-area mobileLabel">JOB AREA:</span>Architecture</span>
+                <span class="job-location"><span class="mob-location mobileLabel">LOCATION:</span>Hyderabad</span>
+                <span class="job-deadline"><span class="mob-deadline mobileLabel">DEADLINE:</span>As soon as possible</span>
+                <div class="moreBtn"><span>Details</span></div>
               </div></a>
               <!-- <div class="job-description">
                 <p>
@@ -614,6 +633,45 @@
               opacity: 1;
               padding: 10px 40px;
             }
+            .mobileLabel{
+    display: none;
+  }
+  .moreBtn{
+    display: none;
+  }
+   @media all and (max-width: 768px) {
+    .job-header{
+      display: none;
+    }
+    .mobileLabel{
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+  }
+    .job-title{
+      width: 100%;
+    }
+    .job-area, .job-location{ width:48%}
+    .job-deadline{
+      width:100%;
+    }
+    .job-summary{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px 0;
+    }
+    .moreBtn{
+    display: block;
+    margin: 10px 0;
+  }
+  .moreBtn span{
+    color:#fff;
+    background-color: #000;
+    padding: 7px 16px;
+    text-decoration: none;
+  }
+    
+   }
           </style>
 
           <!-- <script>
@@ -931,6 +989,27 @@
         }
         .topNav {
           display: none;
+        }
+        .footer {
+          padding: 0px 0 100px 0;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-start;
+          gap: 0;
+          margin-bottom: 100px;
+          flex-wrap: wrap;
+
+          margin-right: 0;
+          width: auto;
+        }
+        .footer-section {
+          margin: 10px 0;
+          position: relative;
+          min-width: 20%;
+          width: 25%;
+        }
+        .footer-link .toggle {
+          margin-left: 2px;
         }
       }
     </style>
