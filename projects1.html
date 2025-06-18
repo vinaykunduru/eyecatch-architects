@@ -4155,18 +4155,25 @@
           gap: 30px;
           flex-wrap: wrap;
         }
+        .ss-carousel {
+          padding: 0;
+        }
+        .ss-carousel .ss-carousel__header {
+          margin-bottom: 0;
+          padding: 0;
+        }
 
         .ss-carousel .ss-carousel__arrow.arrow-next {
           right: 0;
           cursor: url(/images/next.png), auto;
-          background-image: url(/images/next.png);
+          /* background-image: url(/images/next.png); */
           background-repeat: no-repeat;
           background-position: center;
         }
         .ss-carousel .ss-carousel__arrow.arrow-prev {
           right: 0;
           cursor: url(/images/next.png), auto;
-          background-image: url(/images/prev.png);
+          /* background-image: url(/images/prev.png); */
           background-repeat: no-repeat;
           background-position: center;
         }
@@ -4180,12 +4187,24 @@
           width: 92vw;
           padding: 0 4vw;
         }
+        .ss-carousel .ss-carousel__item.textBlock,
+        .ss-carousel .ss-carousel__item.teamBlock {
+          overflow-y: scroll;
+        }
+        .ss-carousel .ss-carousel__item.teamBlock.threeGrid .teamlist div {
+          width: 45%;
+        }
         .projectItem.active {
           /* height: 50vh !important; */
         }
+        .ss-carousel .ss-carousel__item.videoBlock.overlyText video {
+          height: 50%;
+        }
         .overlyText p {
-          max-width: 85%;
+          max-width: 100%;
           position: relative;
+          font-size: 11px;
+          line-height: 1.2;
         }
         .ss-carousel .ss-carousel__content {
           gap: 30px;
