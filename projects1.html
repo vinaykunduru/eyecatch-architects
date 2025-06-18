@@ -4519,19 +4519,38 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
             i.style.height = "";
           });
 
-          // Add active class and resize clicked item
+          // Add active class
           this.classList.add("active");
-          this.style.width = `${window.innerWidth - 30}px`;
-          this.style.height = `${window.innerHeight - 130}px`;
+
+          // Calculate width and height based on screen size
+          const screenWidth = window.innerWidth;
+          const screenHeight = window.innerHeight;
+
+          let targetWidth = screenWidth - 30;
+          let targetHeight;
+
+          if (screenWidth < 576) {
+            // Mobile
+            targetHeight = screenHeight - 450;
+          } else if (screenWidth < 1024) {
+            // Tablet
+            targetHeight = screenHeight - 300;
+          } else {
+            // Desktop
+            targetHeight = screenHeight - 130;
+          }
+
+          this.style.width = `${targetWidth}px`;
+          this.style.height = `${targetHeight}px`;
+
           scroll.update();
 
+          // Update all carousel item heights
           document
             .querySelectorAll(".ss-carousel .ss-carousel__item")
-            .forEach(
-              (el) => (el.style.height = window.innerHeight - 140 + "px")
-            );
+            .forEach((el) => (el.style.height = `${targetHeight - 10}px`)); // slight padding
 
-          // ✅ Scroll to vertically center this item with velocity-style timing
+          // Scroll to vertically center this item
           const itemOffsetTop = this.offsetTop;
           const itemHeight = this.offsetHeight;
           const centerTarget =
@@ -4539,14 +4558,12 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
 
           const currentScrollY = scroll.scroll.instance.scroll.y;
           const distance = Math.abs(currentScrollY - centerTarget);
-
-          // Velocity-based timing: duration depends on distance
-          const duration = Math.min(Math.max(distance / 1000, 0.4), 1.5); // clamp between 0.4s - 1.5s
+          const duration = Math.min(Math.max(distance / 1000, 0.4), 1.5); // 0.4s–1.5s
 
           scroll.scrollTo(centerTarget, {
-            duration: duration * 1000, // Locomotive uses ms
+            duration: duration * 1000,
             offset: 0,
-            easing: [0.25, 0.0, 0.35, 1.0], // cubic-bezier for smooth feel
+            easing: [0.25, 0.0, 0.35, 1.0],
           });
         });
       });
