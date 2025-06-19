@@ -294,19 +294,34 @@
       }
 
       .footer {
-        padding: 100px 0 230px 0;
+        padding: 100px 0 30px 0;
 
         font-size: 11px;
         display: flex;
         justify-content: center;
         gap: 30px;
-        margin-bottom: 300px;
+        /* margin-bottom: 300px; */
 
         width: 94%;
         margin-left: auto;
         margin-right: auto;
         padding-left: 50px;
         margin-right: -50px;
+      }
+      #fooCopyRight {
+        border-top: 1px solid #ccc;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        /* text-align: center; */
+        font-size: 12px;
+      }
+      .fooBrand {
+        text-align: right;
+      }
+      .fooBrand a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #000;
       }
 
       .footer-section {
@@ -1068,8 +1083,9 @@
               poster="images/poster-blank.png"
             >
               <source
-                src="images/Eyecatch Architects Logo Animation.mp4"
+                src="images/Crow Animation 3.mp4"
                 type="video/mp4"
+                style="width: 1920px; height: 1080px"
               />
             </video>
             <button class="mute-toggle" aria-label="Toggle Mute">
@@ -1110,7 +1126,7 @@
                     </div>
                     <div class="col6">
                       <div class="abtWidget">
-                        <h3>350,000 sqft</h3>
+                        <h3>3,50,000 sqft</h3>
                         <p>Completed</p>
                       </div>
                     </div>
@@ -1119,7 +1135,7 @@
                   <div class="rowG50 parallax-section">
                     <div class="col6">
                       <div class="abtWidget noBorder">
-                        <h3>20 Crew</h3>
+                        <h3>30+ Crew Members</h3>
                         <p></p>
                       </div>
                     </div>
@@ -1262,7 +1278,7 @@
 
                   <div class="teamMeta">
                     <h3>Medha Pulipati</h3>
-                    <h5>Principal Designer</h5>
+                    <h5>Interior Architect</h5>
                     <div class="socialProfiles">
                       <span
                         style="background-color: transparent !important"
@@ -1830,7 +1846,7 @@
                         <a
                           href="news/Pranay Nikhilesh Of Vijayawada  Young Interior Designer  Shows Off His Massive Talent  Yuva - Etv Andhra Pradesh (1080P, H264).mp4"
                           class="glightbox3"
-                          >Pranay Nikhilesh Of Vijayawada Young Interior
+                          >Pranay Mithilesh Of Vijayawada Young Interior
                           Designer Shows Off His Massive Talent Yuva - Etv
                           Andhra Pradesh
                         </a>
@@ -2207,6 +2223,23 @@
                 </div>
               </div>
             </footer>
+
+            <div id="fooCopyRight">
+              <div class="row">
+                <div class="col6">
+                  &copy; EyeCatch Architects 2025. All Rights Reserved.
+                </div>
+                <div class="col6 fooBrand">
+                  Designed by
+                  <a
+                    href="https://eyecatch.co.in"
+                    target="_blank"
+                    title="EyeCatch Branding & Advertising"
+                    >EyeCatch Branding and Advertising</a
+                  >.
+                </div>
+              </div>
+            </div>
           </div>
           <!-- Content-->
         </div>
@@ -2274,6 +2307,7 @@
       var swiper = new Swiper(".clientsSlider", {
         slidesPerView: 1,
         spaceBetween: 10,
+        loop: true,
         autoplay: {
           delay: 2000,
           disableOnInteraction: false,
@@ -2315,9 +2349,10 @@
     <script>
       var swiper = new Swiper(".mySwiper", {
         autoplay: {
-          delay: 3000,
+          delay: 8000,
           disableOnInteraction: false,
         },
+        pauseOnMouseEnter: true,
         pagination: {
           el: ".swiper-pagination",
         },
