@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eyecatch Architects – Launch</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        font-family: "Segoe UI", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+      }
+      .logo {
+        max-width: 300px;
+        margin-bottom: 40px;
+      }
+      .launch-button {
+        padding: 15px 40px;
+        font-size: 18px;
+        border: none;
+        background-color: #000;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+      .launch-button:hover {
+        background-color: #333;
+        transform: scale(1.05);
+      }
+      .fade-in {
+        animation: fadeIn 2s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="fade-in">
+    <img
+      src="images/logo.png"
+      alt="Eyecatch Architects Logo"
+      class="logo"
+      style="height: 200px; width: auto"
+    />
+    <button class="launch-button" onclick="launchSite()">Launch Website</button>
+
+    <!-- Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+      function launchSite() {
+        // Fire confetti
+        confetti({
+          particleCount: 150,
+          spread: 90,
+          origin: { y: 0.6 },
+        });
+
+        // Delay before redirect (2.5 seconds)
+        setTimeout(() => {
+          window.location.href = "https://eyecatch-architects-five.vercel.app/"; // Replace with your actual URL
+        }, 2500);
+      }
+    </script>
+  </body>
+</html>
