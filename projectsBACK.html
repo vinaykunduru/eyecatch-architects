@@ -1055,7 +1055,7 @@
           width: 45%;
         }
         .projectItem.active {
-          margin-bottom: 50px;
+          margin-bottom: 0;
         }
         .ss-carousel .ss-carousel__item.videoBlock.overlyText video {
           height: 50%;
@@ -4868,7 +4868,7 @@
           vertical-align: middle;
           margin-top: 0;
           display: flex;
-          gap: 10px;
+          gap: 30px;
           flex-wrap: wrap;
         }
 
@@ -4895,7 +4895,6 @@
         .ss-carousel .ss-carousel__item.teamBlock {
           width: 92vw;
           padding: 0 4vw;
-          margin-bottom: 20px;
         }
         .projectItem.active {
           /* height: 50vh !important; */
@@ -4903,8 +4902,6 @@
         .overlyText p {
           max-width: 85%;
           position: relative;
-          font-size: 12px;
-          line-height: 1.4;
         }
         .ss-carousel .ss-carousel__content {
           gap: 30px;
@@ -4933,23 +4930,8 @@
           min-width: 20%;
           width: 25%;
         }
-        .footer-link {
-          font-size: 12px;
-        }
         .footer-link .toggle {
           margin-left: 2px;
-        }
-
-        .mute-toggle {
-          position: absolute;
-          bottom: auto;
-          right: 20px;
-          top: 10px;
-        }
-
-        .moreInfo p,
-        .moreInfo h4 {
-          font-size: 11px;
         }
       }
     </style>
@@ -5121,63 +5103,15 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
       const scroll = new LocomotiveScroll({
         el: document.querySelector(".scroll-container"),
         smooth: true,
-        direction: "vertical",
+        direction: "vertical", // explicitly vertical scroll
       });
 
       // ✅ Sync ScrollTrigger with Locomotive Scroll
       scroll.on("scroll", ScrollTrigger.update);
 
-      // ✅ Function to calculate responsive height
-      function getResponsiveHeight() {
-        const screenHeight = window.innerHeight;
-        const screenWidth = window.innerWidth;
-
-        if (screenWidth < 576) {
-          return screenHeight - 450; // Mobile
-        } else if (screenWidth < 1024) {
-          return screenHeight - 300; // Tablet
-        } else {
-          return screenHeight - 130; // Desktop
-        }
-      }
-
-      // ✅ Function to set carousel item heights
-      function updateCarouselHeights() {
-        const targetHeight = getResponsiveHeight();
-        document
-          .querySelectorAll(".ss-carousel .ss-carousel__item")
-          .forEach((el) => {
-            el.style.height = `${targetHeight}px`; // slight padding
-          });
-      }
-
-      // ✅ Initial height update
-      updateCarouselHeights();
-
-      // ✅ Update height on window resize
-      window.addEventListener("resize", () => {
-        updateCarouselHeights();
-        scroll.update();
-      });
-
       // ✅ Click behavior for .projectItem
       document.querySelectorAll(".projectItem").forEach((item) => {
         item.addEventListener("click", function () {
-          // ✅ Swipe hint - show only on first click on mobile
-          if (
-            window.innerWidth < 768 && // mobile only
-            !localStorage.getItem("swipeHintShown") // first time only
-          ) {
-            const swipeHint = document.getElementById("swipeHint");
-            if (swipeHint) {
-              swipeHint.style.display = "block";
-              localStorage.setItem("swipeHintShown", "true");
-              setTimeout(() => {
-                swipeHint.style.display = "none";
-              }, 4000); // auto-hide after 4s
-            }
-          }
-
           // Reset all projectItems
           document.querySelectorAll(".projectItem").forEach((i) => {
             i.classList.remove("active");
@@ -5188,20 +5122,35 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
           // Add active class
           this.classList.add("active");
 
+          // Calculate width and height based on screen size
           const screenWidth = window.innerWidth;
           const screenHeight = window.innerHeight;
-          const targetWidth = screenWidth - 30;
-          const targetHeight = getResponsiveHeight();
+
+          let targetWidth = screenWidth - 30;
+          let targetHeight;
+
+          if (screenWidth < 576) {
+            // Mobile
+            targetHeight = screenHeight - 450;
+          } else if (screenWidth < 1024) {
+            // Tablet
+            targetHeight = screenHeight - 300;
+          } else {
+            // Desktop
+            targetHeight = screenHeight - 130;
+          }
 
           this.style.width = `${targetWidth}px`;
           this.style.height = `${targetHeight}px`;
 
           scroll.update();
 
-          // Update carousel item heights again
-          updateCarouselHeights();
+          // Update all carousel item heights
+          document
+            .querySelectorAll(".ss-carousel .ss-carousel__item")
+            .forEach((el) => (el.style.height = `${targetHeight - 10}px`)); // slight padding
 
-          // Scroll to center
+          // Scroll to vertically center this item
           const itemOffsetTop = this.offsetTop;
           const itemHeight = this.offsetHeight;
           const centerTarget =
@@ -5209,7 +5158,7 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
 
           const currentScrollY = scroll.scroll.instance.scroll.y;
           const distance = Math.abs(currentScrollY - centerTarget);
-          const duration = Math.min(Math.max(distance / 1000, 0.4), 1.5);
+          const duration = Math.min(Math.max(distance / 1000, 0.4), 1.5); // 0.4s–1.5s
 
           scroll.scrollTo(centerTarget, {
             duration: duration * 1000,
@@ -5656,46 +5605,5 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
         });
       });
     </script>
-
-    <div
-      id="swipeHint"
-      style="
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 13px;
-        display: none;
-        z-index: 9999;
-        animation: fadeInOut 4s ease forwards;
-      "
-    >
-      👆 Swipe to explore
-    </div>
-
-    <style>
-      @keyframes fadeInOut {
-        0% {
-          opacity: 0;
-          transform: translate(-50%, 10px);
-        }
-        10% {
-          opacity: 1;
-          transform: translate(-50%, 0);
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-          transform: translate(-50%, 10px);
-        }
-      }
-    </style>
-    <script></script>
   </body>
 </html>
