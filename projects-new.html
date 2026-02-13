@@ -465,11 +465,7 @@
         .topNav {
           display: none;
         }
-        .projectItem {
-          width: 90%;
-          min-height: auto;
-          margin-left: auto;
-        }
+       
        
 
         .footer {
@@ -587,7 +583,7 @@
         <div class="container gridContainer">
             <style>
                 .projectItem{
-                    border-bottom: 1px solid #555;
+                    border-bottom: 1px solid #999;
                     padding-bottom: 40px;
                     margin-bottom: 40px;
                 }
@@ -618,11 +614,24 @@
                     color: #000;
                     text-decoration: none;
                     margin-top: 20px;
+                    position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
                 }
+                .exporeBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
                 .exporeBtn:hover{
                     background-color: #000;
                     color:#fff
                 }
+                
                 .projectSlide{
                     position: relative;
   overflow: visible; /* important */
@@ -633,11 +642,11 @@
                     object-fit: cover;
                     border-radius:20px
                 }
-                .projectSlide .swiper-pagination{
+                /* .projectSlide .swiper-pagination{
                     position: relative !important;
                     bottom:auto !important;
                     padding-top: 25px !important;
-                }
+                } */
 
                 .imageWrap img{
                     border-radius: 20px;
@@ -652,7 +661,7 @@
 .imageWrap {
   position: relative;
   overflow: hidden;
-  /* border-radius: 16px; */
+  border-radius: 16px;
 }
 
 .parallax-inner {
@@ -667,20 +676,26 @@
   border-radius: 20px;   /* ✅ here */
   display: block;
 }
+.col-md-8 .exporeBtn{display: none !important;}
+.col-md-4 .exporeBtn{display:inline-block !important}
+@media screen and (max-width: 768px) {
+    .col-md-8 .exporeBtn{display: inline-block !important;}
+   .col-md-4 .exporeBtn{display:none !important}
+}
             </style>
           <div class="row projectItem">
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="projectInfo">
                     <div class="projectIcon"><img src="projects/smart-furniture/Smart_furniture_logo-colourinfill.png"></div>
                     <h2 class="projectTitle">Smart Furniture</h2>
                     <p class="projectLocation">Vijayawada, <br>Andhra Pradesh</p>
                 </div>
-                <div class="ContainerBtn">
+                <div class="ContainerBtn" id="desktop">
                     <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
                 </div>
             </div>
             
-            <div class="col-8 projectSlide">
+            <div class="col-md-8 projectSlide">
                 <div class="imageWrap">
                     <div class="parallax-inner">
                 <div class="swiper mySwiper">
@@ -705,6 +720,9 @@
                           </div>
                           </div>
                           </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
             </div>
             
           </div>
@@ -712,7 +730,7 @@
 
 
           <div class="row projectItem">
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="projectInfo">
                     <div class="projectIcon"><img src="projects/aakruti/akruthi_Logo.jpg"></div>
                     <h2 class="projectTitle">Aakruti - Clothing Store</h2>
@@ -723,7 +741,7 @@
                 </div>
             </div>
             
-            <div class="col-8 projectSlide">
+            <div class="col-md-8 projectSlide">
                 <div class="imageWrap">
                     <div class="parallax-inner">
                 <div class="swiper mySwiper">
@@ -748,6 +766,9 @@
                           </div>
                           </div>
                           </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
             </div>
             
           </div>
@@ -755,7 +776,7 @@
 
 
           <div class="row projectItem">
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="projectInfo">
                     <div class="projectIcon"><img src="projects/anubhava/logo.png"></div>
                     <h2 class="projectTitle">Anubhava Home Foods</h2>
@@ -766,7 +787,7 @@
                 </div>
             </div>
             
-            <div class="col-8 projectSlide">
+            <div class="col-md-8 projectSlide">
                 
                 <div class="imageWrap">
                     <div class="parallax-inner">
@@ -792,13 +813,16 @@
                           </div>
                           </div>
                           </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
             </div>
             
           </div>
           <!--row projectItem -->
 
           <div class="row projectItem">
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="projectInfo">
                     <div class="projectIcon"><img src="projects/padmam/padmam-logo.png"></div>
                     <h2 class="projectTitle">Padmam - Silver Jewellery Store</h2>
@@ -809,7 +833,7 @@
                 </div>
             </div>
             
-            <div class="col-8 projectSlide">
+            <div class="col-md-8 projectSlide">
                 
                 <div class="imageWrap">
                     <div class="parallax-inner">
@@ -835,6 +859,199 @@
                           </div>
                           </div>
                           </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+          </div>
+          <!--row projectItem -->
+
+
+
+
+          <div class="row projectItem">
+            <div class="col-md-4">
+                <div class="projectInfo">
+                    <div class="projectIcon"><img src="projects/ladia/Ladia_Logo_01.jpg"></div>
+                    <h2 class="projectTitle">Ladia - Lab Grown Diamonds</h2>
+                    <p class="projectLocation">JUBILEE HILLS, PUNJAGUTTA<br>Hyderabad, Telangana</p>
+                </div>
+                <div class="ContainerBtn">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+            <div class="col-md-8 projectSlide">
+                
+                <div class="imageWrap">
+                    <div class="parallax-inner">
+                <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/ladia/1.JPG"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/ladia/8.JPG"
+                                  alt=""
+                                />
+                              </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+          </div>
+          <!--row projectItem -->
+
+
+          <div class="row projectItem">
+            <div class="col-md-4">
+                <div class="projectInfo">
+                    <div class="projectIcon"><img src="projects/kps/Perumal_hastam_logo.png"></div>
+                    <h2 class="projectTitle">Kanchipuram Perumal Silks</h2>
+                    <p class="projectLocation">Nellore, Andhra Pradesh</p>
+                </div>
+                <div class="ContainerBtn">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+            <div class="col-md-8 projectSlide">
+                
+                <div class="imageWrap">
+                    <div class="parallax-inner">
+                <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/kps/2.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/kps/4.jpg"
+                                  alt=""
+                                />
+                              </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+          </div>
+          <!--row projectItem -->
+
+
+           <div class="row projectItem">
+            <div class="col-md-4">
+                <div class="projectInfo">
+                    <div class="projectIcon"><img src="projects/amyra/Amyra_icon.png"></div>
+                    <h2 class="projectTitle">Amyra Silver Jewellery store</h2>
+                    <p class="projectLocation">Vijayawada, <br>Andhra Pradesh</p>
+                </div>
+                <div class="ContainerBtn">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+            <div class="col-md-8 projectSlide">
+                
+                <div class="imageWrap">
+                    <div class="parallax-inner">
+                <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/amyra/1.png"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/amyra/2.jpg"
+                                  alt=""
+                                />
+                              </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+          </div>
+          <!--row projectItem -->
+
+
+          <div class="row projectItem">
+            <div class="col-md-4">
+                <div class="projectInfo">
+                    <div class="projectIcon"><img src="projects/goyaz/logo.png"></div>
+                    <h2 class="projectTitle">Goyaz - Silver Jewellery Store</h2>
+                    <p class="projectLocation">Panjagutta, Hyderabad, Telangana</p>
+                </div>
+                <div class="ContainerBtn">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
+            </div>
+            
+            <div class="col-md-8 projectSlide">
+                
+                <div class="imageWrap">
+                    <div class="parallax-inner">
+                <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/goyaz/1.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  
+                                  src="projects/goyaz/2.jpg"
+                                  alt=""
+                                />
+                              </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="ContainerBtn" id="mobile">
+                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                </div>
             </div>
             
           </div>
@@ -1146,9 +1363,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cinematic movement
     gsap.fromTo(parallaxInner,
-      { y: -60, scale: 1.08 },
+      { y: -120, scale: 1.12 },
       {
-        y: 60,
+        y: 120,
         scale: 1.02,
         ease: "none",
         scrollTrigger: {
