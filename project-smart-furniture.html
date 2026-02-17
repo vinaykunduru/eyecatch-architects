@@ -527,61 +527,7 @@
       });
     </script>
 
-    <div class="mainWrapper" style="position: relative">
-      <div class="header">
-        <div class="headerContainer">
-          <div class="logo">
-            <a href="/index.html"><img src="/images/logo.png" /></a>
-          </div>
-          <!-- Logo -->
-          <div class="topNav">
-            <span><a href="/architecture.html">Architecture</a></span>
-            <span><a href="#" class="activeNav">Interior</a></span>
-            <!-- <span><a href="/products.html">Products</a></span> -->
-            <!-- <span>Nav1</span>
-            <span>Nav1</span> -->
-          </div>
-          <!-- Top Nav -->
-          <div class="social"></div>
-          <!-- Social -->
-        </div>
-        <!-- Header Container-->
-      </div>
-      <!-- Main Nav-->
-      <nav class="css-mobile-menu" role="navigation">
-        <div id="menuToggle">
-          <input type="checkbox" />
-          <span class="span"></span>
-          <span class="span"></span>
-          <span class="span"></span>
-          <ul id="menu">
-            <!-- <li class="has-submenu">
-              <a
-                href="javascript:void(0);"
-                class="submenu-toggle"
-                onclick="toggleSubmenu(this)"
-              >
-                <span class="submenu-icon">+</span>Projects
-              </a>
-              <ul class="submenu">
-                <li><a href="/architecture.html">Architecture</a></li>
-                <li><a href="/index.html">Interior</a></li>
-                <li><a href="/products.html">Products</a></li>
-              </ul>
-            </li> -->
-            <li><a href="/">About</a></li>
-            <li><a href="/news-events.html">News</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-            <li><a href="/careers.html">Careers</a></li>
-            <li><a href="#footer">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="contentWrapper pt-10" style="padding-top: 100px;">
-        <div id="smooth-wrapper">
-    <div id="smooth-content">
-        <div class="container gridContainer">
-            <style>
+    <style>
                 .projectItem{
                     border-bottom: 1px solid #999;
                     padding-bottom: 40px;
@@ -678,379 +624,522 @@
    .col-md-4 .exporeBtn{display:none !important}
 }
             </style>
-          <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/smart-furniture/Smart_furniture_logo-colourinfill.png"></div>
-                    <h2 class="projectTitle">Smart Furniture</h2>
-                    <p class="projectLocation">Vijayawada, <br>Andhra Pradesh</p>
-                </div>
-                <div class="ContainerBtn" id="desktop">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
+
+    <div class="mainWrapper" style="position: relative">
+      <div class="header">
+        <div class="headerContainer">
+          <div class="logo">
+            <a href="/index.html"><img src="/images/logo.png" /></a>
+          </div>
+          <!-- Logo -->
+          <div class="topNav">
+            <span><a href="/architecture.html">Architecture</a></span>
+            <span><a href="#" class="activeNav">Interior</a></span>
+            <!-- <span><a href="/products.html">Products</a></span> -->
+            <!-- <span>Nav1</span>
+            <span>Nav1</span> -->
+          </div>
+          <!-- Top Nav -->
+          <div class="social"></div>
+          <!-- Social -->
+        </div>
+        <!-- Header Container-->
+      </div>
+      <!-- Main Nav-->
+      <nav class="css-mobile-menu" role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span class="span"></span>
+          <span class="span"></span>
+          <span class="span"></span>
+          <ul id="menu">
+            <!-- <li class="has-submenu">
+              <a
+                href="javascript:void(0);"
+                class="submenu-toggle"
+                onclick="toggleSubmenu(this)"
+              >
+                <span class="submenu-icon">+</span>Projects
+              </a>
+              <ul class="submenu">
+                <li><a href="/architecture.html">Architecture</a></li>
+                <li><a href="/index.html">Interior</a></li>
+                <li><a href="/products.html">Products</a></li>
+              </ul>
+            </li> -->
+            <li><a href="/">About</a></li>
+            <li><a href="/news-events.html">News</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="contentWrapper pt-10" style="padding-top: 100px;">
+        <div id="smooth-wrapper">
+    <div id="smooth-content">
+        <div class="container">
+            <div class="detailContainer">
+                  <div class="ss-carousel">
+                    <div class="ss-carousel__wrapper">
+                      
+                        <style>
+                            .ss-carousel__content{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 200px;
+                            }
+                            .imgBlock img{
+                                width:100%;
+
+                            }
+                            .videoBlock video{
+                                width:100%;
+                                height:auto
+                            }
+                            .basicInfo{
+                                justify-content: space-between;
+                            }
+                            .headerLeftCont{}
+                            .headerLeftCont .icon{
+                                width:60px;
+                                height:60px
+                            }
+                            .headerLeftCont .icon img{
+                                width:100%;
+                            }
+                            .headerRightCont{}
+
+
+      .mapBlock {
+  position: relative;
+  z-index: 2;
+}
+
+.mapWrap {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.mapWrap #map3 {
+  height: 100%;
+  width: 100%;
+}
+
+      .imgWrap {
+  position: relative;
+  overflow: hidden;      /* prevents overlap */
+  border-radius: 20px;
+}
+
+.imgWrap img {
+  width: 100%;
+  display: block;
+  will-change: transform;
+}
+.videoWrap {
+  position: relative;
+  overflow: hidden;      /* prevents overlap */
+  border-radius: 20px;
+}
+
+.videoWrap video {
+  width: 100%;
+  height: auto;
+  display: block;
+  will-change: transform;
+  object-fit: cover;
+}
+
+.slideWrap {
+  position: relative;
+  overflow: hidden;      /* prevents overlap */
+  border-radius: 20px;
+}
+
+.slideWrap .swiper {
+  width: 100%;
+}
+
+.slideWrap img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  will-change: transform;
+}
+.imgBlock,
+.videoBlock,
+.slideBlock,
+.mapBlock {
+  position: relative;
+  z-index: 1;
+}
+
+.mapWrap {
+  z-index: 2;
+}
+.imgBlock, .videoBlock, .slideBlock  {
+  position: relative;
+  
+}
+img, video {
+  transform: translateZ(0);
+}
+
+.imgWrap,
+.videoWrap,
+.slideWrap,
+.mapWrap {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+                        </style>
+                      <div class="ss-carousel__content">
+                        <div class="row firstInfo">
+                          <div class="basicInfo d-flex">
+                            <div class="headerLeftCont">
+                              <div class="icon">
+                                <img src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/Smart_furniture_logo-colourinfill.png">
+                              </div>
+                              <div class="projectTitleInfo">
+                                <h3 class="projectTitle">Smart Furniture</h3>
+                                <p class="location">
+                                  Vijayawada, Andhra Pradesh
+                                </p>
+                                <p class="location">2025</p>
+                              </div>
+                            </div>
+                            <div class="headerRightCont">
+                            <div class="moreInfo">
+                              <div>
+                                <h4>Client</h4>
+                                <p>Santhosh G</p>
+                              </div>
+                              <div>
+                                <h4>Typology</h4>
+                                <p>Commercial</p>
+                              </div>
+                              <div>
+                                <h4>Size</h4>
+                                <p>5100 S.ft</p>
+                              </div>
+                              <div>
+                                <h4>Status</h4>
+                                <p>Completed</p>
+                              </div>
+                            </div><!-- More Info-->
+                             <div class="socialSection">
+                              <div class="sharethis-inline-share-buttons st-right  st-inline-share-buttons st-animated" id="st-1"><div class="st-total st-hidden">
+  <span class="st-label"></span>
+  <span class="st-shares">
+    Shares
+  </span>
+</div><div class="st-btn st-first  st-remove-label" data-network="facebook" style="display: inline-block;">
+  <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg">
+  
+</div><div class="st-btn  st-remove-label" data-network="twitter" style="display: inline-block;">
+  <img alt="twitter sharing button" src="https://platform-cdn.sharethis.com/img/twitter.svg">
+  
+</div><div class="st-btn st-last  st-remove-label" data-network="whatsapp" style="display: none;">
+  <img alt="whatsapp sharing button" src="https://platform-cdn.sharethis.com/img/whatsapp.svg">
+  
+</div></div>                              
+                            </div><!-- Social -->
+                            </div>
+                            
+                            
+                          </div>
+                        </div><!-- Row -->
+                        <div class="row imgBlock">
+                            <div class="col-md-12">
+                                <div class="imgWrap">
+                          <img class="ss-carousel__item__image" src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/1.jpg" alt="">
+                          </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="ss-carousel__description">
+                            <p>
+                              The store transforms a long, narrow space into an
+                              organic shopping environment with paper
+                              cut-out-inspired curved dividers. These elements
+                              create distinct zones for furniture display and
+                              enhance perception. A muted brown palette lets the
+                              furniture’s color and texture stand out, enriching
+                              the immersive experience.
+                            </p>
+                            <p>
+                              Inspired by paper cuttings, curved partitions with
+                              frayed edges add a sculptural touch. These flowing
+                              divisions create intimate, functional spaces that
+                              foster emotional connection.
+                            </p>
+                          </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="imgBlock">
+                                    <div class="imgWrap">
+                                <img class="ss-carousel__item__image" src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/2.jpg" alt="">
+                                </div>
+                                </div>
+
+                            </div>
+                        </div><!-- Row -->
+
+                        
+                       
+                        <div class="row videoBlock">
+                            <div class="col-md-12">
+                                <div class="videoWrap">
+                          <video muted="" autoplay="" loop="" playsinline="true">
+                            <source src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/Smart Furniture Site View Video latest 17.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+                        <div class="row textBlock" >
+                            <div class="col-md-12">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The shop space led to an innovative solution to
+                              the design to prevent monotony and provide a rich
+                              and visually stimulating interior. The design
+                              provides maximum main road visibility despite a
+                              secondary road entrance
+                            </p>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+                        <div class="row imgBlock horizantal">
+                            <div class="col-md-12">
+                                <div class="imgWrap">
+                          <img class="ss-carousel__item__image" src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/5.jpg" alt="">
+                          </div>
+                        </div>
+                        </div><!-- Row -->
+                        <div class="row textBlock">
+                            <div class="col-md-12">
+                          <div class="ss-carousel__description">
+                            <p>
+                              The winding path and curving dividers create
+                              intimate areas, enhanced by a warm brown color
+                              scheme. The design balances comfort and
+                              readability, encouraging exploration and a
+                              captivating experience.
+                            </p>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+
+                        <li class="row" >
+                            <div class="col-md-4">
+                                <p style="max-width: 100%">
+                            Inspired by Kirigami, the furniture store's display
+                            area transforms structural elements into sculptural
+                            forms. Walls peel and fold back, creating dynamic
+                            partitions that support adjacent spaces and enhance
+                            aesthetic appeal. This design defines spatial
+                            boundaries while inviting exploration, blending
+                            functionality and artistry.
+                          </p>
+                            </div>
+                            <div class="col-md-8 videoBlock">
+                                <div class="videoWrap">
+                                <video muted="" autoplay="" loop="" playsinline="true">
+                            <source src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/Smart furniture - Set 1.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                            </div>
+                          
+                          
+                        </li><!-- Row -->
+                       
+                        
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p style="max-width: 100%">
+                            The display zone features fluid partitions crafted
+                            from flexible plywood, echoing paper cuts and folds.
+                            Sculptural elements curve, forming parabolic
+                            contours that integrate with the floor's geometry.
+                            Subtle geometric embossing adds tactile depth,
+                            enhancing visual rhythm and creating an immersive
+                            experience.
+                          </p>
+                               
+                            </div>
+                            <div class="col-md-8 videoBlock">
+                                <div class="videoWrap">
+                                 <video muted="" autoplay="" loop="" playsinline="true">
+                            <source src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/Smart furniture - Set 2.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                            </div>
+                          
+                          
+                        </div><!-- Row -->
+                       
+
+                        <div class="row overlyText" >
+                            <div class="col-md-4">
+                                <p>
+                            Roman-inspired curves and concealed cove lighting
+                            create a refined backdrop for furniture. A
+                            monochromatic palette ensures focus remains on the
+                            displays, supported by elegant architectural
+                            details.
+                          </p>
+                            </div>
+                            <div class="col-md-8 videoBlock">
+                                <div class="videoWrap">
+                                <video muted="" autoplay="" loop="" playsinline="true">
+                            <source src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/Smart furniture - Set 3.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                            </div>
+                          
+                          
+                        </div> <!-- Row -->
+                        <div class="row">
+                            <div class="col-md-4 textBlock">
+                                <p>
+                              The layout accommodates 15 furniture pieces, two
+                              of which are in window displays, and has basic
+                              facilities. Parabolic curves provide clear
+                              wayfinding, linked spaces, and efficient space
+                              use.
+                            </p>
+                            </div>
+                            <div class="col-md-8 videoBlock">
+                                <div class="videoWrap">
+                                 <video muted="" autoplay="" loop="" playsinline="true" preload="none">
+                            <source src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/Website Video.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          <button class="mute-toggle" aria-label="Toggle Mute">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
+                          </div>
+                            </div>
+                        </div><!-- Row -->
+
+
+                         <div class="row">
+                            <div class="col-md-12 slideBlock">
+                                <div class="slideWrap">
+                          <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                               <div class="swiper-slide">
                                 <img
-                                  
-                                  src="/projects/smart-furniture/1.jpg"
+                                  class="ss-carousel__item__image"
+                                  src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/3.jpg"
                                   alt=""
                                 />
                               </div>
                               <div class="swiper-slide">
                                 <img
-                                  
-                                  src="/projects/smart-furniture/2.jpg"
+                                  class="ss-carousel__item__image"
+                                  src="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/projects/smart-furniture/4.jpg"
                                   alt=""
                                 />
                               </div>
-
                             </div>
                             <div class="swiper-pagination"></div>
                           </div>
                           </div>
                           </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
+                        </div><!-- Row -->
 
 
-          <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/aakruti/akruthi_Logo.jpg"></div>
-                    <h2 class="projectTitle">Aakruti - Clothing Store</h2>
-                    <p class="projectLocation">AMB Mall, Hyderabad, Telangana</p>
-                </div>
-                <div class="ContainerBtn">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="/projects/aakruti/1.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="/projects/aakruti/2.jpg"
-                                  alt=""
-                                />
-                              </div>
 
+                        
+                        <div class="row">
+                            <div class="col-md-6 textBlock">
+                                <div class="ss-carousel__description">
+                            <p>
+                              Parabolic divisions break linear monotony,
+                              creating well-defined, dual-sided display zones.
+                              Curved modules maximize display, ensure smooth
+                              flow, and add rhythmic movement to the space.
+                            </p>
+                            <p>
+                              Swooping partitions serve as visual dividers and
+                              display supports, blending beauty and
+                              functionality. This two-in-one design adds depth
+                              and continuous storytelling to the space.
+                            </p>
+                          </div>
                             </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
-
-
-          <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/anubhava/logo.png"></div>
-                    <h2 class="projectTitle">Anubhava Home Foods</h2>
-                    <p class="projectLocation">Moghalrajpuram @ Vijayawada,<br>Andhra Pradesh</p>
-                </div>
-                <div class="ContainerBtn">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/anubhava/anubhava-slide-img.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/anubhava/anubhava-new.jpg"
-                                  alt=""
-                                />
-                              </div>
-
+                            <div class="col-md-6 mapBlock">
+                                <div class="mapWrap">
+                                <div id="map3" class="map"></div>
+                                </div>
                             </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
+                        </div><!-- Row -->
 
-          <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/padmam/padmam-logo.png"></div>
-                    <h2 class="projectTitle">Padmam - Silver Jewellery Store</h2>
-                    <p class="projectLocation">CMR CENTRal, Eluru<br>Andhra Pradesh</p>
-                </div>
-                <div class="ContainerBtn">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/padmam/1.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/padmam/2.jpg"
-                                  alt=""
-                                />
-                              </div>
+                        <div class="row teamBlock threeGrid" >
+                          
+                            <div class="col-md-4">
+                              <!-- <h5>Project Leader</h5>
+                              <p>Madhusudhan Rao Pulipati</p> -->
+                              <h5>Project Architect</h5>
+                              <p>Ar. Pranay Mithilesh Pulipati</p>
+                              <h5 class="subHead2">Interior Architect</h5>
+                              <p>Id. Medha Pulipati</p>
+                              <h5 class="subHead2">Project Manager</h5>
+                              <p>Rakesh CH</p>
+                              <h5 class="subHead2">Procurment Manager</h5>
+                              <p>Abhilash.V</p>
 
+                              <h5 class="subHead2">Project Team</h5>
+                              <p>Ravi Kumar K</p>
+                              <!-- <p>Abdul</p> -->
+                              <p>Ar. Chennakeshava.R</p>
+
+                              <p>Ar. Vaishnavi Basireddy</p>
+                              <p>Krishna Kanth P</p>
+                              <p>Rajib Roy</p>
+
+                              <p>Shamsheer P</p>
+                              <p>Chandan Halder</p>
+                              <p>Somisetty Baby Sushma</p>
                             </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
 
+                            <div class="col-md-4">
+                              <h5>Project Incharge</h5>
+                              <p>Ameer khan</p>
+                              <h5 class="subHead2">Operational manager</h5>
+                              <p>Fathima</p>
 
-
-
-          <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/ladia/Ladia_Logo_01.jpg"></div>
-                    <h2 class="projectTitle">Ladia - Lab Grown Diamonds</h2>
-                    <p class="projectLocation">JUBILEE HILLS, PUNJAGUTTA<br>Hyderabad, Telangana</p>
-                </div>
-                <div class="ContainerBtn">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/ladia/1.JPG"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/ladia/8.JPG"
-                                  alt=""
-                                />
-                              </div>
-
+                              <h5 class="subHead2">Photograghy</h5>
+                              <p>Victor</p>
+                              <h5 class="subHead2">Content</h5>
+                              <p>Anantu Chinthalapalli</p>
+                              <h5 class="subHead2">Relationship Manager</h5>
+                              <p>Tharani M</p>
                             </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
+                          
+                        </div><!-- Row -->
+                    </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
-
-
-          <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/kps/Perumal_hastam_logo.png"></div>
-                    <h2 class="projectTitle">Kanchipuram Perumal Silks</h2>
-                    <p class="projectLocation">Nellore, Andhra Pradesh</p>
-                </div>
-                <div class="ContainerBtn">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/kps/2.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/kps/4.jpg"
-                                  alt=""
-                                />
-                              </div>
-
-                            </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
-
-
-           <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/amyra/Amyra_icon.png"></div>
-                    <h2 class="projectTitle">Amyra Silver Jewellery store</h2>
-                    <p class="projectLocation">Vijayawada, <br>Andhra Pradesh</p>
-                </div>
-                <div class="ContainerBtn">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/amyra/1.png"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/amyra/2.jpg"
-                                  alt=""
-                                />
-                              </div>
-
-                            </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
-
-
-          <div class="row projectItem">
-            <div class="col-md-4">
-                <div class="projectInfo">
-                    <div class="projectIcon"><img src="projects/goyaz/logo.png"></div>
-                    <h2 class="projectTitle">Goyaz - Silver Jewellery Store</h2>
-                    <p class="projectLocation">Panjagutta, Hyderabad, Telangana</p>
-                </div>
-                <div class="ContainerBtn">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-            <div class="col-md-8 projectSlide">
-                
-                <div class="imageWrap">
-                    <div class="parallax-inner">
-                <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/goyaz/1.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div class="swiper-slide">
-                                <img
-                                  
-                                  src="projects/goyaz/2.jpg"
-                                  alt=""
-                                />
-                              </div>
-
-                            </div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                          </div>
-                          </div>
-                          <div class="ContainerBtn" id="mobile">
-                    <a href="#" class="exporeBtn">EXPLORE PROJECT</a>
-                </div>
-            </div>
-            
-          </div>
-          <!--row projectItem -->
+          
 
 
 
@@ -1515,10 +1604,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // LENIS SMOOTH SCROLL
   // =========================
   const lenis = new Lenis({
-    duration: 1.2,
-    smooth: true,
-    lerp: 0.08
-  });
+  duration: 1.6,
+  smooth: true,
+  lerp: 0.06,
+  wheelMultiplier: 0.9,
+  touchMultiplier: 1.1
+});
 
   function raf(time) {
     lenis.raf(time);
@@ -1526,69 +1617,109 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   requestAnimationFrame(raf);
 
-  // Sync ScrollTrigger
-  lenis.on("scroll", ScrollTrigger.update);
+  // Sync ScrollTrigger with Lenis
+  lenis.on("scroll", () => {
+    ScrollTrigger.update();
+    initVisibleMaps(); // refresh maps on smooth scroll
+  });
 
   // =========================
   // SWIPER INIT
   // =========================
   document.querySelectorAll(".mySwiper").forEach((slider) => {
+
     new Swiper(slider, {
       spaceBetween: 0,
       effect: "slide",
+      speed: 800,
       allowTouchMove: true,
       pagination: {
         el: slider.querySelector(".swiper-pagination"),
         clickable: true,
       },
     });
+
   });
 
-  // =========================
-  // PREMIUM PARALLAX
-  // =========================
-  gsap.utils.toArray(".projectItem").forEach((item) => {
+  // =====================
+  // HERO FADE IN
+  // =====================
+  gsap.from(".firstInfo", {
+    opacity: 0,
+    y: 60,
+    duration: 1.2,
+    ease: "power3.out"
+  });
 
-    const parallaxInner = item.querySelector(".parallax-inner");
-    const leftElements = item.querySelectorAll(
-      ".projectIcon, .projectTitle, .projectLocation, .ContainerBtn"
-    );
+  
 
-    // Cinematic movement
-    gsap.fromTo(parallaxInner,
-      { y: -120, scale: 1.12 },
-      {
-        y: 120,
-        scale: 1.02,
-        ease: "none",
-        scrollTrigger: {
-          trigger: item,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.5
-        }
-      }
-    );
+  // =====================
+  // TEXT REVEAL
+  // =====================
+  gsap.utils.toArray(".textBlock, .ss-carousel__description").forEach((block) => {
 
-    // Left reveal
-    gsap.from(leftElements, {
-      x: -60,
+    gsap.from(block, {
+      y: 60,
       opacity: 0,
       duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
+      ease: "power2.out",
       scrollTrigger: {
-        trigger: item,
-        start: "top 80%"
+        trigger: block,
+        start: "top 85%"
       }
     });
 
   });
 
+  // PARALLAX
+gsap.utils.toArray(".imgWrap, .videoWrap, .slideWrap").forEach((wrap) => {
+
+  gsap.fromTo(wrap,
+    { y: -80, scale: 1.08 },
+    {
+      y: 80,
+      scale: 1.02,
+      ease: "none",
+      scrollTrigger: {
+        trigger: wrap,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1.2,
+invalidateOnRefresh: true
+      }
+    }
+  );
+
+});
+
+// MAP INIT
+ScrollTrigger.create({
+  trigger: ".mapWrap",
+  start: "top 85%",
+  once: true,
+  onEnter: () => {
+
+    requestAnimationFrame(() => {
+
+      initVisibleMaps();
+
+      setTimeout(() => {
+        refreshMaps();
+      }, 200);
+
+    });
+
+  }
+});
+
+
+
+  // FINAL REFRESH
   ScrollTrigger.refresh();
 
 });
 </script>
+
 
 
 
@@ -1727,6 +1858,248 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     </style>
-    <script></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+   <script>
+const mapConfigs = [
+  {
+    id: "map1",
+    coords: [16.5050288, 80.6619402],
+    title: "Amyra Silver - Jewellery Store",
+    address:
+      "D. No: 40-2-3/3C, Gouse Street, Mogalrajpuram, Vijayawada, Andhra Pradesh 520010",
+  },
+  {
+    id: "map2",
+    coords: [17.432709, 78.4281349],
+    title: "Ladia - Lab Grown Diamond Jewellery",
+    address:
+      "Road No. 36, Jubilee Hills, beside US Polo Assn, Hyderabad, Telangana 500033",
+  },
+  {
+    id: "map3",
+    coords: [17.43, 78.42],
+    title: "Smart Furniture",
+    address: "MG Road, Vijayawada, Andhra Pradesh 520010",
+  },
+  {
+    id: "map4",
+    coords: [17.4344965, 78.3691441],
+    title: "Aakruti - Clothing Store",
+    address:
+      "1-74/DH 186 & 201, Gachibowli - Miyapur Rd, Hyderabad, Telangana 500032",
+  },
+  {
+    id: "mapAnubhava",
+    coords: [16.5050288, 80.6619402],
+    title: "Anubhava Home Foods",
+    address: "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+  },
+  {
+    id: "mapPadmam",
+    coords: [16.709803, 81.104014],
+    title: "Padmam Silver Jewellery",
+    address: "CMR Central, Eluru",
+  },
+  {
+    id: "mapGoyaz",
+    coords: [17.4264249, 78.4504177],
+    title: "Goyaz Silver Jewellery",
+    address:
+      "NAGARJUNA CO-OPERATIVE HOUSING SOCIETY LTD, 5 & 6, Nagarjuna Hills, Punjagutta, Hyderabad",
+  },
+  {
+    id: "mapKps",
+    coords: [14.4293811, 79.9738343],
+    title: "Kanchipuram Perumal Silks",
+    address:
+      "Annamayya Cir, ISKCON City, Vanam Thopu, Nellore, Andhra Pradesh 524003",
+  },
+];
+
+
+// ===========================
+// FIXED POINTER ICON
+// ===========================
+
+const customIcon = L.icon({
+  iconUrl: "/assets/images/pointer.png", // make sure this exists
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+});
+
+
+// ===========================
+// STORE MAP INSTANCES
+// ===========================
+
+const mapInstances = {};
+
+
+// ===========================
+// CHECK VISIBILITY
+// ===========================
+
+function isVisible(el) {
+  if (!el) return false;
+
+  const rect = el.getBoundingClientRect();
+
+  return (
+    rect.width > 0 &&
+    rect.height > 0 &&
+    rect.top < window.innerHeight &&
+    rect.bottom > 0
+  );
+}
+
+
+// ===========================
+// INIT MAP
+// ===========================
+
+function createMap(config) {
+
+  if (mapInstances[config.id]) return;
+
+  const el = document.getElementById(config.id);
+  if (!el) return;
+
+  const map = L.map(config.id, {
+    attributionControl: false,
+    zoomControl: false
+  }).setView(config.coords, 17);
+
+
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    {
+      subdomains: "abcd",
+      maxZoom: 20,
+    }
+  ).addTo(map);
+
+
+  L.marker(config.coords, { icon: customIcon })
+    .addTo(map)
+    .bindPopup(`<strong>${config.title}</strong><br>${config.address}`)
+    .openPopup();
+
+
+  mapInstances[config.id] = map;
+
+
+  // force correct sizing
+  setTimeout(() => {
+    map.invalidateSize();
+  }, 500);
+}
+
+
+// ===========================
+// INIT VISIBLE MAPS
+// ===========================
+
+function initVisibleMaps() {
+
+  mapConfigs.forEach((config) => {
+
+    const el = document.getElementById(config.id);
+
+    if (isVisible(el)) {
+      createMap(config);
+    }
+
+  });
+
+}
+
+
+// ===========================
+// REFRESH MAP SIZES
+// ===========================
+
+function refreshMaps() {
+
+  Object.values(mapInstances).forEach((map) => {
+    map.invalidateSize();
+  });
+
+}
+
+
+// ===========================
+// LOAD EVENT
+// ===========================
+
+// Works with Lenis smooth scroll
+ScrollTrigger.create({
+  trigger: ".mapWrap",
+  start: "top 80%",
+  once: true,
+  onEnter: () => {
+
+    initVisibleMaps();
+
+    setTimeout(() => {
+      refreshMaps();
+    }, 300);
+
+  }
+});
+
+
+
+// ===========================
+// SCROLL EVENT (Lenis Compatible)
+// ===========================
+
+lenis.on("scroll", () => {
+
+  ScrollTrigger.update();
+
+  initVisibleMaps();
+
+  Object.values(mapInstances).forEach((map) => {
+    map.invalidateSize();
+  });
+
+});
+
+
+// ===========================
+// RESIZE EVENT
+// ===========================
+
+window.addEventListener("resize", () => {
+
+  ScrollTrigger.refresh();
+
+  refreshMaps();
+
+});
+
+
+// ===========================
+// CAROUSEL FIX
+// ===========================
+
+document.querySelectorAll(".ss-carousel__arrow").forEach((arrow) => {
+
+  arrow.addEventListener("click", () => {
+
+    setTimeout(() => {
+
+      initVisibleMaps();
+      refreshMaps();
+
+    }, 600);
+
+  });
+
+});
+
+</script>
+
   </body>
 </html>

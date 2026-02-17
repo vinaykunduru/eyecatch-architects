@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aakruti Clothing Store - Eye Catch Architects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            width: 100%;
+            background-color: #fff;
+            z-index: 999;
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #444;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Project Header */
+        .project-header {
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #000;
+        }
+
+        .project-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .project-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Project Info Grid */
+        .project-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .info-item h6 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .info-item h5 {
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .section-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin-bottom: 30px;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .image-grid.full {
+            grid-template-columns: 1fr;
+        }
+
+        .image-grid.two-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .image-grid.three-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Project Details */
+        .project-details {
+            background: #f9f9f9;
+            padding: 80px 40px;
+        }
+
+        .details-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .detail-column h5 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .detail-column p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation */
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 40px;
+        }
+
+        .project-nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 15px 30px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .project-nav a:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #000;
+            color: #fff;
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #fff;
+            padding: 60px 40px 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-address {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .footer h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer ul li a:hover {
+            color: #000;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #333;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .project-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero {
+                height: 50vh;
+                margin-top: 60px;
+            }
+
+            .project-header,
+            .content-section {
+                padding: 40px 20px;
+            }
+
+            .project-title {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .project-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .image-grid.two-col,
+            .image-grid.three-col {
+                grid-template-columns: 1fr;
+            }
+
+            .project-nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 20px;
+            }
+
+            .project-nav a {
+                text-align: center;
+            }
+
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .footer {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Image Lazy Load Effect */
+        img {
+            opacity: 0;
+            animation: fadeIn 0.6s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">Eye Catch Architects</a>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://via.placeholder.com/1920x800/333/fff?text=Aakruti+Clothing+Store" alt="Aakruti Clothing Store" class="hero-image">
+    </section>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="breadcrumb">
+            <a href="#">Home</a> / <a href="#">Projects</a> / Aakruti Clothing Store
+        </div>
+        
+        <h1 class="project-title">Aakruti - Clothing Store</h1>
+        <p class="project-subtitle">Where contemporary design meets cultural craftsmanship in a retail experience</p>
+
+        <!-- Project Info -->
+        <div class="project-info">
+            <div class="info-item">
+                <h6>Category</h6>
+                <h5>COMMERCIAL</h5>
+            </div>
+            <div class="info-item">
+                <h6>Year</h6>
+                <h5>2025</h5>
+            </div>
+            <div class="info-item">
+                <h6>Location</h6>
+                <h5>AMB Mall, Hyderabad</h5>
+            </div>
+            <div class="info-item">
+                <h6>Size</h6>
+                <h5>3,650 sq. ft.</h5>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Space Section -->
+    <section class="content-section">
+        <h2 class="section-title">The Space</h2>
+        <p class="section-text">
+            In a bustling mall setting, Aakruti's design stands out with a dramatic 'Aa' installation and a sleek, curved wall that commands attention. A strategically placed video wall amplifies visibility, using dynamic digital content to engage passersby and attract walk-in customers through visual storytelling.
+        </p>
+        <p class="section-text">
+            The store delivers a cohesive and immersive spatial experience, guided by gracefully curved SS pipe racks and dynamic triangular lighting that animates the space. The sculptural 'Aa' entrance installation serves as a bold brand statement, while a soft, refined color palette fosters a sense of calm.
+        </p>
+    </section>
+
+    <!-- Full Width Image -->
+    <div class="image-grid full" style="padding: 0 40px;">
+        <img src="https://via.placeholder.com/1920x1080/444/fff?text=Store+Interior+View" alt="Store Interior">
+    </div>
+
+    <!-- The Journey Section -->
+    <section class="content-section">
+        <h2 class="section-title">The Journey</h2>
+        <p class="section-text">
+            Every detail has a story. Here's how it all came to life.
+        </p>
+
+        <!-- Video Grid -->
+        <div class="image-grid two-col">
+            <div class="video-container">
+                <img src="https://via.placeholder.com/800x600/555/fff?text=Video+Placeholder+1" alt="Design Process">
+            </div>
+            <div class="video-container">
+                <img src="https://via.placeholder.com/800x600/555/fff?text=Video+Placeholder+2" alt="Construction Process">
+            </div>
+            <div class="video-container">
+                <img src="https://via.placeholder.com/800x600/555/fff?text=Video+Placeholder+3" alt="Detail Work">
+            </div>
+            <div class="video-container">
+                <img src="https://via.placeholder.com/800x600/555/fff?text=Video+Placeholder+4" alt="Finishing Touches">
+            </div>
+        </div>
+    </section>
+
+    <!-- The Design Section -->
+    <section class="content-section" style="background: #f9f9f9;">
+        <h2 class="section-title">The Design</h2>
+        <p class="section-text">
+            Stainless steel rack borders, embellished with sculpted motifs, offer a sturdy yet culturally evocative structure for showcasing garments. Positioned in front, display counters made from luxurious teak wood feature delicate silver inlays, echoing the elegance of traditional Indian silverware influenced by Bidri craftsmanship.
+        </p>
+        <p class="section-text">
+            The modern wear section at Aakruti redefines retail display with fluid stainless steel pipes, shaping movement and zones without rigid enclosures. These sculptural forms extend seamlessly to display counters, ensuring a cohesive visual flow.
+        </p>
+    </section>
+
+    <!-- The Result Section -->
+    <section class="content-section">
+        <h2 class="section-title">The Result</h2>
+        
+        <!-- Image Grid -->
+        <div class="image-grid full">
+            <img src="https://via.placeholder.com/1920x1280/666/fff?text=Main+Interior+Shot" alt="Main Interior">
+        </div>
+
+        <div class="image-grid two-col">
+            <img src="https://via.placeholder.com/900x1200/555/fff?text=Detail+Shot+1" alt="Detail 1">
+            <img src="https://via.placeholder.com/900x1200/555/fff?text=Detail+Shot+2" alt="Detail 2">
+        </div>
+
+        <p class="section-text">
+            Thoughtfully planned zoning enhances comfort, fluid movement, and engaging visual connections throughout the store. The zoned layout ensures smooth navigation and ample display space, with gondolas for added hanging and a dedicated service area offering easy, private access to trial rooms.
+        </p>
+
+        <div class="image-grid three-col">
+            <img src="https://via.placeholder.com/600x800/444/fff?text=Detail+3" alt="Detail 3">
+            <img src="https://via.placeholder.com/600x800/444/fff?text=Detail+4" alt="Detail 4">
+            <img src="https://via.placeholder.com/600x800/444/fff?text=Detail+5" alt="Detail 5">
+        </div>
+
+        <p class="section-text">
+            Aakruti's rack display transforms the shopping experience with a rhythmic blend of stocked shelves and hanging sections, intuitively guiding customers through the space. Sculpted stainless steel pipes define these zones, providing both structure and seamless visual flow. This dynamic layout enhances product visibility while fostering an engaging and fluid retail journey.
+        </p>
+
+        <div class="image-grid full">
+            <img src="https://via.placeholder.com/1920x1080/555/fff?text=Wide+Store+View" alt="Wide Store View">
+        </div>
+    </section>
+
+    <!-- Concept Summary -->
+    <section class="content-section" style="background: #f9f9f9;">
+        <p class="section-text">
+            This project masterfully intertwines narrative and design, with SS pipes shaped like flowing threads to form display racks that seamlessly blend function and form. These precisely bent pipes double as partitions, hanging systems, and wayfinding elements, guiding visitors through the space with fluid elegance.
+        </p>
+        <p class="section-text">
+            Anchoring the brand identity, the sculptural 'Aa' installation serves as a striking focal point, while triangular stretch lights introduce a sense of dynamism. A muted, refined color palette balances the energy, creating a harmonious environment that fuses contemporary structure with timeless cultural nuances for a truly distinctive spatial experience.
+        </p>
+    </section>
+
+    <!-- Project Team -->
+    <section class="project-details">
+        <div class="details-grid">
+            <div class="detail-column">
+                <h5>Project Leadership</h5>
+                <p>Project Architect: Ar. Pranay Mithilesh Pulipati</p>
+                <p>Interior Architect: Id. Medha Pulipati</p>
+                <p>Project Manager: Rakesh CH</p>
+                <p>Procurement Manager: Abhilash.V</p>
+            </div>
+            <div class="detail-column">
+                <h5>Project Team</h5>
+                <p>Ravi Kumar K</p>
+                <p>Ar. Chennakeshava.R</p>
+                <p>Ar. Vaishnavi Basireddy</p>
+                <p>Krishna Kanth P</p>
+                <p>Rajib Roy</p>
+                <p>Shamsheer P</p>
+                <p>Chandan Halder</p>
+                <p>Somisetty Baby Sushma</p>
+            </div>
+            <div class="detail-column">
+                <h5>Credits</h5>
+                <p>Project Incharge: Dinesh Babu.D, Ameer khan</p>
+                <p>Operational Manager: Fathima</p>
+                <p>Photography: Victor</p>
+                <p>Content: Anantu Chinthalapalli</p>
+                <p>Relationship Manager: Tharani M</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <div class="project-nav">
+        <a href="#">← Previous Project</a>
+        <a href="#">Next Project →</a>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Looking to elevate the aesthetic of your space?</h2>
+        <p>Have a question for us? Let's talk.<br>For all project inquiries, please contact us with the subject NEW PROJECT.</p>
+        <a href="#" class="cta-button">Contact Us</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">Eye Catch Architects</div>
+                <div class="footer-address">
+                    Plot No. 710, Road No. 36,<br>
+                    Aditya Enclave, Venkatagiri,<br>
+                    Jubilee Hills, Hyderabad,<br>
+                    Telangana 500033<br><br>
+                    +91 8125225696
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Architecture</a></li>
+                    <li><a href="#">Interior Design</a></li>
+                    <li><a href="#">Commercial</a></li>
+                    <li><a href="#">Residential</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:projects@eyecatcharchitects.com">projects@eyecatcharchitects.com</a></li>
+                    <li><a href="mailto:contact@eyecatcharchitects.com">contact@eyecatcharchitects.com</a></li>
+                    <li><a href="mailto:hr@eyecatcharchitects.com">hr@eyecatcharchitects.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Eye Catch Architects 2025. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
