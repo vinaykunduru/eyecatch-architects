@@ -723,7 +723,7 @@
 }
      .mapBlock {
   position: relative;
-  margin-top: 60px;
+  
 }
 
 .mapWrap {
@@ -1810,7 +1810,7 @@ flex: 1;
 <!-- LEAFLET -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <!-- SWIPER -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -1990,7 +1990,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ScrollTrigger.update();
     initVisibleMaps();
-    refreshMaps();
+    setTimeout(refreshMaps, 50);
 
   });
 
