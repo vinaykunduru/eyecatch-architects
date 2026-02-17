@@ -455,6 +455,13 @@
         bottom: 20px !important;
       }
       @media screen and (max-width: 768px) {
+        .ss-carousel{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .ss-carousel__content{
+            gap:100px
+        }
         #preloader img {
           width: 50%;
         }
@@ -710,23 +717,26 @@
                             }
                             .headerRightCont{}
 
-
-      .mapBlock {
+.imgBlock, .videoBlock, .mapBlock, .slideBlock{
+    overflow: hidden;
+    border-radius: 20px;
+}
+     .mapBlock {
   position: relative;
-  z-index: 2;
+  margin-top: 60px;
 }
 
 .mapWrap {
   position: relative;
-  height: 500px;
   width: 100%;
-  overflow: hidden;
+  height: 500px;        /* FIXED HEIGHT REQUIRED */
   border-radius: 20px;
+  overflow: hidden;
 }
 
-.mapWrap #map3 {
-  height: 100%;
+.map {
   width: 100%;
+  height: 100%;
 }
 
       .imgWrap {
@@ -770,6 +780,9 @@
   object-fit: cover;
   will-change: transform;
 }
+.ss-carousel__description{
+    padding-right: 30px;
+}
 .imgBlock,
 .videoBlock,
 .slideBlock,
@@ -795,6 +808,11 @@ img, video {
 .mapWrap {
   transform: translateZ(0);
   backface-visibility: hidden;
+}
+@media screen and (max-width: 768px) {
+    .ss-carousel__content{
+        gap:50px
+    }
 }
                         </style>
                       <div class="ss-carousel__content">
@@ -939,7 +957,7 @@ img, video {
                         </div><!-- Row -->
 
                         <li class="row" >
-                            <div class="col-md-4">
+                            <div class="col-md-4"><div class="ss-carousel__description">
                                 <p style="max-width: 100%">
                             Inspired by Kirigami, the furniture store's display
                             area transforms structural elements into sculptural
@@ -949,6 +967,7 @@ img, video {
                             boundaries while inviting exploration, blending
                             functionality and artistry.
                           </p>
+                          </div>
                             </div>
                             <div class="col-md-8 videoBlock">
                                 <div class="videoWrap">
@@ -966,7 +985,7 @@ img, video {
                         
 
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4"><div class="ss-carousel__description">
                                 <p style="max-width: 100%">
                             The display zone features fluid partitions crafted
                             from flexible plywood, echoing paper cuts and folds.
@@ -975,7 +994,7 @@ img, video {
                             Subtle geometric embossing adds tactile depth,
                             enhancing visual rhythm and creating an immersive
                             experience.
-                          </p>
+                          </p></div>
                                
                             </div>
                             <div class="col-md-8 videoBlock">
@@ -993,7 +1012,7 @@ img, video {
                        
 
                         <div class="row overlyText" >
-                            <div class="col-md-4">
+                            <div class="col-md-4"><div class="ss-carousel__description">
                                 <p>
                             Roman-inspired curves and concealed cove lighting
                             create a refined backdrop for furniture. A
@@ -1001,6 +1020,7 @@ img, video {
                             displays, supported by elegant architectural
                             details.
                           </p>
+                          </div>
                             </div>
                             <div class="col-md-8 videoBlock">
                                 <div class="videoWrap">
@@ -1016,6 +1036,7 @@ img, video {
                         </div> <!-- Row -->
                         <div class="row">
                             <div class="col-md-4 textBlock">
+                                <div class="ss-carousel__description">
                                 <p>
                               The layout accommodates 15 furniture pieces, two
                               of which are in window displays, and has basic
@@ -1023,6 +1044,7 @@ img, video {
                               wayfinding, linked spaces, and efficient space
                               use.
                             </p>
+                            </div>
                             </div>
                             <div class="col-md-8 videoBlock">
                                 <div class="videoWrap">
@@ -1095,6 +1117,7 @@ img, video {
                         <div class="row teamBlock threeGrid" >
                           
                             <div class="col-md-4">
+                                <div class="ss-carousel__description">
                               <!-- <h5>Project Leader</h5>
                               <p>Madhusudhan Rao Pulipati</p> -->
                               <h5>Project Architect</h5>
@@ -1118,9 +1141,11 @@ img, video {
                               <p>Shamsheer P</p>
                               <p>Chandan Halder</p>
                               <p>Somisetty Baby Sushma</p>
+                              </div>
                             </div>
 
                             <div class="col-md-4">
+                                <div class="ss-carousel__description">
                               <h5>Project Incharge</h5>
                               <p>Ameer khan</p>
                               <h5 class="subHead2">Operational manager</h5>
@@ -1132,6 +1157,7 @@ img, video {
                               <p>Anantu Chinthalapalli</p>
                               <h5 class="subHead2">Relationship Manager</h5>
                               <p>Tharani M</p>
+                            </div>
                             </div>
                           
                         </div><!-- Row -->
@@ -1585,7 +1611,157 @@ img, video {
       }
     </style>
 
+<style type="text/css">#st-1 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: right;
+  z-index: 94034;
+}
+#st-1.st-animated {
+  -moz-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -ms-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -o-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -webkit-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in;
+}
+#st-1.st-hidden {
+  opacity: 0;
+}
 
+#st-1.st-preview {
+  display: none!important;
+  opacity: 0!important;
+}
+#st-1.st-hide {
+  display: none;
+}
+#st-1 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in; -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in; -o-transition: opacity 0.2s ease-in, top 0.2s ease-in; -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in; transition: opacity 0.2s ease-in, top 0.2s ease-in;
+  -moz-border-radius: 16px;
+-webkit-border-radius: 16px;
+border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 8px;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
+#st-1 .st-btn:last-child {
+  margin-right: 0;
+}
+#st-1 .st-btn > svg {
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 8px;
+  vertical-align: top;
+}
+#st-1 .st-btn > img {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 8px;
+  vertical-align: top;
+}
+#st-1 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-width: 60px;
+  opacity: 1;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+}
+#st-1.st-has-labels .st-btn {
+  min-width: 120px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label {
+  min-width: 50px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label > span {
+  display: none;
+}
+#st-1.st-has-labels .st-btn.st-hide-label > span {
+  display: none;
+}
+#st-1 .st-total {
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 12px;
+  margin-right: 0;
+  max-width: 80px;
+  padding: 4px 8px;
+  text-align: center;
+}
+#st-1 .st-total.st-hidden {
+  display: none;
+}
+#st-1 .st-total > span {
+  font-size: 16px;
+  line-height: 17px;
+  display: block;
+  padding: 0;
+}
+#st-1 .st-total > span.st-shares {
+  font-size: 9px;
+  line-height: 9px;
+}
+#st-1.st-justified {
+  display: flex;
+  text-align: center;
+}
+#st-1.st-justified .st-btn {
+  -moz-flex: 1;
+-ms-flex: 1;
+-webkit-flex: 1;
+flex: 1;
+}#st-1 .st-btn:hover {
+  opacity: .8;
+  top: -4px;
+}#st-1 .st-btn[data-network='facebook'] {
+  background-color: #000000
+}
+#st-1 .st-btn[data-network='facebook'] img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(106%) contrast(103%);
+}
+#st-1 .st-btn[data-network='facebook'] > span {
+  color: #ffffff
+}
+#st-1 .st-btn[data-network='twitter'] {
+  background-color: #000000
+}
+#st-1 .st-btn[data-network='twitter'] img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(106%) contrast(103%);
+}
+#st-1 .st-btn[data-network='twitter'] > span {
+  color: #ffffff
+}
+#st-1 .st-btn[data-network='whatsapp'] {
+  background-color: #000000
+}
+#st-1 .st-btn[data-network='whatsapp'] img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(106%) contrast(103%);
+}
+#st-1 .st-btn[data-network='whatsapp'] > span {
+  color: #ffffff
+}#st-1 .st-btn[data-network='snapchat'] > span {
+  color: #333};
+
+</style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
@@ -1819,45 +1995,7 @@ ScrollTrigger.create({
       });
     </script>
 
-    <div
-      id="swipeHint"
-      style="
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 13px;
-        display: none;
-        z-index: 9999;
-        animation: fadeInOut 4s ease forwards;
-      "
-    >
-      👆 Swipe to explore
-    </div>
-
-    <style>
-      @keyframes fadeInOut {
-        0% {
-          opacity: 0;
-          transform: translate(-50%, 10px);
-        }
-        10% {
-          opacity: 1;
-          transform: translate(-50%, 0);
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-          transform: translate(-50%, 10px);
-        }
-      }
-    </style>
+    
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
    <script>
 const mapConfigs = [
@@ -1922,7 +2060,7 @@ const mapConfigs = [
 // ===========================
 
 const customIcon = L.icon({
-  iconUrl: "/assets/images/pointer.png", // make sure this exists
+  iconUrl: "images/pointer.png", // make sure this exists
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
@@ -1940,69 +2078,53 @@ const mapInstances = {};
 // CHECK VISIBILITY
 // ===========================
 
+// ===========================
+// GLOBAL MAP FUNCTIONS
+// ===========================
+
 function isVisible(el) {
+
   if (!el) return false;
 
   const rect = el.getBoundingClientRect();
 
   return (
-    rect.width > 0 &&
-    rect.height > 0 &&
     rect.top < window.innerHeight &&
     rect.bottom > 0
   );
+
 }
 
-
-// ===========================
-// INIT MAP
-// ===========================
 
 function createMap(config) {
 
   if (mapInstances[config.id]) return;
 
-  const el = document.getElementById(config.id);
-  if (!el) return;
-
   const map = L.map(config.id, {
-    attributionControl: false,
-    zoomControl: false
+    attributionControl: false
   }).setView(config.coords, 17);
 
 
   L.tileLayer(
     "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-    {
-      subdomains: "abcd",
-      maxZoom: 20,
-    }
+    { maxZoom: 20 }
   ).addTo(map);
 
 
   L.marker(config.coords, { icon: customIcon })
     .addTo(map)
-    .bindPopup(`<strong>${config.title}</strong><br>${config.address}`)
+    .bindPopup(config.title)
     .openPopup();
 
 
   mapInstances[config.id] = map;
 
-
-  // force correct sizing
-  setTimeout(() => {
-    map.invalidateSize();
-  }, 500);
 }
 
 
-// ===========================
-// INIT VISIBLE MAPS
-// ===========================
-
 function initVisibleMaps() {
 
-  mapConfigs.forEach((config) => {
+  mapConfigs.forEach(config => {
 
     const el = document.getElementById(config.id);
 
@@ -2015,13 +2137,9 @@ function initVisibleMaps() {
 }
 
 
-// ===========================
-// REFRESH MAP SIZES
-// ===========================
-
 function refreshMaps() {
 
-  Object.values(mapInstances).forEach((map) => {
+  Object.values(mapInstances).forEach(map => {
     map.invalidateSize();
   });
 
@@ -2047,6 +2165,49 @@ ScrollTrigger.create({
 
   }
 });
+document.querySelectorAll("video").forEach(video => {
+  video.pause();
+});
+
+gsap.utils.toArray(".videoBlock").forEach((block) => {
+
+  const video = block.querySelector("video");
+
+  ScrollTrigger.create({
+
+    trigger: block,
+    start: "top 70%",
+    end: "bottom 30%",
+
+    onEnter: () => video.play(),
+
+    onEnterBack: () => video.play(),
+
+    onLeave: () => video.pause(),
+
+    onLeaveBack: () => video.pause()
+
+  });
+
+});
+
+
+document.querySelectorAll(".mute-toggle").forEach((btn) => {
+
+  btn.addEventListener("click", () => {
+
+    const video = btn.closest(".videoWrap").querySelector("video");
+
+    video.muted = !video.muted;
+
+    btn.innerHTML = video.muted
+      ? '<i class="fas fa-volume-mute"></i>'
+      : '<i class="fas fa-volume-up"></i>';
+
+  });
+
+});
+
 
 
 
@@ -2100,6 +2261,57 @@ document.querySelectorAll(".ss-carousel__arrow").forEach((arrow) => {
 });
 
 </script>
+
+
+<script>
+
+let lenis;
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  lenis = new Lenis({
+    duration: 1.6,
+    smooth: true
+  });
+
+  function raf(time){
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+
+  lenis.on("scroll", () => {
+
+    ScrollTrigger.update();
+
+    initVisibleMaps();
+
+    refreshMaps();
+
+  });
+
+
+  ScrollTrigger.create({
+
+    trigger: ".mapWrap",
+    start: "top 85%",
+    once: true,
+
+    onEnter: () => {
+
+      initVisibleMaps();
+
+      setTimeout(refreshMaps,300);
+
+    }
+
+  });
+
+});
+
+</script>
+
 
   </body>
 </html>
