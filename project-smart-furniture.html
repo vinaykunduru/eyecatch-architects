@@ -123,6 +123,8 @@
         user-select: none;
         right: 0;
         top: 35px;
+        height: 100dvh;
+        bottom:0;
       }
       .css-mobile-menu #menuToggle input {
         display: flex;
@@ -164,10 +166,10 @@
         transform: rotate(-45deg) translate(0, -1px);
       }
       #menu {
-        position: absolute;
+        position: fixed;
         width: auto;
         min-width: 50px;
-        height: 100vh;
+        height: 100dvh;
         margin: -50px 0 0 -50px;
         padding: 50px 30px 0 50px;
         padding-top: 110px;
@@ -177,6 +179,7 @@
         transform: translateX(100%);
         top: 0;
         right: 0;
+        bottom:0;
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
         list-style: none;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -715,7 +718,10 @@
                             .headerLeftCont .icon img{
                                 width:100%;
                             }
-                            .headerRightCont{}
+                            .headerRightCont{
+                              border-left:1px solid #ccc;
+                              padding-left: 50px;
+                            }
 
 .imgBlock, .videoBlock, .mapBlock, .slideBlock{
     overflow: hidden;
@@ -841,6 +847,142 @@ img, video {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+.projectNav {
+
+  padding: 80px 0px;
+  border-top:1px solid #ccc;
+  margin-top: 40px;
+
+}
+
+.projectNavInner {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.projectNavItem {
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.projectNavItem.next {
+
+  justify-content: flex-end;
+
+}
+
+.circleBtn {
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #555;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.35s ease;
+
+}
+
+.projectNavItem:hover .circleBtn {
+
+  transform: scale(1.1);
+  background: #000;
+
+}
+
+.projectNavItem:hover {
+
+  color: #000;
+
+}
+
+.navText {
+
+  letter-spacing: 0.5px;
+
+}
+
+
+/* responsive */
+
+@media(max-width:768px){
+
+  .projectNav {
+
+    padding: 50px 0px;
+
+  }
+  .projectNavItem{
+    gap: 8px;
+  }
+
+  .navText {
+
+    font-size: 14px;
+
+  }
+
+  .circleBtn {
+
+    width: 36px;
+    height: 36px;
+
+  }
+
+   .headerRightCont{
+                              border-left:0px solid #ccc;
+                              padding-left: 0px;
+                            }
+
+}
+
+#ctaSection{
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+
+#ctaSection h2 {
+    font-size: 2rem;
+}
+#ctaSection p a {
+    text-decoration: none;
+    color: #000;
+}
+#ctaSection .col-md-8{
+  padding-top:40px;
+  padding-bottom:40px
+}
+.ctaButtonSection {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+    .ctaButton {
+        color: #000;
+        border: 1px solid #000;
+        padding: 12px 24px;
+        text-decoration: none;
+        align-self: center;
+        margin-left: 40px;
+      }
+      .ctaButton:hover {
+        background-color: #000;
+        color: #fff;
+      }
 @media screen and (max-width: 768px) {
 
     .basicInfo{
@@ -869,23 +1011,7 @@ img, video {
                                 </p>
                                 <p class="location">2025</p>
 
-                                <div class="socialSection">
-                              <div class="sharethis-inline-share-buttons st-inline-share-buttons st-animated" id="st-1" style="text-align: left !important;"><div class="st-total st-hidden">
-  <span class="st-label"></span>
-  <span class="st-shares">
-    Shares
-  </span>
-</div><div class="st-btn st-first  st-remove-label" data-network="facebook" style="display: inline-block;">
-  <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg">
-  
-</div><div class="st-btn  st-remove-label" data-network="twitter" style="display: inline-block;">
-  <img alt="twitter sharing button" src="https://platform-cdn.sharethis.com/img/twitter.svg">
-  
-</div><div class="st-btn st-last  st-remove-label" data-network="whatsapp" style="display: none;">
-  <img alt="whatsapp sharing button" src="https://platform-cdn.sharethis.com/img/whatsapp.svg">
-  
-</div></div>                              
-                            </div><!-- Social -->
+                                
                               </div>
                             </div>
                             <div class="headerRightCont">
@@ -906,6 +1032,23 @@ img, video {
                                 <h4>Status</h4>
                                 <p>Completed</p>
                               </div>
+                              <div class="socialSection">
+                              <div class="sharethis-inline-share-buttons st-inline-share-buttons st-animated" id="st-1" style="text-align: left !important;"><div class="st-total st-hidden">
+  <span class="st-label"></span>
+  <span class="st-shares">
+    Shares
+  </span>
+</div><div class="st-btn st-first  st-remove-label" data-network="facebook" style="display: inline-block;">
+  <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg">
+  
+</div><div class="st-btn  st-remove-label" data-network="twitter" style="display: inline-block;">
+  <img alt="twitter sharing button" src="https://platform-cdn.sharethis.com/img/twitter.svg">
+  
+</div><div class="st-btn st-last  st-remove-label" data-network="whatsapp" style="display: none;">
+  <img alt="whatsapp sharing button" src="https://platform-cdn.sharethis.com/img/whatsapp.svg">
+  
+</div></div>                              
+                            </div><!-- Social -->
                             </div><!-- More Info-->
                              
                             </div>
@@ -1208,9 +1351,67 @@ img, video {
                   </div>
                 </div>
           
+<section class="projectNav">
+
+  <div class="projectNavInner">
+
+    <!-- Previous -->
+    <a href="previous-project.html" class="projectNavItem prev">
+
+      <span class="circleBtn">
+        <i class="fas fa-chevron-left"></i>
+      </span>
+
+      <span class="navText">Previous Project</span>
+
+    </a>
 
 
+    <!-- Next -->
+    <a href="next-project.html" class="projectNavItem next">
 
+      <span class="navText">Next Project</span>
+
+      <span class="circleBtn">
+        <i class="fas fa-chevron-right"></i>
+      </span>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="services" id="ctaSection">
+              <!-- <div class="sectionHead parallax-section">
+                <h2>Our Verticals</h2>
+              </div> -->
+              <style></style>
+              <div class="row borderBottom">
+                <div
+                  class="col-md-8"
+                  style="border-right: 1px solid #ccc"
+                >
+                  <h2>Seeking to enhance the visual appeal of your space?</h2>
+                  <p>
+                    Have a question for us? Let’s talk.<br />For all project
+                    inquiries, please email
+                    <a href="mailto:projects@eyecatcharchitects.com"
+                      >projects@eyecatcharchitects.com</a
+                    >
+                    with the subject NEW PROJECT
+                  </p>
+                </div><!-- Col -->
+                <div class="col-md-4 ctaButtonSection">
+                  <a
+                    href="mailto:projects@eyecatcharchitects.com"
+                    class="ctaButton"
+                    >Contact us</a
+                  >
+                </div>
+              </div>
+            </section>
         </div>
         <!-- Container Grid Container-->
          </div>
@@ -1530,7 +1731,7 @@ img, video {
       }
       
       .moreInfo {
-        text-align: right;
+        text-align: left;
         align-self: end;
         vertical-align: bottom;
         /* margin-top: 30px; */
@@ -1550,6 +1751,9 @@ img, video {
         padding: 0;
         font-weight: normal;
         font-size: 14px;
+      }
+      .moreInfo div:last-child p{
+        margin-bottom: 0;
       }
       
       .mute-toggle {
