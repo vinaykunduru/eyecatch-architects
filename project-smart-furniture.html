@@ -699,7 +699,7 @@
                                 flex-direction: column;
                                 gap: 60px;
                             }
-                            .ss-carousel__content .row .col-md-4{
+                            .ss-carousel__content .row .col-md-4, .ss-carousel__content .row .itemsCenter{
                               display: flex;
                               align-items: center;
                             }
@@ -762,6 +762,18 @@
   position: relative;
   overflow: hidden;      /* prevents overlap */
   border-radius: 20px;
+}
+.videoWrap .bordered{
+  border:1px solid #ccc;
+}
+.videoBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  pointer-events: none;
+  z-index: 5;
 }
 
 .videoWrap video {
@@ -1111,10 +1123,10 @@ img, video {
 
                         
                        
-                        <div class="row videoBlock">
+                        <div class="row videoBlock videoBorder">
                             <div class="col-md-12">
                                 <div class="videoWrap">
-                          <video muted="" autoplay="" loop="" playsinline="true">
+                          <video muted="" autoplay="" loop="" playsinline="true" class="">
                             <source src="projects/smart-furniture/Smart Furniture Site View Video latest 17.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
 
                             Your browser does not support the video tag.
@@ -1169,7 +1181,7 @@ img, video {
                           </p>
                           </div>
                             </div>
-                            <div class="col-md-8 videoBlock">
+                            <div class="col-md-8 videoBlock videoBorder">
                                 <div class="videoWrap">
                                 <video muted="" autoplay="" loop="" playsinline="true">
                             <source src="projects/smart-furniture/Smart furniture - Set 1.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
@@ -1197,7 +1209,7 @@ img, video {
                           </p></div>
                                
                             </div>
-                            <div class="col-md-8 videoBlock">
+                            <div class="col-md-8 videoBlock videoBorder">
                                 <div class="videoWrap">
                                  <video muted="" autoplay="" loop="" playsinline="true">
                             <source src="projects/smart-furniture/Smart furniture - Set 2.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
@@ -1222,7 +1234,7 @@ img, video {
                           </p>
                           </div>
                             </div>
-                            <div class="col-md-8 videoBlock">
+                            <div class="col-md-8 videoBlock videoBorder">
                                 <div class="videoWrap">
                                 <video muted="" autoplay="" loop="" playsinline="true">
                             <source src="projects/smart-furniture/Smart furniture - Set 3.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
@@ -1291,7 +1303,7 @@ img, video {
 
                         
                         <div class="row">
-                            <div class="col-md-6 textBlock">
+                            <div class="col-md-6 textBlock itemsCenter">
                                 <div class="ss-carousel__description">
                             <p>
                               Parabolic divisions break linear monotony,
