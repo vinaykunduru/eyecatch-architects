@@ -697,7 +697,11 @@
                             .ss-carousel__content{
                                 display: flex;
                                 flex-direction: column;
-                                gap: 100px;
+                                gap: 60px;
+                            }
+                            .ss-carousel__content .row .col-md-4{
+                              display: flex;
+                              align-items: center;
                             }
                             .imgBlock img{
                                 width:100%;
@@ -709,6 +713,7 @@
                             }
                             .basicInfo{
                                 justify-content: space-between;
+                                align-items: center;
                             }
                             .headerLeftCont{}
                             .headerLeftCont .icon{
@@ -2128,9 +2133,16 @@ function createMap(config){
   if(!el) return;
 
   const map = L.map(el,{
-    attributionControl:false,
-    zoomControl:false,
-    preferCanvas:true
+    attributionControl: false,
+  zoomControl: false,
+
+  scrollWheelZoom: false,     // 🔥 prevents wheel zoom
+  doubleClickZoom: false,
+  boxZoom: false,
+  dragging: true,            // optional (disables drag)
+  keyboard: false,
+  tap: false,
+  touchZoom: false
   });
 
   map.setView(config.coords,17);
