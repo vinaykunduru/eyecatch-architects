@@ -964,6 +964,7 @@ img, video {
 
     .basicInfo{
         flex-direction: column;
+        align-items: flex-start;
     }
     .moreInfo{
         text-align: left !important;
@@ -1343,7 +1344,7 @@ img, video {
                             </div>
                         </div><!-- Row -->
 
-                        <div class="row teamBlock threeGrid" >
+                        <div class="row teamBlock threeGrid" style="display:none !important">
                           
                             <div class="col-md-4 itemsTop">
                                 <div class="ss-carousel__description">
@@ -2168,7 +2169,7 @@ function createMap(config){
   scrollWheelZoom: false,     // 🔥 prevents wheel zoom
   doubleClickZoom: false,
   boxZoom: false,
-  dragging: true,            // optional (disables drag)
+  dragging: false,            // optional (disables drag)
   keyboard: false,
   tap: false,
   touchZoom: false
