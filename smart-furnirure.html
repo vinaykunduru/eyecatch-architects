@@ -2940,45 +2940,7 @@ https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.
 
       window.addEventListener("resize", refreshVisibleMaps);
     </script>
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const videoBlocks = document.querySelectorAll(".videoBlock");
-
-        videoBlocks.forEach((block) => {
-          const video = block.querySelector("video");
-          const button = block.querySelector(".mute-toggle");
-          if (!video || !button) return;
-
-          const icon = button.querySelector("i");
-
-          button.addEventListener("click", () => {
-            const isMuted = video.muted;
-
-            // First mute all other videos
-            videoBlocks.forEach((otherBlock) => {
-              const otherVideo = otherBlock.querySelector("video");
-              const otherButton = otherBlock.querySelector(".mute-toggle");
-              const otherIcon = otherButton?.querySelector("i");
-
-              if (otherVideo && otherVideo !== video) {
-                otherVideo.muted = true;
-                if (otherIcon) {
-                  otherIcon.classList.remove("fa-volume-up");
-                  otherIcon.classList.add("fa-volume-mute");
-                }
-              }
-            });
-
-            // Now toggle current video
-            video.muted = !isMuted;
-            video.play().catch(() => {}); // force play (some browsers pause on mute toggle)
-
-            icon.classList.toggle("fa-volume-mute", video.muted);
-            icon.classList.toggle("fa-volume-up", !video.muted);
-          });
-        });
-      });
-    </script> -->
+   
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {

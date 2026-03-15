@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+       @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+      body {
+        padding: 0;
+        margin: 0;
+        /* font-family: Helvetica;
+        font-family: "Poppins", sans-serif;
+        font-family: "Cardo", serif;
+        font-family: "Raleway", sans-serif; */
+        font-family: "Montserrat", sans-serif;
+
+        font-size: 16px;
+        line-height: 1.4;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        /* font-family: "Karla", sans-serif;
+        font-family: "Bodoni Moda", serif; */
+        font-family: "Libre Baskerville", serif;
+
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.5px;
+      }
+      .mainWrapper {
+        padding-bottom: 0;
+      }
+      
+      .logo {
+        width: 50px;
+        height: auto;
+        padding: 5px 0;
+      }
+      .logo img {
+        width: 100%;
+      }
+      
+      .header {
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        z-index: 999;
+      }
+      .headerContainer {
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        justify-content: space-between;
+        vertical-align: middle;
+      }
+      .topNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+      }
+      .topNav span {
+        align-items: center;
+        text-transform: uppercase;
+        /* font-family: "Helvetica"; */
+        color: #444;
+        letter-spacing: 1px;
+      }
+      .topNav span a {
+        color: #444;
+        text-decoration: none;
+      }
+      .topNav span a.activeNav {
+        border-bottom: 1px solid #444;
+      }
+      
+
+      
+
+      .css-mobile-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .css-mobile-menu #menuToggle {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        padding-right: 1.5rem;
+        z-index: 9999;
+        -webkit-user-select: none;
+        user-select: none;
+        right: 0;
+        top: 35px;
+        height: 100dvh;
+        bottom:0;
+      }
+      .css-mobile-menu #menuToggle input {
+        display: flex;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+      }
+      .css-mobile-menu #menuToggle span.span {
+        display: flex;
+        width: 29px;
+        height: 2px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #4a4a4a;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 5px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+          background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+      }
+      .css-mobile-menu #menuToggle span.span:first-child {
+        transform-origin: 0% 0%;
+      }
+      .css-mobile-menu #menuToggle span.span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-3px, -1px);
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+      .css-mobile-menu #menuToggle input:checked ~ span.span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+      #menu {
+        position: fixed;
+        width: auto;
+        min-width: 50px;
+        height: 100dvh;
+        margin: -50px 0 0 -50px;
+        padding: 50px 30px 0 50px;
+        padding-top: 110px;
+        background-color: #fff;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transform: translateX(100%);
+        top: 0;
+        right: 0;
+        bottom:0;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        list-style: none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      #menu li {
+        padding: 10px 0;
+        transition-delay: 2s;
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      #menu li a {
+        color: #4a4a4a;
+        text-decoration: none;
+      }
+      .css-mobile-menu #menuToggle input:checked ~ ul {
+        transform: none;
+      }
+      /* Hide submenu initially */
+      #menu .has-submenu .submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 15px;
+        list-style: none;
+      }
+
+      /* When open, show submenu */
+      #menu .has-submenu.open .submenu {
+        max-height: 300px;
+      }
+
+      /* Style the icon specifically in the menu */
+      #menu .submenu-toggle {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+
+      #menu .submenu-icon {
+        /* font-weight: bold; */
+        font-size: 14px;
+        margin-right: 5px;
+        line-height: 1;
+      }
+
+      
+      @media all and (max-width: 768px) {
+        #menu {
+          width: 100vw;
+          height: 100vh;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+        #menu li {
+          padding: 1rem 2rem;
+        }
+        .css-mobile-menu #menuToggle {
+          padding-right: 1rem;
+        }
+        .footer {
+          padding: 50px 0 100px 0;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-start;
+          gap: 0;
+          margin-bottom: 100px;
+          flex-wrap: wrap;
+        }
+        .footer-section {
+          margin: 10px 0;
+          position: relative;
+          min-width: 20%;
+          width: 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader">
+      <img src="/images/crow-animation.gif" alt="Loading..." />
+    </div>
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.6s ease, visibility 0.6s;
+        text-align: center;
+      }
+      #preloader img {
+        width: 20%;
+        height: auto;
+      }
+
+      #preloader.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .mainWrapper {
+        transform: translateY(50px);
+        opacity: 0;
+        transition: transform 0.8s ease, opacity 0.8s ease;
+      }
+
+      .mainWrapper.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .footer {
+        padding: 100px 0 230px 0;
+
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 10px;
+      }
+
+      .footer-section {
+        margin: 10px 0;
+        position: relative;
+        min-width: 150px;
+      }
+
+      .footer-link {
+        cursor: pointer;
+        font-size: 14px;
+        margin: 10px 0;
+        display: inline-block;
+        position: relative;
+      }
+
+      .footer-link .toggle {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+      }
+
+      .sub-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        opacity: 0;
+      }
+      .sub-content a {
+        color: #000;
+      }
+      .address {
+        transition: all 0.5s ease;
+        /* opacity: 0; */
+      }
+      .sub-content p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .emailLabel {
+        min-width: 85px;
+        display: inline-block;
+      }
+      .sub-content p a {
+        color: #000;
+      }
+      #socialSection p {
+        padding-bottom: 5px;
+      }
+      #socialSection p a {
+      }
+      #socialSection p svg {
+        width: 7px;
+        height: auto;
+        padding-left: 1px;
+      }
+
+      .sub-content.show {
+        max-height: 500px; /* Large enough to hold content */
+        opacity: 1;
+        /* padding-top: 10px; */
+      }
+
+      .sub-toggle {
+        /* color: #00bcd4; */
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      .detailedAddress {
+        max-width: 200px;
+      }
+      .detailedAddress strong {
+        font-weight: 600;
+      }
+      .ss-carousel {
+        padding: 24px 0px;
+        background-color: #fff;
+      }
+
+      .ss-carousel a {
+        text-decoration: none;
+      }
+      .ss-carousel img {
+        width: 100%;
+        overflow: hidden;
+
+        object-fit: cover;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+      }
+
+     
+     
+      
+      .moreInfo {
+        text-align: right;
+        align-self: end;
+        vertical-align: bottom;
+        /* margin-top: 30px; */
+      }
+      .moreInfo h4 {
+        text-transform: uppercase;
+        color: #787878;
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 14px;
+      }
+      .moreInfo p {
+        text-transform: uppercase;
+        color: #000;
+        margin: 3px 0 20px 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 14px;
+      }
+      
+      .subHead2 {
+        font-size: 14px;
+        margin-top: 20px;
+        margin-top: 20px !important;
+      }
+      
+      .disclaimer a {
+        color: #fff;
+      }
+      .swiper-pagination-bullet {
+        width: 10px !important;
+        height: 10px !important;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #ed1c24 !important;
+      }
+
+      * {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+      .swiper-horizontal > .swiper-pagination-bullets,
+      .swiper-pagination-bullets.swiper-pagination-horizontal,
+      .swiper-pagination-custom,
+      .swiper-pagination-fraction {
+        bottom: 20px !important;
+      }
+      @media screen and (max-width: 768px) {
+        .ss-carousel{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .ss-carousel__content{
+            gap:100px
+        }
+        #preloader img {
+          width: 50%;
+        }
+        .headerContainer {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .topNav {
+          display: none;
+        }
+       
+       
+
+        .footer {
+          padding: 0px 0 100px 0;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-start;
+          gap: 0;
+          margin-bottom: 100px;
+          flex-wrap: wrap;
+
+          width: 92%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .footer-section {
+          margin: 10px 0;
+          position: relative;
+          min-width: 20%;
+          width: 25%;
+        }
+        .footer-link .toggle {
+          margin-left: 2px;
+        }
+      }
+
+      html,
+      body {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-wrapper {
+        height: 100%;
+        /* overflow: hidden; */
+      }
+
+      #smooth-content {
+        will-change: transform;
+      }
+      body {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        const mainWrapper = document.querySelector(".mainWrapper");
+
+        const gifDuration = 3000;
+
+        setTimeout(() => {
+          preloader.classList.add("hidden");
+          mainWrapper.classList.add("visible");
+        }, gifDuration);
+      });
+    </script>
+
+    <style>
+                .projectItem{
+                    border-bottom: 1px solid #999;
+                    padding-bottom: 40px;
+                    margin-bottom: 40px;
+                }
+                .projectItem:last-child{
+                    border-bottom:0 !important
+                }
+                .projectInfo{
+                    text-align: left;
+                }
+                .projectIcon{
+                    width: 40px;
+                    height:40px;
+                    /* margin-left: auto; */
+                }
+                .projectIcon img{
+                    width:100%;
+                    
+                }
+                .projectTitle{
+                    font-size: 34px;
+                    margin: 10px 0;
+                }
+                .projectLocation{}
+                .ContainerBtn{
+                    /* text-align: right; */
+                }
+                .projectTitleInfo p:last-child{
+                  margin-bottom: 0;
+                }
+                .exporeBtn{
+                    border:1px solid #000;
+                    display: inline-block;
+                    padding: 16px 32px;
+                    color: #000;
+                    text-decoration: none;
+                    margin-top: 20px;
+                    position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+                }
+                
+                .exporeBtn:hover{
+                    background-color: #000;
+                    color:#fff
+                }
+                
+                .projectSlide{
+                    position: relative;
+  overflow: visible; /* important */
+                }
+
+                .projectSlide .swiper-slide img{
+                   
+                    object-fit: cover;
+                    border-radius:20px
+                }
+                /* .projectSlide .swiper-pagination{
+                    position: relative !important;
+                    bottom:auto !important;
+                    padding-top: 25px !important;
+                } */
+
+                .imageWrap img{
+                    border-radius: 20px;
+
+                }
+
+.projectSlide {
+  position: relative;
+  overflow: visible;
+}
+
+.imageWrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.parallax-inner {
+  position: relative;
+  will-change: transform;
+}
+
+.projectSlide .swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;   /* ✅ here */
+  display: block;
+}
+.col-md-8 .exporeBtn{display: none !important;}
+.col-md-4 .exporeBtn{display:inline-block !important}
+@media screen and (max-width: 768px) {
+    .col-md-8 .exporeBtn{display: inline-block !important;}
+   .col-md-4 .exporeBtn{display:none !important}
+}
+            </style>
+            <style>
+                            .ss-carousel__content{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 60px;
+                            }
+                            .ss-carousel__content .row .col-md-4, .ss-carousel__content .row .itemsCenter{
+                              display: flex;
+                              align-items: center;
+                            }
+                            .ss-carousel__content .row .itemsTop{
+                                display: flex;
+                              align-items: flex-start;
+
+                            }
+                            .imgBlock img{
+                                width:100%;
+
+                            }
+                            .videoBlock video{
+                                width:100%;
+                                height:auto
+                            }
+                            .basicInfo{
+                                justify-content: space-between;
+                                align-items: center;
+                            }
+                            .headerLeftCont{}
+                            .headerLeftCont .icon{
+                                width:60px;
+                                height:60px
+                            }
+                            .headerLeftCont .icon img{
+                                width:100%;
+                            }
+                            .headerRightCont{
+                              border-left:1px solid #ccc;
+                              padding-left: 50px;
+                            }
+
+.imgBlock, .videoBlock, .mapBlock, .slideBlock{
+    overflow: hidden;
+    border-radius: 20px;
+}
+     .mapBlock {
+  position: relative;
+  
+}
+
+.mapWrap {
+  position: relative;
+  width: 100%;
+  height: 500px;        /* FIXED HEIGHT REQUIRED */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+
+      .imgWrap {
+  position: relative;
+  overflow: hidden;      /* prevents overlap */
+  border-radius: 20px;
+}
+
+.imgWrap img {
+  width: 100%;
+  display: block;
+  will-change: transform;
+}
+.videoWrap {
+  position: relative;
+  overflow: hidden;      /* prevents overlap */
+  border-radius: 20px;
+}
+.videoWrap .bordered{
+  border:1px solid #ccc;
+}
+.videoBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 1px solid #e5e5e5;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.videoWrap video {
+  width: 100%;
+  height: auto;
+  display: block;
+  will-change: transform;
+  object-fit: cover;
+}
+
+.slideWrap {
+  position: relative;
+  overflow: hidden;      /* prevents overlap */
+  border-radius: 20px;
+}
+
+.slideWrap .swiper {
+  width: 100%;
+}
+
+.slideWrap img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  will-change: transform;
+}
+.ss-carousel__description{
+    padding-right: 30px;
+}
+.imgBlock,
+.videoBlock,
+.slideBlock,
+.mapBlock {
+  position: relative;
+  z-index: 1;
+}
+
+.mapWrap {
+  z-index: 2;
+}
+.imgBlock, .videoBlock, .slideBlock  {
+  position: relative;
+  
+}
+img, video {
+  transform: translateZ(0);
+}
+.map{
+    width:100%;
+    height:100%;
+}
+
+.mapWrap {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.mapBlock {
+  width: 100%;
+  height: 100%;
+}
+
+#map1,
+#map2,
+#map3,
+#map4,
+#mapAnubhava,
+#mapPadmam,
+#mapGoyaz,
+#mapKps {
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+.imgWrap,
+.videoWrap,
+.slideWrap,
+.mapWrap {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.verticleImg .imgWrap{
+    text-align: center;
+}
+.verticleImg img{
+    max-width: 100%;
+    width:auto;
+    margin:auto;
+}
+.projectNav {
+
+  padding: 80px 0px;
+  border-top:1px solid #ccc;
+  margin-top: 40px;
+
+}
+
+.projectNavInner {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.projectNavItem {
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.projectNavItem.next {
+
+  justify-content: flex-end;
+
+}
+
+.circleBtn {
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #555;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.35s ease;
+
+}
+
+.projectNavItem:hover .circleBtn {
+
+  transform: scale(1.1);
+  background: #000;
+
+}
+
+.projectNavItem:hover {
+
+  color: #000;
+
+}
+
+.navText {
+
+  letter-spacing: 0.5px;
+
+}
+
+
+/* responsive */
+
+@media(max-width:768px){
+.ss-carousel__description{
+  padding-right:0;
+}
+
+  .projectNav {
+
+    padding: 50px 0px;
+
+  }
+  .projectNavItem{
+    gap: 8px;
+  }
+
+  .navText {
+
+    font-size: 14px;
+
+  }
+
+  .circleBtn {
+
+    width: 36px;
+    height: 36px;
+
+  }
+
+   .headerRightCont{
+                              border-left:0px solid #ccc;
+                              padding-left: 0px;
+                            }
+
+}
+
+#ctaSection{
+  border-top:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+}
+
+#ctaSection h2 {
+    font-size: 2rem;
+}
+#ctaSection p a {
+    text-decoration: none;
+    color: #000;
+}
+#ctaSection .col-md-8{
+  padding-top:40px;
+  padding-bottom:40px
+}
+.ctaButtonSection {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+    .ctaButton {
+        color: #000;
+        border: 1px solid #000;
+        padding: 12px 24px;
+        text-decoration: none;
+        align-self: center;
+        margin-left: 40px;
+      }
+      .ctaButton:hover {
+        background-color: #000;
+        color: #fff;
+      }
+@media screen and (max-width: 768px) {
+
+    .basicInfo{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .moreInfo{
+        text-align: left !important;
+        margin-top: 30px !important;
+    }
+    .ss-carousel__content{
+        gap:50px
+    }
+#ctaSection .col-md-8{
+  padding-bottom: 8px;
+}
+    .ctaButton{
+      margin-left: 0;
+      margin-bottom: 40px;
+    }
+}
+                        </style>
+
+    <div class="mainWrapper" style="position: relative">
+      <div class="header">
+        <div class="headerContainer">
+          <div class="logo">
+            <a href="/index.html"><img src="/images/logo.png" /></a>
+          </div>
+          <!-- Logo -->
+          <div class="topNav">
+            <span><a href="/architecture.html">Architecture</a></span>
+            <span><a href="#" class="activeNav">Interior</a></span>
+            <!-- <span><a href="/products.html">Products</a></span> -->
+            <!-- <span>Nav1</span>
+            <span>Nav1</span> -->
+          </div>
+          <!-- Top Nav -->
+          <div class="social"></div>
+          <!-- Social -->
+        </div>
+        <!-- Header Container-->
+      </div>
+      <!-- Main Nav-->
+      <nav class="css-mobile-menu" role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span class="span"></span>
+          <span class="span"></span>
+          <span class="span"></span>
+          <ul id="menu">
+            <!-- <li class="has-submenu">
+              <a
+                href="javascript:void(0);"
+                class="submenu-toggle"
+                onclick="toggleSubmenu(this)"
+              >
+                <span class="submenu-icon">+</span>Projects
+              </a>
+              <ul class="submenu">
+                <li><a href="/architecture.html">Architecture</a></li>
+                <li><a href="/index.html">Interior</a></li>
+                <li><a href="/products.html">Products</a></li>
+              </ul>
+            </li> -->
+            <li><a href="/">About</a></li>
+            <li><a href="/news-events.html">News</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="contentWrapper pt-10" style="padding-top: 100px;">
+        <div id="smooth-wrapper">
+    <div id="smooth-content">
+        <div class="container">
+            <div class="detailContainer">
+                  <div class="ss-carousel">
+                    <div class="ss-carousel__wrapper">
+                      
+                        
+                      <div class="ss-carousel__content">
+                        <div class="row firstInfo">
+                          <div class="basicInfo d-flex">
+                            <div class="headerLeftCont">
+                              <div class="icon">
+                                <img src="projects/smart-furniture/Smart_furniture_logo-colourinfill.png">
+                              </div>
+                              <div class="projectTitleInfo">
+                                <h3 class="projectTitle">Narayani Silks</h3>
+                                <p class="location">
+                                  ---
+                                </p>
+                                <p class="location">2025</p>
+
+                                
+                              </div>
+                            </div>
+                            <div class="headerRightCont">
+                            <div class="moreInfo">
+                              <div>
+                                <h4>Client</h4>
+                                <p>--</p>
+                              </div>
+                              <div>
+                                <h4>Typology</h4>
+                                <p>Commercial</p>
+                              </div>
+                              <div>
+                                <h4>Size</h4>
+                                <p>--</p>
+                              </div>
+                              <div>
+                                <h4>Status</h4>
+                                <p>Completed</p>
+                              </div>
+                              <div class="socialSection">
+                              <div class="sharethis-inline-share-buttons st-inline-share-buttons st-animated" id="st-1" style="text-align: left !important;"><div class="st-total st-hidden">
+  <span class="st-label"></span>
+  <span class="st-shares">
+    Shares
+  </span>
+</div><div class="st-btn st-first  st-remove-label" data-network="facebook" style="display: inline-block;">
+  <img alt="facebook sharing button" src="https://platform-cdn.sharethis.com/img/facebook.svg">
+  
+</div><div class="st-btn  st-remove-label" data-network="twitter" style="display: inline-block;">
+  <img alt="twitter sharing button" src="https://platform-cdn.sharethis.com/img/twitter.svg">
+  
+</div><div class="st-btn st-last  st-remove-label" data-network="whatsapp" style="display: none;">
+  <img alt="whatsapp sharing button" src="https://platform-cdn.sharethis.com/img/whatsapp.svg">
+  
+</div></div>                              
+                            </div><!-- Social -->
+                            </div><!-- More Info-->
+                             
+                            </div>
+                            
+                            
+                          </div>
+                        </div><!-- Row -->
+                        <div class="row">
+                            <div class="col-md-12 slideBlock">
+                                <div class="slideWrap">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/15.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image verticalSlide"
+                                  src="projects/narayani/16.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image verticalSlide"
+                                  src="projects/narayani/14.jpg"
+                                  alt=""
+                                />
+                              </div>
+                             
+                           
+                              
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="ss-carousel__description">
+                            <p>
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+                            </p>
+                          
+                          </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="imgBlock">
+                                    <div class="imgWrap">
+                                <img class="ss-carousel__item__image" src="projects/narayani/2.jpg" alt="">
+                                </div>
+                                </div>
+
+                            </div>
+                        </div><!-- Row -->
+
+                        
+                       
+                        <div class="row videoBlock videoBorder">
+                            <div class="col-md-12">
+                                <div class="videoWrap">
+                          <video muted="" autoplay="" loop="" playsinline="true" class="">
+                            <source src="projects/narayani/Narayani Silks Elevation.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+                        <div class="row textBlock" >
+                            <div class="col-md-12">
+                          <div class="ss-carousel__description">
+                            <p>
+                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+                            </p>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+                        
+
+                        <div class="row" >
+                            <div class="col-md-4"><div class="ss-carousel__description">
+                                <p style="max-width: 100%">
+                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                          </p>
+                          </div>
+                            </div>
+                            <div class="col-md-8 videoBlock videoBorder">
+                                <div class="videoWrap">
+                                <video muted="" autoplay="" loop="" playsinline="true">
+                            <source src="projects/narayani/Comp 1 (1).mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                            </div>
+                          
+                          
+                          </div><!-- Row -->
+                       
+                        
+
+                        <div class="row">
+                            <div class="col-md-4"><div class="ss-carousel__description">
+                                <p style="max-width: 100%">
+                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                          </p></div>
+                               
+                            </div>
+                            <div class="col-md-8 videoBlock videoBorder">
+                                <div class="videoWrap">
+                                 <video muted="" autoplay="" loop="" playsinline="true">
+                            <source src="projects/narayani/Comp 2.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                            </div>
+                          
+                          
+                        </div><!-- Row -->
+                       
+
+                        <div class="row overlyText" >
+                            <div class="col-md-4"><div class="ss-carousel__description">
+                                <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                          </p>
+                          </div>
+                            </div>
+                            <div class="col-md-8 videoBlock videoBorder">
+                                <div class="videoWrap">
+                                <video muted="" autoplay="" loop="" playsinline="true">
+                            <source src="projects/narayani/Comp 3.mp4" type="video/mp4" poster="https://eyecatcharchitects.com/site/wp-content/themes/EyeCatchArchitects/assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          </div>
+                            </div>
+                          
+                          
+                        </div> <!-- Row -->
+                       
+
+
+                         <div class="row">
+                            <div class="col-md-12 slideBlock">
+                                <div class="slideWrap">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/1.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/3.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/5.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/7.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/8.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/10.jpg"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+
+<div class="row textBlock">
+                            <div class="col-md-12">
+                          <div class="ss-carousel__description">
+                            <p>
+                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+
+                       
+
+ <div class="row videoBlock videoBorder">
+    <div class="col-md-12">
+        <div class="videoWrap">
+            <video muted="" autoplay="" loop="" playsinline="" preload="none">
+                            <source src="projects/narayani/Narayani Silks Full Video.mp4" type="video/mp4" poster="assets/images/blank.png">
+
+                            Your browser does not support the video tag.
+                          </video>
+                          <button class="mute-toggle">
+                            <i class="fas fa-volume-mute"></i>
+                          </button>
+        </div>
+    </div>
+</div>
+
+
+                         <div class="row">
+                            <div class="col-md-12 slideBlock">
+                                <div class="slideWrap">
+                          <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/11.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/12.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div class="swiper-slide">
+                                <img
+                                  class="ss-carousel__item__image"
+                                  src="projects/narayani/13.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          </div>
+                          </div>
+                        </div><!-- Row -->
+
+                        
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <div class="mapWrap">
+                                <div id="map3" class="mapBlock"></div>
+                                </div>
+                            </div>
+                        </div><!-- Row -->
+
+                        <div class="row teamBlock threeGrid" style="display:none !important">
+                          
+                            <div class="col-md-4 itemsTop">
+                                <div class="ss-carousel__description">
+                              <!-- <h5>Project Leader</h5>
+                              <p>Madhusudhan Rao Pulipati</p> -->
+                              <h5>Project Architect</h5>
+                              <p>Ar. Pranay Mithilesh Pulipati</p>
+                              <h5 class="subHead2">Interior Architect</h5>
+                              <p>Id. Medha Pulipati</p>
+                              <h5 class="subHead2">Project Manager</h5>
+                              <p>Rakesh CH</p>
+                              <h5 class="subHead2">Procurment Manager</h5>
+                              <p>Abhilash.V</p>
+
+                              <h5 class="subHead2">Project Team</h5>
+                              <p>Ravi Kumar K</p>
+                              <!-- <p>Abdul</p> -->
+                              <p>Ar. Chennakeshava.R</p>
+
+                              <p>Ar. Vaishnavi Basireddy</p>
+                              <p>Krishna Kanth P</p>
+                              <p>Rajib Roy</p>
+
+                              <p>Shamsheer P</p>
+                              <p>Chandan Halder</p>
+                              <p>Somisetty Baby Sushma</p>
+                              </div>
+                            </div>
+
+                            <div class="col-md-4 itemsTop">
+                                <div class="ss-carousel__description">
+                              <h5>Project Incharge</h5>
+                              <p>Ameer khan</p>
+                              <h5 class="subHead2">Operational manager</h5>
+                              <p>Fathima</p>
+
+                              <h5 class="subHead2">Photograghy</h5>
+                              <p>Victor</p>
+                              <h5 class="subHead2">Content</h5>
+                              <p>Anantu Chinthalapalli</p>
+                              <h5 class="subHead2">Relationship Manager</h5>
+                              <p>Tharani M</p>
+                            </div>
+                            </div>
+                          
+                        </div><!-- Row -->
+                    </div>
+                    </div>
+                  </div>
+                </div>
+          
+<section class="projectNav">
+
+  <div class="projectNavInner">
+
+    <!-- Previous -->
+    <a href="#" class="projectNavItem prev">
+
+      <span class="circleBtn">
+        <i class="fas fa-chevron-left"></i>
+      </span>
+
+      <span class="navText">Previous Project</span>
+
+    </a>
+
+
+    <!-- Next -->
+    <a href="#" class="projectNavItem next">
+
+      <span class="navText">Next Project</span>
+
+      <span class="circleBtn">
+        <i class="fas fa-chevron-right"></i>
+      </span>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="services" id="ctaSection">
+              <!-- <div class="sectionHead parallax-section">
+                <h2>Our Verticals</h2>
+              </div> -->
+              <style></style>
+              <div class="row borderBottom">
+                <div
+                  class="col-md-8"
+                  style="border-right: 1px solid #ccc"
+                >
+                  <h2>Seeking to enhance the visual appeal of your space?</h2>
+                  <p>
+                    Have a question for us? Let’s talk.<br />For all project
+                    inquiries, please email
+                    <a href="mailto:projects@eyecatcharchitects.com"
+                      >projects@eyecatcharchitects.com</a
+                    >
+                    with the subject NEW PROJECT
+                  </p>
+                </div><!-- Col -->
+                <div class="col-md-4 ctaButtonSection">
+                  <a
+                    href="mailto:projects@eyecatcharchitects.com"
+                    class="ctaButton"
+                    >Contact us</a
+                  >
+                </div>
+              </div>
+            </section>
+        </div>
+        <!-- Container Grid Container-->
+         </div>
+
+         <!-- Footer Start -->
+          <footer class="footer" id="footer">
+                <div class="footer-section">
+                  <div class="footer-link" data-target="emailSection">
+                    Email <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="emailSection">
+                    <p>
+                      <span class="emailLabel">New Projects:</span>
+                      <a href="mailto:projects@eyecatcharchitects.com"
+                        >projects@eyecatcharchitects.com</a
+                      >
+                    </p>
+                    <p>
+                      <span class="emailLabel">Contact:</span>
+                      <a href="mailto:contact@eyecatcharchitects.com"
+                        >contact@eyecatcharchitects.com</a
+                      >
+                    </p>
+                    <p>
+                      <span class="emailLabel">Careers:</span>
+                      <a href="mailto:hr@eyecatcharchitects.com"
+                        >hr@eyecatcharchitects.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="officeSection">
+                    Offices <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="officeSection">
+                    <div>
+                      <p class="sub-toggle" onclick="toggleAddressHyd()">
+                        Hyderabad
+                      </p>
+                      <div
+                        class="address"
+                        id="hyderabadAddress"
+                        style="display: block"
+                      >
+                        <p class="detailedAddress">
+                          <strong>Eyecatch Architects</strong><br />
+                          Plot No. 710, Road No. 36, Aditya Enclave,
+                          Venkatagiri, Jubilee Hills, Hyderabad, Telangana
+                          500033. <br />+91 8125225696<br />contact@eyecatcharchitects.in<br />
+                        </p>
+                      </div>
+                      <p class="sub-toggle" onclick="toggleAddressVijayawada()">
+                        Vijayawada
+                      </p>
+                      <div
+                        class="address"
+                        id="vijayawadaAddress"
+                        style="display: none"
+                      >
+                        <p class="detailedAddress">
+                          <strong>Eyecatch</strong><br />
+                          MG Rd, Behind Kalaniketan, Mogalrajapuram, Sidhartha
+                          Nagar, Labbipet, Vijayawada, Andhra Pradesh 520010.<br />
+                          +91 96189 02587<br />contact@eyecatcharchitects.in<br />
+                        </p>
+                      </div>
+                    </div>
+                    <div></div>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="socialSection">
+                    Social <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="socialSection">
+                    <p>
+                      <a
+                        href="https://www.facebook.com/EyeCatchArchitects"
+                        target="_blank"
+                        title="Eyecatch Facebook"
+                        >Facebook
+                        <span class="arrow" style="touch-action: none">
+                          <svg
+                            width="10"
+                            height="10"
+                            viewBox="0 0 10 10"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="touch-action: none"
+                          >
+                            <path
+                              d="M2 1H9V8"
+                              stroke="black"
+                              style="touch-action: none"
+                            ></path>
+                            <path
+                              d="M9 1L1 9"
+                              stroke="black"
+                              style="touch-action: none"
+                            ></path>
+                          </svg> </span
+                      ></a>
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.instagram.com/eyecatcharchitects/"
+                        target="_blank"
+                        title="Eyecatch Facebook"
+                        >Instagram
+                        <span class="arrow" style="touch-action: none">
+                          <svg
+                            width="10"
+                            height="10"
+                            viewBox="0 0 10 10"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="touch-action: none"
+                          >
+                            <path
+                              d="M2 1H9V8"
+                              stroke="black"
+                              style="touch-action: none"
+                            ></path>
+                            <path
+                              d="M9 1L1 9"
+                              stroke="black"
+                              style="touch-action: none"
+                            ></path>
+                          </svg> </span
+                      ></a>
+                    </p>
+                    <p>
+                      <a
+                        href="https://www.linkedin.com/company/eyecatch-architects1"
+                        target="_blank"
+                        title="Eyecatch Facebook"
+                        >LinkedIn
+                        <span class="arrow" style="touch-action: none">
+                          <svg
+                            width="10"
+                            height="10"
+                            viewBox="0 0 10 10"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="touch-action: none"
+                          >
+                            <path
+                              d="M2 1H9V8"
+                              stroke="black"
+                              style="touch-action: none"
+                            ></path>
+                            <path
+                              d="M9 1L1 9"
+                              stroke="black"
+                              style="touch-action: none"
+                            ></path>
+                          </svg> </span
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="footer-section">
+                  <div class="footer-link" data-target="copyrightSection">
+                    Copyright <span class="toggle">+</span>
+                  </div>
+                  <div class="sub-content" id="copyrightSection">
+                    <p>
+                      <a
+                        href="docs/Privacy Policy-ECArchitects.pdf"
+                        target="_blank"
+                        >Policy</a
+                      >
+                    </p>
+                    <p><a href="#">Terms of Use</a></p>
+                    <p><a href="#">Legal Disclaimer</a></p>
+                  </div>
+                </div>
+              </footer>
+              <div id="fooCopyRight">
+                <div class="row">
+                  <div class="col6">
+                    &copy; EyeCatch Architects 2025. All Rights Reserved.
+                  </div>
+                  <div class="col6 fooBrand">
+                    Designed by
+                    <a
+                      href="https://eyecatch.co.in"
+                      target="_blank"
+                      title="EyeCatch Branding & Advertising"
+                      >EyeCatch Branding and Advertising</a
+                    >.
+                  </div>
+                </div>
+              </div>
+          <!-- Footer End -->
+  </div><!-- Smooth -->
+      </div>
+      <!-- Content Wrapper-->
+
+      
+    </div>
+    <!-- Main Wrapper-->
+    <style>
+      .footer {
+        padding: 100px 0 30px 0;
+
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        /* margin-bottom: 300px; */
+      }
+      #fooCopyRight {
+        border-top: 1px solid #ccc;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        /* text-align: center; */
+        font-size: 12px;
+        margin-bottom: 500px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .fooBrand {
+        text-align: right;
+      }
+      .fooBrand a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #000;
+      }
+      .row {
+        display: flex;
+      }
+      .col6 {
+        width: 50%;
+      }
+
+      .footer-section {
+        margin: 10px 0;
+        position: relative;
+        min-width: 150px;
+      }
+
+      .footer-link {
+        cursor: pointer;
+        font-size: 14px;
+        margin: 10px 0;
+        display: inline-block;
+        position: relative;
+      }
+
+      .footer-link .toggle {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+        display: inline-block;
+      }
+
+      .sub-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        opacity: 0;
+      }
+      .sub-content a {
+        color: #000;
+      }
+      .address {
+        transition: all 0.5s ease;
+        /* opacity: 0; */
+      }
+      .sub-content p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .emailLabel {
+        min-width: 85px;
+        display: inline-block;
+      }
+      .sub-content p a {
+        color: #000;
+      }
+      #socialSection p {
+        padding-bottom: 5px;
+      }
+      #socialSection p a {
+      }
+      #socialSection p svg {
+        width: 7px;
+        height: auto;
+        padding-left: 1px;
+      }
+
+      .sub-content.show {
+        max-height: 500px; /* Large enough to hold content */
+        opacity: 1;
+        /* padding-top: 10px; */
+      }
+
+      .sub-toggle {
+        /* color: #00bcd4; */
+        cursor: pointer;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+      .detailedAddress {
+        max-width: 200px;
+      }
+      .detailedAddress strong {
+        font-weight: 600;
+      }
+      
+      .moreInfo {
+        text-align: left;
+        align-self: end;
+        vertical-align: bottom;
+        /* margin-top: 30px; */
+      }
+      .moreInfo h4 {
+        text-transform: uppercase;
+        color: #787878;
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 14px;
+      }
+      .moreInfo p {
+        text-transform: uppercase;
+        color: #000;
+        margin: 3px 0 20px 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 14px;
+      }
+      .moreInfo div:last-child p{
+        margin-bottom: 0;
+      }
+      
+      .mute-toggle {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        font-size: 14px;
+        padding: 10px 10px;
+        border-radius: 100%;
+        cursor: pointer;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+      }
+      .mute-toggle i {
+        align-self: center;
+      }
+
+      .mute-toggle:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+     
+
+      .disclaimer a {
+        color: #fff;
+      }
+      .swiper-pagination-bullet {
+        width: 10px !important;
+        height: 10px !important;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: #ed1c24 !important;
+      }
+
+      * {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+      .swiper-horizontal > .swiper-pagination-bullets,
+      .swiper-pagination-bullets.swiper-pagination-horizontal,
+      .swiper-pagination-custom,
+      .swiper-pagination-fraction {
+        bottom: 20px !important;
+      }
+      @media screen and (max-width: 768px) {
+        #preloader img {
+          width: 50%;
+        }
+        .headerContainer {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .topNav {
+          display: none;
+        }
+        
+
+        .footer {
+          padding: 0px 0 100px 0;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-start;
+          gap: 0;
+          margin-bottom: 100px;
+          flex-wrap: wrap;
+
+          width: 92%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .footer-section {
+          margin: 10px 0;
+          position: relative;
+          min-width: 20%;
+          width: 25%;
+        }
+        .footer-link {
+          font-size: 12px;
+        }
+        .footer-link .toggle {
+          margin-left: 2px;
+        }
+
+        .mute-toggle {
+          position: absolute;
+          bottom: auto;
+          right: 20px;
+          top: 10px;
+        }
+
+        .moreInfo p,
+        .moreInfo h4 {
+          font-size: 11px;
+        }
+      }
+    </style>
+
+<style type="text/css">#st-1 {
+  font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;;
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: right;
+  z-index: 94034;
+}
+#st-1.st-animated {
+  -moz-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -ms-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -o-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; -webkit-transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in; transition: o 0.2s ease-in, p 0.2s ease-in, a 0.2s ease-in, c 0.2s ease-in, i 0.2s ease-in, t 0.2s ease-in, y 0.2s ease-in;
+}
+#st-1.st-hidden {
+  opacity: 0;
+}
+
+#st-1.st-preview {
+  display: none!important;
+  opacity: 0!important;
+}
+#st-1.st-hide {
+  display: none;
+}
+#st-1 .st-btn {
+  -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+  -moz-transition: opacity 0.2s ease-in, top 0.2s ease-in; -ms-transition: opacity 0.2s ease-in, top 0.2s ease-in; -o-transition: opacity 0.2s ease-in, top 0.2s ease-in; -webkit-transition: opacity 0.2s ease-in, top 0.2s ease-in; transition: opacity 0.2s ease-in, top 0.2s ease-in;
+  -moz-border-radius: 16px;
+-webkit-border-radius: 16px;
+border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 11px;
+  height: 32px;
+  line-height: 32px;
+  margin-right: 8px;
+  padding: 0 8px;
+  position: relative;
+  text-align: center;
+  top: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
+#st-1 .st-btn:last-child {
+  margin-right: 0;
+}
+#st-1 .st-btn > svg {
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 8px;
+  vertical-align: top;
+}
+#st-1 .st-btn > img {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 8px;
+  vertical-align: top;
+}
+#st-1 .st-btn > span {
+  -moz-transition: all 0.2s ease-in; -ms-transition: all 0.2s ease-in; -o-transition: all 0.2s ease-in; -webkit-transition: all 0.2s ease-in; transition: all 0.2s ease-in;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  min-width: 60px;
+  opacity: 1;
+  padding: 0 6px;
+  position: relative;
+  vertical-align: top;
+}
+#st-1.st-has-labels .st-btn {
+  min-width: 120px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label {
+  min-width: 50px;
+}
+#st-1.st-has-labels .st-btn.st-remove-label > span {
+  display: none;
+}
+#st-1.st-has-labels .st-btn.st-hide-label > span {
+  display: none;
+}
+#st-1 .st-total {
+  color: #555;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 12px;
+  margin-right: 0;
+  max-width: 80px;
+  padding: 4px 8px;
+  text-align: center;
+}
+#st-1 .st-total.st-hidden {
+  display: none;
+}
+#st-1 .st-total > span {
+  font-size: 16px;
+  line-height: 17px;
+  display: block;
+  padding: 0;
+}
+#st-1 .st-total > span.st-shares {
+  font-size: 9px;
+  line-height: 9px;
+}
+#st-1.st-justified {
+  display: flex;
+  text-align: center;
+}
+#st-1.st-justified .st-btn {
+  -moz-flex: 1;
+-ms-flex: 1;
+-webkit-flex: 1;
+flex: 1;
+}#st-1 .st-btn:hover {
+  opacity: .8;
+  top: -4px;
+}#st-1 .st-btn[data-network='facebook'] {
+  background-color: #000000
+}
+#st-1 .st-btn[data-network='facebook'] img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(106%) contrast(103%);
+}
+#st-1 .st-btn[data-network='facebook'] > span {
+  color: #ffffff
+}
+#st-1 .st-btn[data-network='twitter'] {
+  background-color: #000000
+}
+#st-1 .st-btn[data-network='twitter'] img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(106%) contrast(103%);
+}
+#st-1 .st-btn[data-network='twitter'] > span {
+  color: #ffffff
+}
+#st-1 .st-btn[data-network='whatsapp'] {
+  background-color: #000000
+}
+#st-1 .st-btn[data-network='whatsapp'] img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(304deg) brightness(106%) contrast(103%);
+}
+#st-1 .st-btn[data-network='whatsapp'] > span {
+  color: #ffffff
+}#st-1 .st-btn[data-network='snapchat'] > span {
+  color: #333};
+
+</style>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- LENIS -->
+<script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
+
+<!-- SWIPER -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- LEAFLET -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<!-- SWIPER -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+
+<script>
+const mapConfigs = [
+        {
+          id: "map1",
+          coords: [16.5050288, 80.6619402],
+          title: "Amyra Silver - Jewellery Store",
+          address:
+            "D. No: 40-2-3/3C, Gouse Street, Mogalrajpuram, Vijayawada, Andhra Pradesh 520010",
+        },
+        {
+          id: "map2",
+          coords: [17.432709, 78.4281349],
+          title: "Ladia - Lab Grown Diamond Jewellery",
+          address:
+            "Road No. 36, Jubilee Hills, beside US Polo Assn, Hyderabad, Telangana 500033",
+        },
+        {
+          id: "map3",
+          coords: [17.43, 78.42],
+          title: "Smart Furniture",
+          address: "MG Road, Vijayawada, Andhra Pradesh 520010",
+        },
+        {
+          id: "map4",
+          coords: [17.4344965, 78.3691441],
+          title: "Aakruti - Clothing Store",
+          address:
+            "1-74/DH 186 & 201, Gachibowli - Miyapur Rd, Hyderabad, Telangana 500032",
+        },
+        {
+          id: "mapAnubhava",
+          coords: [16.5050288, 80.6619402],
+          title: "Anubhava Home Foods",
+          address: "Moghalrajpuram, Vijayawada, Andhra Pradesh",
+        },
+        {
+          id: "mapPadmam",
+          coords: [16.709803, 81.104014],
+          title: "Padmam Silver Jewellery",
+          address: "CMR Central, Eluru",
+        },
+        {
+          id: "mapGoyaz",
+          coords: [17.4264249, 78.4504177],
+          title: "Goyaz Silver Jewellery",
+          address:
+            "NAGARJUNA CO-OPERATIVE HOUSING SOCIETY LTD, 5 & 6, Nagarjuna Cir Rd, Nagarjuna Hills, Punjagutta, Hyderabad",
+        },
+        {
+          id: "mapKps",
+          coords: [14.4293811, 79.9738343],
+          title: "kanchipuram perumal silks",
+          address:
+            "Annamayya Cir, near Annamayya Circle, ISKCON City, Vanam Thopu, Nellore, Andhra Pradesh 524003",
+        },
+      ];
+</script>
+<script>
+/* =====================================================
+   GLOBAL VARIABLES
+===================================================== */
+
+let lenis;
+const mapInstances = {};
+
+
+/* =====================================================
+   LEAFLET ICON (UNCHANGED)
+===================================================== */
+
+const customIcon = L.icon({
+  iconUrl: "images/pointer.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+});
+
+
+/* =====================================================
+   MAP FUNCTIONS (UNCHANGED)
+===================================================== */
+
+function createMap(config){
+
+  if(mapInstances[config.id]) return;
+
+  const el = document.getElementById(config.id);
+  if(!el) return;
+
+  const map = L.map(el,{
+    attributionControl: false,
+    zoomControl: false,
+
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    dragging: false,
+    keyboard: false,
+    tap: false,
+    touchZoom: false
+  });
+
+  map.setView(config.coords,17);
+
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    { maxZoom:20 }
+  ).addTo(map);
+
+  L.marker(config.coords,{icon:customIcon})
+    .addTo(map)
+    .bindPopup(`<strong>${config.title}</strong><br>${config.address}`)
+    .openPopup();
+
+  mapInstances[config.id] = map;
+
+  setTimeout(()=>map.invalidateSize(),100);
+  setTimeout(()=>map.invalidateSize(),500);
+  setTimeout(()=>map.invalidateSize(),1000);
+}
+
+
+function initVisibleMaps(){
+
+  mapConfigs.forEach(config=>{
+
+    const el = document.getElementById(config.id);
+    if(!el) return;
+
+    const rect = el.getBoundingClientRect();
+
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      createMap(config);
+    }
+
+  });
+
+}
+
+
+function refreshMaps(){
+
+  Object.values(mapInstances).forEach(map=>{
+    map.invalidateSize();
+  });
+
+}
+
+
+/* =====================================================
+   MAIN INIT
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  gsap.registerPlugin(ScrollTrigger);
+
+
+  /* =========================
+     LENIS INIT (FIXED)
+  ========================= */
+
+  lenis = new Lenis({
+    duration: 1.6,
+    smooth: true,
+    lerp: 0.06,
+    wheelMultiplier: 0.9,
+    touchMultiplier: 1.1
+  });
+
+
+  function raf(time){
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+
+  /* =====================================================
+     CRITICAL FIX: SCROLLTRIGGER SYNC WITH LENIS
+  ===================================================== */
+
+  lenis.on("scroll", ScrollTrigger.update);
+
+
+  ScrollTrigger.scrollerProxy(document.body, {
+
+    scrollTop(value){
+
+      if(arguments.length){
+        lenis.scrollTo(value, { immediate: true });
+      }
+
+      return lenis.scroll;
+
+    },
+
+    getBoundingClientRect(){
+
+      return {
+        top:0,
+        left:0,
+        width:window.innerWidth,
+        height:window.innerHeight
+      };
+
+    }
+
+  });
+
+
+  ScrollTrigger.addEventListener("refresh", ()=>lenis.resize());
+
+
+  /* =========================
+     MAP REFRESH ON SCROLL
+  ========================= */
+
+  lenis.on("scroll", ()=>{
+    initVisibleMaps();
+    setTimeout(refreshMaps,50);
+  });
+
+
+  /* =========================
+     SWIPER
+  ========================= */
+
+  document.querySelectorAll(".mySwiper").forEach(slider=>{
+
+    new Swiper(slider,{
+      spaceBetween:0,
+      speed:800,
+      allowTouchMove:true,
+      pagination:{
+        el:slider.querySelector(".swiper-pagination"),
+        clickable:true
+      }
+    });
+
+  });
+
+
+  /* =========================
+     HERO ANIMATION
+  ========================= */
+
+  gsap.from(".firstInfo",{
+    opacity:0,
+    y:60,
+    duration:1.2,
+    ease:"power3.out"
+  });
+
+
+  /* =========================
+     TEXT REVEAL
+  ========================= */
+
+  gsap.utils.toArray(".textBlock, .ss-carousel__description")
+  .forEach(block=>{
+
+    gsap.from(block,{
+      y:60,
+      opacity:0,
+      duration:1,
+      ease:"power2.out",
+      scrollTrigger:{
+        trigger:block,
+        start:"top 85%"
+      }
+    });
+
+  });
+
+
+  /* =========================
+     PARALLAX
+  ========================= */
+
+  gsap.utils.toArray(".imgWrap, .videoWrap, .slideWrap")
+  .forEach(wrap=>{
+
+    gsap.fromTo(wrap,
+      { y:-100, scale:1.08 },
+      {
+        y:100,
+        scale:1.02,
+        ease:"none",
+        scrollTrigger:{
+          trigger:wrap,
+          start:"top bottom",
+          end:"bottom top",
+          scrub:1.3,
+          invalidateOnRefresh:true
+        }
+      }
+    );
+
+  });
+
+
+  /* =========================
+     MAP INIT
+  ========================= */
+
+  ScrollTrigger.create({
+
+    trigger:".mapWrap",
+    start:"top 85%",
+    once:true,
+
+    onEnter:()=>{
+      initVisibleMaps();
+      setTimeout(refreshMaps,400);
+    }
+
+  });
+
+
+
+
+  /* =========================
+     VIDEO AUTOPLAY
+  ========================= */
+
+  document.querySelectorAll(".videoBlock video")
+  .forEach(video=>video.pause());
+
+
+  gsap.utils.toArray(".videoBlock")
+  .forEach(block=>{
+
+    const video = block.querySelector("video");
+
+    ScrollTrigger.create({
+
+      trigger:block,
+      start:"top 70%",
+      end:"bottom 30%",
+
+      onEnter:()=>video.play(),
+      onEnterBack:()=>video.play(),
+      onLeave:()=>video.pause(),
+      onLeaveBack:()=>video.pause()
+
+    });
+
+  });
+
+
+  /* =========================
+     MUTE BUTTON
+  ========================= */
+
+  document.querySelectorAll(".mute-toggle")
+  .forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+      const video = btn.closest(".videoWrap").querySelector("video");
+
+      video.muted = !video.muted;
+
+      btn.innerHTML = video.muted
+        ? '<i class="fas fa-volume-mute"></i>'
+        : '<i class="fas fa-volume-up"></i>';
+
+    });
+
+  });
+
+
+  /* =========================
+     FOOTER TOGGLE (RESTORED)
+  ========================= */
+
+  document.querySelectorAll(".footer-link").forEach((link)=>{
+
+    link.addEventListener("click", function(){
+
+      const targetId = this.getAttribute("data-target");
+      const subContent = document.getElementById(targetId);
+      const toggleSymbol = this.querySelector(".toggle");
+
+      document.querySelectorAll(".sub-content").forEach(content=>{
+        if(content.id !== targetId){
+          content.classList.remove("show");
+        }
+      });
+
+      document.querySelectorAll(".toggle").forEach(toggle=>{
+        if(toggle !== toggleSymbol){
+          toggle.textContent="+";
+          toggle.style.transform="rotate(0deg)";
+        }
+      });
+
+      if(subContent.classList.contains("show")){
+        subContent.classList.remove("show");
+        toggleSymbol.textContent="+";
+      }else{
+        subContent.classList.add("show");
+        toggleSymbol.textContent="-";
+      }
+
+    });
+
+  });
+
+
+  /* =========================
+     FINAL REFRESH
+  ========================= */
+
+  setTimeout(()=>{
+    ScrollTrigger.refresh();
+  },500);
+
+});
+
+
+/* =====================================================
+   ADDRESS TOGGLE FUNCTIONS (RESTORED)
+===================================================== */
+
+function toggleAddressHyd(){
+
+  document.getElementById("hyderabadAddress").style.display="block";
+  document.getElementById("vijayawadaAddress").style.display="none";
+  document.getElementById("tamilnaduAddress").style.display="none";
+
+}
+
+function toggleAddressTamil(){
+
+  document.getElementById("hyderabadAddress").style.display="none";
+  document.getElementById("vijayawadaAddress").style.display="none";
+  document.getElementById("tamilnaduAddress").style.display="block";
+
+}
+
+function toggleAddressVijayawada(){
+
+  document.getElementById("hyderabadAddress").style.display="none";
+  document.getElementById("vijayawadaAddress").style.display="block";
+  document.getElementById("tamilnaduAddress").style.display="none";
+
+}
+
+
+/* =====================================================
+   SUBMENU FUNCTION (RESTORED)
+===================================================== */
+
+function toggleSubmenu(el){
+
+  const parentLi = el.closest("li.has-submenu");
+  const icon = el.querySelector(".submenu-icon");
+
+  parentLi.classList.toggle("open");
+
+  if(parentLi.classList.contains("open")){
+    icon.textContent="−";
+  }else{
+    icon.textContent="+";
+  }
+
+}
+
+</script>
+
+  </body>
+</html>

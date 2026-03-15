@@ -2152,7 +2152,7 @@ const customIcon = L.icon({
 
 
 /* =====================================================
-   MAP FUNCTIONS
+   MAP FUNCTIONS (UNCHANGED)
 ===================================================== */
 
 function createMap(config){
@@ -2164,15 +2164,15 @@ function createMap(config){
 
   const map = L.map(el,{
     attributionControl: false,
-  zoomControl: false,
+    zoomControl: false,
 
-  scrollWheelZoom: false,     // 🔥 prevents wheel zoom
-  doubleClickZoom: false,
-  boxZoom: false,
-  dragging: false,            // optional (disables drag)
-  keyboard: false,
-  tap: false,
-  touchZoom: false
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    dragging: false,
+    keyboard: false,
+    tap: false,
+    touchZoom: false
   });
 
   map.setView(config.coords,17);
@@ -2232,7 +2232,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     LENIS INIT
+     LENIS INIT (FIXED)
   ========================= */
 
   lenis = new Lenis({
@@ -2243,6 +2243,7 @@ document.addEventListener("DOMContentLoaded", function () {
     touchMultiplier: 1.1
   });
 
+
   function raf(time){
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -2250,12 +2251,49 @@ document.addEventListener("DOMContentLoaded", function () {
   requestAnimationFrame(raf);
 
 
+  /* =====================================================
+     CRITICAL FIX: SCROLLTRIGGER SYNC WITH LENIS
+  ===================================================== */
+
+  lenis.on("scroll", ScrollTrigger.update);
+
+
+  ScrollTrigger.scrollerProxy(document.body, {
+
+    scrollTop(value){
+
+      if(arguments.length){
+        lenis.scrollTo(value, { immediate: true });
+      }
+
+      return lenis.scroll;
+
+    },
+
+    getBoundingClientRect(){
+
+      return {
+        top:0,
+        left:0,
+        width:window.innerWidth,
+        height:window.innerHeight
+      };
+
+    }
+
+  });
+
+
+  ScrollTrigger.addEventListener("refresh", ()=>lenis.resize());
+
+
+  /* =========================
+     MAP REFRESH ON SCROLL
+  ========================= */
+
   lenis.on("scroll", ()=>{
-
-    ScrollTrigger.update();
     initVisibleMaps();
-    setTimeout(refreshMaps, 50);
-
+    setTimeout(refreshMaps,50);
   });
 
 
@@ -2353,6 +2391,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
   });
+
+
 
 
   /* =========================
